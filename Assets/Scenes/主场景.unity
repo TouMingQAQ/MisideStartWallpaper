@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 34858557}
   - component: {fileID: 34858556}
   m_Layer: 0
-  m_Name: CanvasBack
+  m_Name: "\u80CC\u666F\u7248(UI)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 143228050}
   - component: {fileID: 143228049}
   m_Layer: 0
-  m_Name: Spot Light
+  m_Name: "\u70B9\u5149\u6E90"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -452,7 +452,7 @@ GameObject:
   m_Component:
   - component: {fileID: 158783087}
   m_Layer: 0
-  m_Name: LookAtTarget
+  m_Name: "\u89D2\u8272\u8FFD\u8E2A\u76EE\u6807"
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 189189137}
   - component: {fileID: 189189138}
   m_Layer: 0
-  m_Name: LookAtIK
+  m_Name: "\u89D2\u8272\u76EE\u5149IK"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -685,7 +685,7 @@ GameObject:
   - component: {fileID: 330585548}
   - component: {fileID: 330585549}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: "\u4E3B\u76F8\u673A"
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2447,6 +2447,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 832575519}
   - {fileID: 143228051}
   - {fileID: 543450653060252943}
   - {fileID: 34858555}
@@ -2467,12 +2468,12 @@ GameObject:
   - component: {fileID: 832575519}
   - component: {fileID: 832575518}
   m_Layer: 0
-  m_Name: Global Volume
+  m_Name: "PP\u540E\u5904\u7406"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &832575518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2480,7 +2481,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832575517}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
@@ -2498,12 +2499,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832575517}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 796871744}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1013576547
 GameObject:
@@ -2785,7 +2786,7 @@ GameObject:
   - component: {fileID: 1552070738}
   - component: {fileID: 1552070737}
   m_Layer: 0
-  m_Name: CinemachineCamera (2)
+  m_Name: "\u865A\u62DF\u76F8\u673A(\u76F8\u673A\u53C2\u6570\u5728\u8FD9\u8C03)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3930,7 +3931,7 @@ GameObject:
   - component: {fileID: 1907506232}
   - component: {fileID: 1907506233}
   m_Layer: 0
-  m_Name: Dolly Spline
+  m_Name: "\u76F8\u673A\u8F68\u9053"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5033,7 +5034,7 @@ GameObject:
   - component: {fileID: 919132148587044792}
   - component: {fileID: 919132148587044794}
   m_Layer: 0
-  m_Name: MITA
+  m_Name: "\u7C73\u5854(\u4E3B\u8981\u811A\u672C\u5728\u8FD9\u91CC)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13749,6 +13750,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 330585546}
   - {fileID: 410087041}
-  - {fileID: 832575519}
   - {fileID: 796871744}
   - {fileID: 721846635}
