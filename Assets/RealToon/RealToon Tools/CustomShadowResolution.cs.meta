@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: ef184494de3501f4ca1c8d8839a36f11
+timeCreated: 1534021412
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 65518
+  packageName: RealToon (Pro Anime/Toon Shader)
+  packageVersion: 5.0.8p8
+  assetPath: Assets/RealToon/RealToon Tools/CustomShadowResolution.cs
+  uploadId: 629436

@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 9f51a2cb54804064b8fc03edfef062fb
+timeCreated: 1527764313
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 65518
+  packageName: RealToon (Pro Anime/Toon Shader)
+  packageVersion: 5.0.8p8
+  assetPath: Assets/RealToon/RealToon Tools/FrameByFrameRendering/FrameByFrameRendering_Manual.cs
+  uploadId: 629436

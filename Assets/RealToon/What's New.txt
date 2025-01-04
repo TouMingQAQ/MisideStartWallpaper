@@ -1,0 +1,29 @@
+What's New to RealToon V5.0.10 (December 2024)
+=====================================
+
+[New]
+- SDF Mode (ShadowT New Option) (Built-In, URP and HDRP)
+"SDF Style Shadowing."
+
+- Add/Remove "See Through" feature (New Setting Option) (URP) 
+"Add or Remove 'See Through' feature on the RealToon Shader."
+"Useful for those who don't want to use it and fix overlap fog on the Outline."
+
+[Changes]
+- Smooth Object Normal does not get disable anymore when Self Shadow is disabled. (Built-In, URP and HDRP)
+- "See Through" feature is default disabled, just enable or add it if you need it, Your settings are still maintained even disabled. (URP)
+
+[Improvements]
+- Smooth Object Normal has been improved including the Smooth Object Normal helper script. (Built-In, URP and HDRP)
+- RealToon Tools/Script has been improved and added some info.
+
+[Fixed]
+- Some fog asset overlap the RealToon Shader - Outline, it can be fix by disable the 'See Through' feature. (URP)
+
+====================================
+
+#Read the "Change - Fix Log.txt." file for previous updates.
+#This update supports Unity 5, 2017, 2018, 2019, 2020, 2022, 2023, Unity 6 and future unity versions.
+
+[Other Notes]
+* If you encounter some problems or need help just contact by email.

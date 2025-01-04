@@ -1,0 +1,69 @@
+RealToon V5.0.10 (HDRP)
+===========================================================
+Requirements/Recommendations
+===========================================================
+
+RealToon HDRP packages:
+*(HDRP 10 and 11) is for unity 2020.2.0 to 2021.1.X
+*(HDRP 12 and 13) is for unity 2021.2.0 to 2022.1.X.
+*(HDRP 14 and 15) is for unity 2022.2.0 to 2022.3.X.
+*(HDRP 15 and 16) is for unity 2022.3.0 to 2023.2.X.
+*(HDRP 17) is for unity 6.0.0 to later
+
+===========================================================
+Note:
+===========================================================
+
+*How to download, import and unpack RealToon (HDRP) Shader Packages Video Tutorial:
+https://www.youtube.com/watch?v=JVlbOYi2V3M&t=157s
+
+===========================================================
+
+*DXR/Raytracing is supported.
+- Unity uses DXR and it will work on all GPUs that supports raytracing.
+
+*Tessellation version is still in development.
+
+*All lights are supported: Direction, Point, Spot and Arealight.
+
+*Light layers is possible to use.
+
+*Use RealToon + Unity's HDRP shaders is possible too.
+
+*Hover your mouse to an option or feature name for 
+option description and infos.
+
+*There's a RealToon HDRP user guide or documentation included as text file.
+
+*If you encounter any errors/problems or something just email me.
+
+===========================================================
+Note and reminder about Raytracing 
+===========================================================
+
+*Raytracing Shadow and Raytracing Global Illumination does not yet reflect to Raytraced Reflection surface. (HDRP 8 and HDRP 7)
+*Only non raytraced shadow and non raytraced global illumination can reflect to Raytraced Reflection surface at the moment.
+(HDRP 8 and HDRP 7)
+
+*Fade Transparency or Transparent does not yet reflect to Raytraced Reflection surface.
+*Opaque objects and transparent type Alpha clip or Cutout transparent can reflect to Raytraced Reflection surface and can bounce light at the moment.
+
+*In recursive rendering, transparency can be visible to reflective object but can't receive raytraced global illumination.
+
+===========================================================
+RealToon HDRP current issues
+===========================================================
+
+[For Outline] [Traditional]
+*In normal or opaque state, far fog will overlap but if there is an opaque object behind, far fog will not overlap. 
+*In 'Transparent Mode' far fog will not overlap."
+*Currently, there is no HDRP line code or function to mask this.
+
+*Currently in raytracing mode, outline will not reflect to Raytraced Relfection surface, to have an outline in a Raytraced Relfection surface, use "Rimlight" as an alternative outline, just changed the "Power" value to negative 1 then enable "Rim Light in Light".
+
+[For Arealight (HDRP 15 and Below]
+*If the size of a Rect type arealight is too un-even like 'X:30 | Y:1' the light falloff will cause some noise.
+*Current arealight light falloff is just a temporary solution.
+*"Tube Light Falloff" option is a temporary option for Arealight Tube Type light falloff.
+*These current issues only applies when "Area Light Smooth Look" option disabled.
+*Arealight currently in beta, if you want or planned to use it just enable "Enable Area Light" under the category "Lighting".

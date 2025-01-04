@@ -1,0 +1,1305 @@
+==========================================
+Realtoon (Change - Fix Log)
+==========================================
+v1.0 (2016):
+
+- Initial Release
+
+
+
+
+
+==========================================
+v1.0.1 (2016):
+
+- New "Fresnel effect".
+- New control/function "Reduce White".
+- You can now enable/disable light falloff of a spotlight or pointlight.
+- Added 2 example scenes.
+- "FReflection Scale" is removed and changed it to Unity3d's "Tiling - Offset" to control the size.
+- All sliders are now 0 to 1..... values.
+- Some controls are renamed/corrected.
+
+
+
+
+
+==========================================
+v1.0.2 (2016):
+
+- Added "No Outline" (If you're not using the outline and want less draw calls).
+- New "Fade Transparency" (For smooth & fade transparency).
+- Added "Tutorials" pdf (Tutorials and tips on how to use realtoon, using the shader with receive shadows turned on and more).
+- Added 1 example scene.
+- Folder "RealToon Shader" renamed to "RealToon Shaders".
+- Default color changed to gray.
+- Updated example scene number 8.
+- Updated "Read Me First" pdf file.
+
+==========================================
+End of Version 1
+==========================================
+
+
+
+
+
+==========================================
+Start of Version 2
+==========================================
+V2.0.0 (2017)
+
+- New Multi & Single Light Mode.
+- New Cutout.
+- New Double Sided.
+- New Self Shadow PTexture feature.
+- New AO (Texture)
+- New Outline Noise
+- New added controls "Fresnel Hard edge, Fresnel Fill, Fresnel on Light/Shadow,
+Main Texture Color Self Shadow & Self Shadow at View Direction".
+- All new Examples.
+- Read me first is now changed to User Guide and its all new.
+- Some controls are rearranged and renamed.
+- You can now change Receive Shadows color.
+- Each version shader will have its own folder like "Version2, Version3, etc.".
+- Tutorials PDF removed just for now.
+
+(Read "User Guide" for more info about the new controls and new features)
+
+
+
+
+
+==========================================
+V2.0.1 (Feb 2017)
+
+*New - Gloss*
+- Gloss (Texture) - Custom Gloss.
+- Main Texture Color Gloss - Now you can use main texture color to color the gloss
+just like Self Shadow/Shadows & AO.
+
+*New - Color Adjustment*
+- Texture Washout - Adding washout effect.
+
+*New - Outline*
+- Dynamic Noise Outline - You can now disable - enable moving distort/noisy outline.
+
+*Changed - Fixed - Added*
+- FReflection default size changed to texture size.
+- User Guide PDF - Added some page and info.
+- Added one new example scene.
+
+(Read "User Guide" for more info about the new controls and new features)
+
+
+
+
+
+==========================================
+V2.0.2 (Jun 2017)
+
+[New]
+
+- "Refraction Shader" - a new realtoon shader for anime/cartoon style glass, liquid, ice etc..
+- "Texture Pattern Style" - Make the Main Texture to Pattern Style.
+- "Main Texture Color SS/S (Mix Shadow Color)" - Mix "Main Texture Color Self Shadow/Shadow" and "Shadow/Self Shadow" color.
+- "Main Texture Color SS/S (Saturation)" - Adjust the "Main Texture Color Self Shadow/Shadow" color intensity/saturation.
+- "FReflection Texture Blend" - Blends "FReflection" to Main Texture, Gloss, AO, Self Lit & Fresnel.
+
+
+[Changed - Fixed - Added - Others]
+
+- FReflection is now support texture/image with alpha/transparent.
+- FReflection is much better now than the previous one.
+- Fresnel On Light & Fresnel On Self Shadow/Shadow now needs to be enabled to show Fresnel on both light & shadow area of the object.
+- Fresnel Visible On Dark/Ambient Light is changed to Experimental and might be remove or change its function/name soon.
+- Fix and updated User Guide PDF.
+- Added one new example scene for Refraction & Texture Pattern Style.
+- You can now try to use this shader in your Xbox One, PS 4 and PS Vita game project.
+
+(Read "User Guide" for more info about the new controls, new features and new notes & tips)
+
+==========================================
+End of Version 2
+==========================================
+
+
+
+
+
+==========================================
+Start of Version 3
+==========================================
+V3.0.0 (Aug 2017)
+
+[New]
+
+- RealToon is now fully multi-light.
+* No separate multi-light & single-light anymore.
+
+- ShadowT - Texture based shadow.
+
+[Changed - Fixed - Added - Others]
+- Fresnel Visible On Dark/Ambient Light is not Experimental anymore.
+- AO is removed.
+- Revise and Update User Guide (PDF).
+- Added one example scene for "ShadowT".
+
+Note:
+(Previous version V2.0.2 is included as unity package.)
+(Don't import this new RealToon V3 version into your unity project with realtoon V2.0.2 or below.)
+(If you want to use both V2.0.2 & V3.0.0, Import v3.0.0 first then V2.0.2 .) 
+(Please see or read again User Guide (PDF) for more info about the changes and updates.)
+
+==========================================
+V3.0.1 (Aug 2017)
+
+[Fixed]
+- Fade Transparancy & Refraction lighting problem (Fixed)
+- Gloss does not affected by point & spotlight light falloff even the color of the shadow color is black. (Fixed)
+
+Note:
+
+(Previous version V2.0.2 is included as unity package.)
+(Don't import this new RealToon V3 version into your unity project with realtoon V2.0.2 or below.)
+(If you want to use both V2.0.2 & V3.0.0, Import v3.0.0 first then V2.0.2 .) 
+(Please see or read again User Guide (PDF) for more info about the changes and updates.)
+
+==========================================
+V3.0.2 (Jan 2018)
+
+New
+- Self Shadow Only - Shadow settings control only self shadow, useful if Received Shadows turned off.
+- Double Sided (On/Off) - No separate double sided shader anymore, you can just turn it on or off.
+- GPU Instancing/Instancing Support.
+
+==========================================
+End of Version 3
+==========================================
+
+
+
+
+
+==========================================
+Start of Version 4
+==========================================
+V4.0.0 (Jan 2018)
+
+[New]
+- Can now receive GI Lighthing (with smooth or flat shade) & Sky lighting.
+- Can now receive and do Baked/Real-Time Reflection.
+- GPU Instancing/Instancing Support.
+- Double Sided (On/Off) - No more separate double sided shader, you can just turn it on or off.
+
+[New Shadow settings featuring]
+ - Shadow Color Texture - Fully custom shadow color in texture form.
+
+[New Lighting settings]
+*Controls GI lighting and Light-falloff.
+
+[New Reflection settings]
+*Controls both Default Reflection & FReflection.
+
+[Gloss Texture - New Controls]
+- Follow Object Rotation - Gloss Texture Follow Object Rotation.
+- Follow Light - Gloss Texture Follow Light.
+- Rotate - Rotate Gloss Texture.
+
+[Fixed, Changes & Others]
+- Reduce White & Washout are removed.
+- Point & Spotlight Light-Falloff problem is finally solved/fixed.
+- You can now use both Point - Spotlight & Directional Light at the same time without problem.
+- Previous Old Examples are removed.
+- Old RealToon V2.0.2 & Updated RealToon V3.0.2 are included as Package.
+
+[Notes]
+- Please see or read again User Guide (PDF) for more info about the changes and updates.
+- Also read "[Notes & Tips]" on the User Guide.
+
+
+
+
+
+==========================================
+V4.0.1 (Jan 2018)
+
+[Fixed]
+- "Add Light" does not decrease when Directional Light Intensity is decreased.
+
+[Others - Changes]
+- Affect Light (Directional Light Only) is removed.
+*Because "Add light" problem in Directional Light is now fixed.
+
+- User Guide (PDF) revised and added some tips & links. 
+
+[Notes]
+- Please see or read again User Guide (PDF) for more info about the changes and updates.
+- Read also "Change - Fix Log.txt" for previous updates/release notes and changes.
+
+
+
+
+
+==========================================
+V4.0.2 (Feb 2018)
+
+[New]
+
+- RealToon Tessellation Version shader.
+
+{Outline (New Property/Control)}
+- Outline Mode
+
+{Cutout (New Property/Control)}
+- Secondary Cutout
+
+{Opacity (New Property/Control)}
+- Mask Transparency
+
+{Self Lit (New Property/Control)}
+- High Contrast
+
+{ShadowT (New Property/Control)}
+- Light Falloff Affect ShadowT
+
+{Lighting (New Property/Control)}
+- Directional Light Affect Shadow
+*Use Directional Light as Ambient Light.
+
+
+[Fixed - Changes - Others]
+
+- Improved "Self Lit".
+- "Color" property changed is to "Main Color" to prevent sudden color change or conflict.
+- User Guide (PDF) revised and added some tips & links.
+- Can now be use in Unity3D 2018.
+
+
+[Notes]
+*Warning: "Color" property is changed to "Main Color" | Reason: To prevent sudden color change or conflict.
+*This will revert object color "not texture" to default gray color if you import 
+this into your current project with realtoon v4.0.1, realtoon v4.0.0 or older realtoon versions.
+
+- Please see or read again User Guide (PDF) for more info about the new properties, changes and updates.
+- Read also "Change - Fix Log.txt" for previous updates/release notes and changes.
+
+
+
+
+
+==========================================
+V4.1.2 (March 2018)
+
+[New]
+
+- Sobel Outline Effect
+- See Through (New Property/Control)
+
+[Fixed - Changes - Others]
+- Added "See Through Example" scene.
+- User Guide (PDF) revised and added some tips & links.
+- Added "RealToon Update Rollback" shader package (A Rollback to previous version if the current version is not working properly to you.)
+
+[Notes]
+- Please see or read again User Guide (PDF) for more info about the changes and updates.
+- Read also "Change - Fix Log.txt" for previous updates/release notes and changes.
+
+
+
+
+
+==========================================
+V4.0.3 (June 2018)
+
+[New]
+
+"Frame By Frame Rendering (Tool)"
+- Frame by frame render to Image Sequence or PNG Sequence.
+- For Animation & Illustration/Art Use.
+
+"Now supports Nintendo Switch."
+
+[Texture Color - New Options/Controls]
+
+- Vertex Colors Intensity
+
+[Shadow - New Options/Controls]
+- Custom Light Direction
+- Light Intensity Affect (OC - AL - CT - PT) (Directional Light)
+- ShadowT Color
+- Shadow PTexture Power
+
+[Outline - New Options/Controls]
+- Outline Width Control (Texture)
+- Outline Offset
+
+[Refraction Shader - New Options/Controls]
+- Main Color Affect Texture
+- Depth
+
+[Cutout Shader - New Options/Controls]
+- Use Secondary Cutout Only
+
+[Fade Transparency Shader - New Options/Controls]
+- Affect Shadow
+
+[Changes]
+- Assets name changed from RealToon (PC/MAC & Mobile) to RealToon.
+- "Outline Width" Changed from Silder to Value.
+- "Outline Mode" has been removed.
+- "Follow Light" changed from Silder to Value.
+- "Saturation (Point & Spotlight) only affect main texture & color.
+- "Self Lit High Contrast" changed default value to checked.
+
+[Fixed]
+- "Mask Reflection" masking problem.
+- Fade Transparency "Opacity" does not affect shadow.
+- Point & Spotlight Overblown/Overexposure when using fog (Unity3D 2017 & below).
+
+[Others]
+- Updated, revised & fixed "RealToon (User Guide).pdf"
+- Added "What's New.txt" to know right away new features & options.
+
+[Note]
+Warning to those who planned to update/download to this new version to your current project:
+"There are options/control changes and you might need to re-set or set them again. Be sure you write/list all the necessary values/settings."
+
+(Read "RealToon (User Guide).pdf" for more info about the new controls, tools & tips)
+
+==========================================
+End of Version 4
+==========================================
+
+
+
+
+
+==========================================
+Start of Version 5
+==========================================
+V5.0.0 (August 2018)
+
+[New]
+
+*"RealToon Lite Version (Shaders)"
+- For mobile or games that only need low-end/lite features.  
+
+*"Smooth Object Normal/Ignore Object Normal (Feature)"
+- Smooth object normal for better smooth shade.
+
+*"Reduce Shadow (Feature)"
+- Reduce Real-Time shadow of an object - material without affecting other parts of an object.
+
+*"Custom Shadow Resolution (Tool)"
+- Custom shadow resolution for higher quality shadow. (Useful for Film/Animation & Illustration/Art)
+
+*"Outline Width Affected By View Distance (Feature)"
+
+*New GUI.
+*Can now fully color the shadow and maintain light falloff.
+*Can now fully use multiple lights and maintain object color and light exposure/brightness.
+*Can now disable/enable features you want or don't want to use.
+
+[Improved]
+
+- PTexture & Texture Pattern Style scale by view distance.
+
+[Changed]
+
+- "Fresnel" changed to "Rim Light".
+- "Override Color" changed to "Overall Shadow Color".  
+- "Cutout" merged to "Default" shader, means no more separate "Cutout" shader.
+- "Self Shadow" & "Real-Time Shadow" are now combined.
+- No more separate "No Outline" shaders, you can choose to disable/enable it.
+- "Color Adjustment - Saturation" is temporarily removed but i might add it again in the next future updates.
+- Some "Intensity" feature are removed because you can now disable/enable features.
+- "Vertex Colors Intensity" is removed.
+- "Shadow Mask Gloss Texture" removed, Gloss Texture now always masked by shadows.
+- "Add Light", "Adjust Light (Point & Spotlight)", "Adjust Light (Directional Light)", "Saturation (Point & Spotlight)""
+  And "Light Intensity Affect [OC - AL - CT - PT] (Directional Light)" 
+  are now removed because you can now fully color shadow and maintain light falloff.
+  without using those features.
+- Features with "Size" word are changed to "Threshold".
+- "Enable Light Falloff" is removed and replace with "Light Falloff Softness".
+- ShadowT "On light" & "On Self Shadow" is remove, ShadowT now always visible in light.
+- "Use GI Lighting" is removed, GI is now always used.
+- "RealToon Old Version Package" is removed.
+- "RealToon Rollback Update" is removed.
+
+(Please Read "RealToon (User Guide).pdf" again for more info about the new features/changes.)
+
+
+
+
+
+==========================================
+V5.0.1 (November 2018)
+
+[New]
+
+- Fade Transparency with Outline.
+- Reduce Outline Backface (Fade Transparency) [New Option/Feature]
+- Self Shadow Affected By Light Strength [New Option/Feature]
+- Environmental Lighthing Intensity [New Option/Feature]
+
+- Light Affect Shadow [New Option/Feature]
+- Light Intensity [New Option/Feature]
+
+- Show In Shadow (ShadowT) [New Option/Feature]
+- Show In Ambient Light (ShadowT) [New Option/Feature]
+- Show In Ambient Light Intensity (ShadowT) [New Option/Feature]
+- Show In Ambient Light & Shadow Threshold (ShadowT) [New Option/Feature]
+
+- ShadowT Intensity [Re-added Option/Feature]
+- Gloss Intensity [Re-added Option/Feature]
+- Self Shadow Intensity [Re-added Option/Feature]
+- Saturation [Re-added Option/Feature]
+
+- Hide Directional Light Shadow [New Option/Feature]
+
+[Others]
+
+- Can now be use in 2D games.
+- Foldout state are now remembered.
+- Fade Transparency can now affect shadow.
+- Added some new info [RealToon (User Guide).pdf]
+
+[Changes]
+
+- "Self Shadow Threshold" value is changed and the default value is now 0.85.
+- "Directional Light Affect Shadow" is changed to "Light Affect Shadow".
+- "_Texture" property is changed to "_MainTex", this also affect lite version.
+- "PTexture Power" default value changed to 1.
+- "Reduce Shadow (Spot & Directional Light)" default value changed to 10.
+
+[Fixed]
+
+- Object looks transparent when using AO (Ambient Occlusion FX).
+- Directional Light Cookie is not working.
+- Rim Light is flickering when using DX9 and softness set to 0. 
+
+[Note]
+(To those who planned to update to this version to your current project.)
+*There are some changes, be sure you backup or list down "Self Shadow Threshold", "Texture" & "Directional Light Affect Shadow" values.
+*It's better to test this version to a new project file or test project first.
+
+(Read "RealToon (User Guide).pdf" for more info)
+
+
+
+
+
+==========================================
+V5.1.1 (December 2018)
+
+[Fixed]
+
+- Fade Transparency error when Fog is enabled.
+
+[Others]
+
+- Added Fade Transparency with outline example.
+
+
+
+
+
+==========================================
+V5.2.1 (December 2018)
+
+[New]
+
+- Outline Extrude Method [Re-added Option/Feature]
+
+
+
+
+
+==========================================
+(V5.3.1) (January 2019)
+
+
+[Fixed]
+
+- See Through option is not working when Outline is enabled.
+
+
+
+
+
+==========================================
+(V5.0.2) (February 2019)
+
+[New]
+
+- Shadow Hardness [New Option/Feature]
+- Hide Cast Shadow (Fade Transparency) [New Option/Feature]
+- Double Sided Outline [New Option/Feature]
+- Outline Z Position in Camera [New Option/Feature]
+
+[Other New]
+
+- Fog Affect Outline.
+
+[Fixed]
+
+- Default "Fade Transparency" fixed transparent shadow problem.
+- "Cutout" doesn't affect outline.
+
+[Changes]
+- "Outline" can be set to negative values.
+- GUI/UI changed a bit to fix inspector width problem.
+- "Outline Offset Enable" is removed and "Outline Offset" function has been changed.
+
+
+
+
+
+==========================================
+(V5.1.2) (February 2019)
+
+[New]
+
+- Metallic (Reflection) [New Option/Feature]
+
+- RealToon LWRP [Included as package to unpack or import]
+  (Unity 2018 with LWRP V4.0.0 or latest)
+
+[Changes]
+
+- "ShadowT Light Threshold" default value changed to 50 and its precision to 0.01.
+
+(To convert your "ShadowT Light Threshold" current value, just multiply your "ShadowT Light Threshold" current value by  100" if you updated your current work/project to this version and if you are using "ShadowT".)
+
+
+
+
+
+==========================================
+(V5.2.2) (March 2019)
+
+[New]
+
+- Directional Light Intensity [New Option/Feature]
+- No Light and Shadow On Backface [New Option/Feature]
+- Far Distance Max Width [New Option/Feature] [For Outline Width Affected By View Distance]
+
+[Other New]
+- Video Tutorials [Button]
+* To access "Video Tutorials" right away.
+
+- Added support "GLES 2.0".
+
+[Fixed]
+
+- Fix GPU instancing "Outline" [LWRP Version]
+- "PTexture" is not working. [Lite Version - Default]
+- Normal is visible/showing when there is pointlight + GI. [LWRP Version]
+- Disable/Enable "Outline" option not working properly 
+  when doing Multi Material/Selected Material Editing. [Both Standard and LWRP Version]
+- On/Off "Disable Cast Shadow" option not working properly 
+  when doing Multi Material/Selected Material Editing. [LWRP Version]
+- Shadow is still visible even if "Double Sided" is off. [LWRP Version]
+- Fixed and added some new notes and tips on "RealToon User Guide.pdf" at page 22.
+
+[Changes]
+
+- "Show In Ambient Light Intensity" changed to "Show In Ambient Light Shadow Intensity".
+*Both "Show In Ambient Light" & "Show In Shadow" intensity can be adjust.
+
+- Light blend changed back to old or traditional light blend. [Lite version]
+*So the shader can also be use on older mobile device.
+
+- "ZWrite" default value changed to Off. [Fade Transparency & Refraction].
+
+[Improvents]
+
+- Improve "GI Flat Shade".
+- Removed unnecessary duplicate lines. [LWRP Version]
+
+
+
+
+
+==========================================
+(V5.0.3) (May 2019)
+
+[New]
+
+- Transparent Threshold. [New Option/Feature] [For Fade Transparency]
+- Use Traditonal Light Blend. [New Option/Feature] [For LWRP Version]
+
+[Other New]
+
+- Added "RealToon (UserGuide).pdf" button.
+*So you can access the file right away.
+
+- Added "Show/Hide UI".
+*If you want to hide options/properties UI.
+
+- Can disable/enable Normal Map.
+
+[Improvements]
+
+- "Outline Z Position In Camera" precision has been improved.
+
+[Fixed]
+
+- DX11, GLCORE, GLES 3.0 and Vulkan compilation error.
+- Point and Spotlight light falloff not working when on GLCore and GLES.
+- "Light Affect Shadow" option doesn't affect ShadowT.
+- "Outline Z Position In Camera" becomes negative value when on GLCore and GLES.
+- Shadow disappear when using Cutout or enabled "Enable Texture Transparent" on Unity 2017 to Unity 2019.
+
+[Changes]
+
+- "Highlight Color" & "Highlight Power" moved to "Texture - Color" category.
+- "Self Shadow & Realtime Shadow Intensity" moved outside "Self Shadow" category.
+
+- All color picker changed to HDR color picker for more color control.
+*You might need to adjust your color a-bit if you update to this 5.0.3 version.
+
+- You can now disable/enable Normal Map, the default state/value is off, 
+*You might need to re-enable this if you update to this 5.0.3 version.
+
+- "Outline Z Position In Camera" precision has been changed and improved.
+
+- Normal Map intensity default value changed to 1.
+- "Point and Spotlight intensity" default value changed to 0.
+- "No Light and Shadow On BackFace" default value changed to off.
+- "Reduce Shadow (Directional Light)" default value changed 0.5. [LWRP Version]
+
+
+[Note]
+
+(To those who planned to update to this version to your current project)
+
+* You might need to enable "Normal Map" if you use this option/feature.
+* All color picker changed to HDR color picker, you might need to adjust a-bit the color of your character or object uses RealToon.
+* "Outline Z Position In Camera" precision has been changed you might need to adjust it again.
+* Test this first in a new project before update.
+* Always make a backup of your current realtoon shader and your current project also before update.
+
+
+(To those who have custom/modified realtoon shader on your current project).
+
+*Don't update it might overwrite it.
+*Only update if you make another project.
+
+
+
+
+
+==========================================
+(V5.0.4) (September 2019)
+
+[New]
+
+- "MatCap"   [New Feature] [All RealToon Shader]
+
+- "Mix Vertex Color"   [New Option/Feature] [For Default & Fade Transparency]
+*To show vertex color or mix vertex color on main texture and color.
+
+- "Mix Main Texture To Outline"   [New Option/Feature][For Outline]
+
+- "Ignore Light"   [New Option/Feature] [For ShadowT]
+*When you want ShadowT to not moving with the light.
+
+- "Main Color In Ambient Light Only"   [New Option/Feature] [For Default & Fade Transparency]
+*This is useful when doing dual shading/multi shading.
+
+- "Pointlight Shadow Visibility Distance"  [New Option/Feature]
+*To adjust the pointlight shadow visibility. 
+*When you move the pointlight away from the object the shadows will disappear, 
+To prevent that adjust this option.
+
+- RealToon URP version (For Unity 2019.3.0 to later)
+
+[Improvements]
+
+- Codes/lines are re-written, re-arranged and optimized especially the RealToon lite.
+- Disable/Enable feature keywords are now moved to local. [Unity 2019 to later]
+
+[Changes]
+
+- SRP packages are moved to "RealToon SRP".
+- RealToon SRP GUI editor script renamed to "RealToonShaderGUI_LWRP_SRP" and "RealToonShaderGUI_URP_SRP".
+ "Use FReflection" is removed so once you enabled "FReflection" it will be use right away.
+- Main Color default value changed to RGB 0.6886792 or RGB 176 to prevent initial light overexposure.
+- "Point and Spot light intensity" default value changed from 0 to 0.45 because the Main Color default value is changed.
+- RealToon Lite version "Point and Spot light intensity" default value changed from 0 to 0.1.
+- Fixed and added some new info on “RealToon (User Guide).pdf”
+
+[Fixed]
+
+- One GLES compile error.
+- One Fade Transparency shader error (LWRP).
+
+==========================================
+(V5.0.5) (September 2019)
+
+[Fixed]
+
+- RealToon Default compile errors. (URP)
+- No spotlight shadow. (URP)
+
+[Improvements]
+
+- Improved "Enable/Disable Features".
+
+(For those who use URP, after you update to this version, update your URP package to 7.1.1)
+
+
+
+
+
+==========================================
+(V5.0.6) (March 2020)
+==========================================
+This update supports Unity 5, 2017, 2018, 2019, 2020 and future unity versions.
+
+[New]
+
+- Receive Environmental Lighting and GI [New Option/Feature] [All RealToon Shaders]
+*Turn off or on Ambient Light or Environmental Lighting and GI.
+
+- Pattern Style [New Option/Feature]
+*New option for 'Gloss Texture'.
+*This will turn 'Gloss Texture' into pattern style.
+
+- Specular Mode [New Option/Feature]
+*New option for 'MatCap'.
+*This will turn 'MatCap' into specular mode.
+
+- Texture and Main Color Intensity [New Option/Feature]
+*New option for 'SelfLit'.
+*This will adjust 'Texture and Main Color' intensity.
+*This is useful if these two are too strong or too bright for 'SelfLit'.
+
+- Automatic Remove Unused Shader Keywords [New Option/Feature]`
+* This will remove unused shader keywords.
+* This can also fix keywords error problem.
+* Warning: This will also remove previous shaders stored shader keywords,
+Only enable this if you don't planned to reuse or change back to previous shaders you used.
+
+- ToolTip [New Feature]
+*ToolTip for all options.
+*For quick option description.
+
+- Automatic convert color properties into Linear when you switch your project into Linear color space.
+
+[Fixed]
+
+- Keywords error problem.
+- "Implicit truncation of vector type". (LWRP/URP Only)
+- "Vertex Color Green Control Self Shadow Threshold" option is not working.
+- "Use Traditional Light Blend" option is not working. (URP and LWRP Only)
+- "RealToon Default" Shaders goes pink when the object is in static and using ShadowMask.
+- Some other errors that turned the object to pink.
+- Shadow cascades glitch or weird shadow distort lines. (URP 7.2.0 to latest version)
+
+[Changed]
+
+- 'See Through' functions has been changed and improved.
+
+[Improved]
+
+- Fixed and added some new info in “RealToon (User Guide).pdf”
+
+
+
+NOTE: To those who planned to update to this version to your current project:
+
+- You need to disable and enable again the new option "Receive Environmental Lighting and GI", 
+that option is under the "Lighting" category.
+
+- If your current project is in Linear color space, RealToon color properties 
+will be automatically converted to that color space.
+
+
+
+
+
+==========================================
+(V5.0.7) (May 2020)
+==========================================
+This update supports Unity 5, 2017, 2018, 2019, 2020 and future unity versions.
+
+
+
+**(Main Update)**
+
+[New]
+
+- RealToon HDRP Version.
+- Adding instructions for Unpacking/Importing SRP's.
+
+[Fixed]
+
+- "See Through" feature stencil problem. (VR Chat)
+*For VRChat users, set A and B to "Blank".
+
+[Changed]
+
+- "Reduce Outline Backface" removed because you can just turn on "ZWrite" then adjust "Opacity". [Fade Transparency] [LWRP/URP]
+- "Vertex Color Red Affect Outline" Changed To "Vertex Color Blue Affect Outline".
+- "Vertex Color Blue Control Smooth Object Normal" Changed To "Vertex Color Red Control Smooth Object Normal".
+
+
+
+NOTE: To those who planned to update to this version to your current project:
+
+- Backup your current RealToon and your current project also if needed.
+
+- "Vertex Color Red Affect Outline" Changed To "Vertex Color Blue Affect Outline" and
+"Vertex Color Blue Control Smooth Object Normal" Changed To "Vertex Color Red Control Smooth Object Normal",
+means you need to recolor if you currently using these options.
+
+- If you are using "Reduce Outline Backface" option, just turn on the "ZWrite" then adjust the "Opacity". [Only LWRP/URP]
+
+___________________________________________________________________________________
+___________________________________________________________________________________
+
+
+**(Includes new Patch #4 for RealToon 5.0.7) January 2021 Release**
+
+[New]
+
+- Added SSGI (Screen Space Global Illumination) to RealToon HDRP.
+- Recursive Rendering (Transparency and Reflection) support. (RealToon HDRP)
+- HDRP 10 support. (RealToon HDRP)
+
+- New option "Remove Outline/Add Outline". (RealToon URP and RealToon HDRP)
+*This will completely remove or add outline on the shader file, this is not per material.
+*Useful if you are not really using the outline, want to use a 3rd party outline or want to use your own created outline method.
+*This will also reduce calls/draw calls when using the shader on an environment objects.
+
+[Fix]
+
+- Reflection probe smooth blend. (RealToon HDRP)
+
+
+
+
+**(Includes Patch #3 for RealToon 5.0.7) December 2020 Release**
+
+[New]
+
+- RealToon URP and RealToon HDRP SRP Batcher compatible
+
+[Fix]
+
+- Fade Transparency does not convert color from linear to gamma. (URP)
+
+
+
+
+**(Includes Patch #2 for RealToon 5.0.7) September 2020 Release**
+
+[New]
+
+- Added DXR/Ray Tracing support to RealToon HDRP. 
+- Added SSR (Screen Space Reflection) to RealToon HDRP.
+- new "Enable Screen Space Shadow" option (HDRP).
+- RealToon HDRP has been improved.
+
+- "Ray Traced GI shade falloff" option. (HDRP)
+*Adjust the Ray traced global illumination shade falloff.
+*Useful if you want to blend the colored shadow in a pitch black scene.
+
+- Refresh Settings (New Inspector Option) (Currently HDRP)
+*This will refresh all the realtoon properties and apply the settings properly.
+*This is useful after update and after change material shader.
+
+[Fix]
+
+- Outline looks transparent in a Render Texture. (Built-In RP)
+- Looks too bright when using Point and Spotlight. (Built-In RP - RealToon Lite)
+- Object turned pink when ShadowMask is enabled. (Built-In RP - RealToon Lite "Default")
+
+[Changes]
+
+- “ColorMask RGB” has been removed because it is not the right fix for "outline look transparent in Render Texture" problem. (Built-In RP)
+- RealToon HDRP Reflection "Roughness" option name changed to "Smoothness" because of the added ray tracing. (HDRP)
+- RealToon HDRP codes has been re-arranged and separated for fast update and one call functions, this will also apply to RealToon URP later.
+- "See Through" feature on RealToon HDRP has been temporarily disabled or removed, because Unity HDRP uses the "Stencil" differently, 
+It will be back if there's a new solution. (HDRP)
+- "ZTest" has been temporarily removed or totally remove soon on RealToon HDRP, because Unity HDRP uses the "ZTest" differently. (HDRP)
+
+NOTE:
+*RealToon HDRP Reflection "Roughness" name has been changed to "Smoothness", you might need to change the value again.
+*After you update your RealToon HDRP, click the "Refresh Settings" on the RealToon Inspector to refresh and apply the properties properly.
+
+*For HDRP Users: 
+Read the "RealToon HDRP (Temporary User Guide)" for new info and setup steps.
+Read the "Please read before you unpack or import" for important new notes.
+
+
+
+
+**(Includes Patch #1 for RealToon 5.0.7) August 2020 Release**
+
+[Fixed]
+
+* “ColorMask RGB” added to outline pass to prevent transparent outline when capturing single image. (ALL)
+* ”Normal Bias” is not working properly. (URP)
+* “Normal Bias” has been removed to prevent double shades. (HDRP)
+* “Spotlight Cookie “ not working (HDRP)
+* ”Spotlight Box Type” doesn’t have Attenuation/Light falloff.
+* "Hide Contact Shadow" not working properly. (HDRP)
+* "Shadow Color Texture" is still affected by “Main Color” even if the "Main Color In Ambient Light Only" is enabled. (HDRP)
+* ”Spotlight Attenuation“ is too strong. (Built-In RP)
+* ”_ShadowCoord” error. (Built-In RP - Unity 2020)
+* ”_GIShadeThreshold” and GUI error. (Built-In RP - Unity 2017)
+* One Pointlight cookie line typo. (Built-In RP)
+
+
+
+
+
+==========================================
+(V5.0.8) (March 2021)
+==========================================
+This update supports Unity 5, 2017, 2018, 2019, 2020, 2021 and future unity versions.
+
+
+
+**(Main Update)**
+
+[New Options]
+
+- Use Vertex Color As Normal Direction (Outline) [URP and HDRP]
+*Use the vertex colors of the object as normal direction for outline.
+
+- Affect Shadow (Transparency) [URP]
+*Transparency affects shadow.
+
+- PTexture Color (PTexture) [URP]
+*Can now color the PTexture feature.
+
+- Optimize for [Light Mode:Baked] (Lightmapping) [URP]
+*Optimize the shader for [Light Mode: Baked]
+
+- On shader "Screen Space Outline" (Outline) [URP and HDRP]
+*Screen space - depth based outline on the shader.
+
+- Blending (Transparency) [URP and HDRP]
+- Rim Light Intensity (RimLight) [URP]
+
+- Refresh Settings (URP)
+*This will refresh the settings and apply it properly.
+*Useful if the settings are not applied properly or after change shader or if there is a problem on the shader.
+
+
+[New Features and Support]
+
+- DeNorSob Outline (Post - Processing Effect) [URP and HDRP]
+*Sobel, Depth and Normal based outline.
+
+- Smooth Object Normal - Helper Script (Smooth Object Normal) [URP and HDRP]
+*This helper script will help "Smooth Object Normal" feature to follow object animation or movement.
+
+- Lightmap Support [URP]
+- PlayStation Support [URP and HDRP]
+- URP 11 Support
+- HDRP 11 Support
+- Unity DOTS Ready [URP and HDRP]
+===========================================================
+
+[Note]
+Patches from the previous version 5.0.7 are 
+integrated to this new version.
+See previous version list for more info about the patches.
+
+===========================================================
+Changes and Improvements
+===========================================================
+- Improved user guide/documentation.
+- "Double Sided" has been changed to "Culling" for more polygon sides control. [URP]
+- "Fade Transparency" is now merged to "Default", there will be one shader and you'll just need to toggle the "Transparent Mode". [URP]
+- Color blending/mixing has been changed - improved, it is now accurate than before. [URP]
+- "Main Color" default color has been changed. [URP]
+- "Smooth Object Normal" has been improved, you don't need anymore a Hardness option and can adjust it in any direction. [URP and HDRP]
+- Shaders and Examples are now in packages. [All]
+- "Light Intensity" default value has been changed from -1 to 1 because of the color blending/mixing change. [URP]
+
+===========================================================
+Fixed
+===========================================================
+- Turns pink after iOS or Mac build (Metal Graphics API). [URP]
+- Spotlight don't have shadow. (URP 10)
+- Can't select the front face of a plane object or quad face object, the cause is the traditional outline culling. [URP and HDRP]
+
+===========================================================
+Note and warning
+===========================================================
+To those who planned to update your current project to this version:
+*RealToon URP color blending or mixing has been changed, You need to adjust the colors of your object again.
+*RealToon URP "Fade Transparency" is now merged to "Default", Change your transparent object shader to "Default" and enable "Transparent Mode".
+
+
+
+
+**(5.0.8p10 [Patch#10] - July 2024)**
+
+[New]
+- Screen Space Rimlight [HDRP]
+- Triplanar [URP and HDRP]
+- Soft Cutout (New Option for Cutout Feature) [URP and HDRP]
+- HDRP is finally out of beta starting Unity 6 (HDRP 17)
+- Starting Unity 6 (URP 17) DeNorSob Outline is finally volume based.
+
+[Improvements]
+- Improved DeNorSob Outline outline width. [URP and HDRP]
+- Improved Near Fade Transparency distance. [URP and HDRP]
+
+[Fixed]
+- Fix all errors [URP and HDRP]
+- Fix DOTS errors [URP and HDRP]
+
+
+
+**(5.0.8p9 [Patch#9] - May 2024)**
+
+[New]
+- Added support for HDRP 17 and URP 17.
+- Added support for Unity 6 and ready. [URP and HDRP]
+- GPU Resident compatible. [URP 17 and HDRP 17]
+**GPU Resident on RealToon URP, you need to set the Shader Compilation from 2.0 to 4.5 under the RealToon Settings section.
+
+[Improvements]
+- GI/Ambient light improved and can use both Static and Dynamic. [HDRP 14 to HDRP 17]
+- GI Flat Shade correct light. [URP and HDRP]
+- Improved URP and HDRP DOTS/Hybrid Renderer shader properties. [URP 17 and HDRP 17]
+
+[Fix]
+- URP 17 and HDRP 17 properties error.
+
+
+
+
+**(5.0.8p8 [Patch#8] - October 2023)**
+
+[New]
+- APV (Adaptive Probe Volume) [URP 15 to later]
+- Arealight out of beta. [HDRP 16 to later]
+- DeNorSob Outline does not need a separate Depth-Normals Render Feature [URP 15 to later]
+- URP Deferred Support [URP 12 to later]
+
+[Improvements]
+- DeNorSob Outline can now be affected by the Cutout feature. [URP 15 to later]
+- Arealight light falloff is improved and can now be set to any XY size without any noise. [HDRP 16]
+
+[Changes]
+- DeNorSob Outline will not affect transparency [URP and HDRP]
+- In Transparent Mode, On Shader Screen Space Outline will be disabled except Cutout Feature. [URP and HDRP]
+- DeNorSob Outline Injection is now AfterOpaqueAndSky and transparent object will not affected by the outline. [HDRP]
+
+[Fix]
+- Blinking/Flashing when using Cutout Feature [HDRP]
+- Blinking/Flashing colors [HDRP 14 to later]
+- "INDIRECTDIFFUSEMODE_RAYTRACE" error [HDRP 14 to later]
+- Arealight errors [HDRP 16 to later]
+- DeNorSob Outline not working [URP 15 to later]
+- URP 7 - 8 and HDRP 7 - 8 are not supported and removed.
+
+
+
+
+**(5.0.8p7 [Patch#7] - December 2022)**
+
+[New]
+- Near Fade Dithering (URP and HDRP)
+*Objects fade when the camera is near.
+
+- LOD Crossfading (URP 14 and HDRP 14)
+- URP 14 and HDRP 14 full support
+- Quick ready support for Unity 2023 (For Testing Purpose)
+
+[Improvements]
+- RayTracing reflections and RayTracing GI (HDRP 14)
+
+
+
+
+**(5.0.8p6 [Patch#6] - September 2022)**
+
+[New]
+- Simple Transparency (For Transparent)
+*This option is for platforms that only need simple transparency like (Playstation)
+
+- Disable DOTS Mesh Deformation (For DOTS Enabled Project) (URP)
+*For objects that are static.
+
+- URP 14 and HDRP 14 Support.
+- Forward+ Support. (URP 14 to later)
+- 1 simple example for RealToon URP.
+
+
+[Fix]
+- Transparent is not working properly. (Playstation)
+- DOTS not working properly (URP 12)
+
+
+
+
+**(5.0.8p5 [Patch#5] - April 2022)**
+
+[New]
+- AO/Ambient Occlusion Support. (HDRP and [URP 10 to later]) 
+  *To use just enable "Enable Screen Space AO" under the Category shadow.
+- Glow/Emission effect for Cutout. (URP and HDRP)
+- Decal Support (URP 12 to later)
+- 1 Simple Example Package. (HDRP)
+
+[Fix]
+- SSR/Screen Space Reflection waterfall look when decal is behind the object. (HDRP)
+- RealToon Inspector error when there is no "Render Pipeline Asset" on the Current selected
+  "Quality Level". (HDRP 12)
+- Transparent is not working properly. (Playstation) (URP and HDRP)
+
+[Change]
+- Add namespace on all RealToon scripts and editors. (All Render Pipeline)
+
+
+
+
+**(5.0.8p4 [Patch#4] - December 2021)**
+
+[New]
+- Planar Reflection (HDRP 10 to Later)
+- Swap Shader To RealToon (New Tool) (Built-In, URP and HDRP)
+  *Swap shader from VRoid|VRM or Unity Shaders to RealToon.
+
+[Fix]
+- Object selection on the scene window. (HDRP 10 to later)
+
+[Change]
+- "Selflit - Power" option changed default value to 50. (HDRP)
+- "Texture and Main Color Intensity" changed default value to 0. (HDRP)
+- "Light Ignore Y Normal Direction" has been moved to Shadow category, (URP and HDRP)
+  because it is also affect "ShadowT" feature.
+
+[Improved]
+- RayTracing exposure. (HDRP 10 to later)
+
+
+
+
+**(5.0.8p3 [Patch#3] - October 2021)**
+
+[New]
+- Main Color Power (URP and HDRP)
+  * This will let you adjust the intensity of the Main Color.
+  * You don't need to adjust the Main Color to darker color or gray color to prevent overexposure, just adjust this new option.
+
+- Compute Deformation [DOTS - Hybrid Renderer] (Currently URP 10, 12 and later)
+
+- Light Ignore Y Normal Direction (Self Shadow) (URP and HDRP)
+  * Light will ignore object's Y normal direction when the angle or position of the light is in X or Z.
+  * Self Shadow/Shade will move in X or Z only.
+
+[Fix]
+- Transparent mode "Affect Shadow" does not work properly.
+- Include "Sobel Outline Effect" again, this was missing or not included in packing the shader. (Built-In) (Unity 2019 to Later)
+
+[Change]
+- "Use Vertex Color As Normal" has been removed. (URP and HDRP)
+- "Main Color" default color has been changed to white because of the new option "Main Color Power". (URP and HDRP)
+
+[Improved]
+- "Shadow Color" and "Shadow Color Texture" has been improved, the colors are now accurate and you'll get what you select. (When Light Affect Shadow is disabled) (HDRP)
+
+
+
+Note/Warning (If you are already a RealToon (URP or HDRP) user and planned to update your project to this patch):
+  *There is a new option for "Main Color" to adjust the intensity and it is set to low value to prevent overexposure,
+  if you still want to use the previous "Main Color" intesnity, just set the "Main Color Power" to 1.
+
+  *"Shadow Color" and "Shadow Color Texture" has been improved on RealToon HDRP, you might need to re-adjust the shadow color or the "Overall Shadow Color Power"
+
+
+
+
+**(5.0.8p2 [Patch#2] - August 2021)**
+
+[New]
+- DOTS - Hybrid Renderer Support (URP and HDRP)(10 to 12)
+- Linear Blend Skinning [DOTS - Hybrid Renderer] (Currently URP 10, 12 and later)
+- URP 12 Support
+- HDRP 12 Support
+- Added "Settings" Section (Currently URP)
+- Added "Change Shader Compilation Target 2.0/4.5" (Currently URP)
+- VRoid - manually change shader guide
+
+[Fix]
+- Gloss, Rim Light and Self Shadow at View Direction is not working properly when
+in GPU Instancing or SRP Batched (URP)
+- Object turns pink/error when disabling Outline. (URP and HDRP) (Apple Metal)
+
+Improved:
+- Disable/Enable outline. (URP and HDRP)
+
+
+Note:
+*To use RealToon URP on a DOTS - Hybrid Renderer project,
+change the "Shader Compilation Target" to 4.5, it is under the "Settings" section.
+RealToon HDRP is already Shader Compilation Target 4.5.
+
+
+
+
+
+==========================================
+(V5.0.9) (October 2024)
+==========================================
+This update supports Unity 5, 2017, 2018, 2019, 2020, 2021, Unity and future unity versions.
+
+
+
+**(Main Update)**
+
+[New]
+- Perspective Adjustment
+"Adjusting the perspective from 3D to 2D/2D to 3D."
+
+- Smear Effect 
+"For Anime/Toon style smear motion."
+
+[Improvements]
+- Minor UI improvements starting Unity 6 - URP 16 & HDRP 16.
+
+[Fixed]
+- Fix all errors starting URP10/HDRP 10 to 16.
+
+
+
+
+==========================================
+(V5.0.10) (December 2024)
+==========================================
+This update supports Unity 5, 2017, 2018, 2019, 2020, 2021, Unity and future unity versions.
+
+
+
+**(Main Update)**
+
+[New]
+- SDF Mode (ShadowT New Option) (Built-In, URP and HDRP)
+"SDF Style Shadowing."
+
+- Add/Remove "See Through" feature (New Setting Option) (URP) 
+"Add or Remove 'See Through' feature on the RealToon Shader."
+"Useful for those who don't want to use it and fix overlap fog on the Outline."
+
+[Changes]
+- Smooth Object Normal does not get disable anymore when Self Shadow is disabled. (Built-In, URP and HDRP)
+- "See Through" feature is default disabled, just enable or add it if you need it, Your settings are still maintained even disabled. (URP)
+
+[Improvements]
+- Smooth Object Normal has been improved including the Smooth Object Normal helper script. (Built-In, URP and HDRP)
+- RealToon Tools/Script has been improved and added some info.
+
+[Fixed]
+- Some fog asset overlap the RealToon Shader - Outline, it can be fix by disable the 'See Through' feature. (URP)

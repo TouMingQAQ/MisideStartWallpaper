@@ -1,0 +1,20 @@
+For VRoid|VRM Users
+===============================================================
+There is a Swap Shader To RealToon Shader included.
+This tool is Swap shader materials from 
+VRoid|VRM shader and Unity Shaders to RealToon shader.
+It is really easy to use, just select the materials, 
+select from what shader is the material/s then click swap.
+================================================================
+
+*How to Use*
+
+1. Click "Window" on the menu above beside "Help" then go to "RealToon -> Swap Shader To RealToon".
+2. Select the "Materials" on your project window/panel.
+3. Select from what Shader.
+4. Select the options you need if available.
+5. Click "Click To Swap To RealToon Shader".
+6. All materials shader are now swap to RealToon Shader.
+
+
+================================================================

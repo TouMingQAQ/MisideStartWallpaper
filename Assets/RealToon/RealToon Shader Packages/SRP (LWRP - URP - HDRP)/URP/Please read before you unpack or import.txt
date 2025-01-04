@@ -1,0 +1,13 @@
+RealToon V5.0.10 (URP)
+===========================================================
+Note:
+===========================================================
+
+URP is universal, from mobile, console to high end.
+Shadow for Pointlight is not available on older URP versions.
+Tessellation will be coming soon.
+
+===========================================================
+*How to download, import and unpack RealToon (URP) Shader Packages Video Tutorial:
+https://www.youtube.com/watch?v=JVlbOYi2V3M&t=83s
+===========================================================
