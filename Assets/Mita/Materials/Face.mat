@@ -224,7 +224,7 @@ Material:
     - _MCIALO: 0
     - _MCapIntensity: 1
     - _MVCOL: 0
-    - _MaiColPo: 1.125
+    - _MaiColPo: 1.05
     - _MaxFadDistance: 2.45
     - _Metallic: 0
     - _MinFadDistance: 0
