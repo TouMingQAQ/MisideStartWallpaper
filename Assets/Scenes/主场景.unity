@@ -353,10 +353,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: -1
   m_LightLayerMask: 1
   m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
+  m_CustomShadowLayers: 1
   m_ShadowLayerMask: 1
   m_ShadowRenderingLayers: 1
   m_LightCookieSize: {x: 1, y: 1}
@@ -371,21 +371,21 @@ Light:
   m_GameObject: {fileID: 143228048}
   m_Enabled: 1
   serializedVersion: 11
-  m_Type: 2
+  m_Type: 0
   m_Color: {r: 1, g: 0.919, b: 0.948, a: 1}
-  m_Intensity: 1.3
-  m_Range: 3.2492745
+  m_Intensity: 1.5
+  m_Range: 2
   m_SpotAngle: 82.45767
-  m_InnerSpotAngle: 53.60912
+  m_InnerSpotAngle: 21.8
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
+    m_Type: 1
+    m_Resolution: 2048
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.4
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 0.028
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -435,13 +435,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143228048}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.040427644, y: 0.6981108, z: -0.71030116, w: -0.080493934}
-  m_LocalPosition: {x: 0.106990114, y: 2.566, z: 0.305}
+  m_LocalRotation: {x: -0.013714586, y: 0.9449853, z: -0.30420703, w: -0.11946921}
+  m_LocalPosition: {x: 0.129, y: 1.817, z: 0.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 796871744}
-  m_LocalEulerAnglesHint: {x: 86.606, y: 291.83002, z: 102.015}
+  m_LocalEulerAnglesHint: {x: 35.325, y: 195.457, z: 3.286}
 --- !u!1 &158783086
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,8 +758,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.563584, z: 5.19}
+  m_LocalRotation: {x: -9.137702e-10, y: 0.9997815, z: -0.020904629, w: -0.00000004370183}
+  m_LocalPosition: {x: 0, y: 1.786, z: 5.633}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1846,7 +1846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21960786, g: 0.13333334, b: 0.38823533, a: 1}
+  m_Color: {r: 0.4392157, g: 0.023529412, b: 0.32941177, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2654,20 +2654,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.2}
+  m_Color: {r: 1, g: 0, b: 0.6, a: 0.29803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: b4c5aa13024073445ac4b6f11c0ef46d, type: 3}
+  m_Texture: {fileID: 2800000, guid: f00d7dbc66dee214084ffefc4c4949bb, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 10
-    height: 10
+    width: 30
+    height: 30
 --- !u!222 &1178011947
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2800,8 +2800,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552070734}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.563584, z: 5.19}
+  m_LocalRotation: {x: -9.1377034e-10, y: 0.9997815, z: -0.020904629, w: -0.00000004370184}
+  m_LocalPosition: {x: 0, y: 1.786, z: 5.633}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2828,21 +2828,21 @@ MonoBehaviour:
   Damping:
     Enabled: 0
     Position: {x: 0, y: 0, z: 0}
-    Angular: 0
+    Angular: 4.1
   AutomaticDolly:
     Enabled: 1
     Method:
-      rid: 4658761679821603302
+      rid: 7609400115716423745
   m_LegacyPosition: -1
   m_LegacyUnits: 0
   m_LegacySpline: {fileID: 0}
   references:
     version: 2
     RefIds:
-    - rid: 4658761679821603302
+    - rid: 7609400115716423745
       type: {class: SplineAutoDolly/FixedSpeed, ns: Unity.Cinemachine, asm: Unity.Cinemachine}
       data:
-        Speed: 0.2
+        Speed: 0.15
 --- !u!114 &1552070738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3967,64 +3967,84 @@ MonoBehaviour:
     m_Knots:
     - Position:
         x: 0
+        y: 0.085999966
+        z: 0.7220001
+      TangentIn:
+        x: 0
         y: 0
         z: 0
-      TangentIn:
-        x: 0
-        y: 0
-        z: -0.2500347
       TangentOut:
         x: 0
         y: 0
-        z: 0.2500347
+        z: 0
       Rotation:
         value:
-          x: 0
-          y: 0.9999653
-          z: 0
-          w: -0.008332465
+          x: 0.01040639
+          y: 0.9999119
+          z: 0.0075623095
+          w: -0.00328457
     - Position:
         x: 0
-        y: 0
-        z: -1.3
+        y: 0.085999966
+        z: -0.16899967
       TangentIn:
         x: 0
         y: 0
-        z: -0.30046266
+        z: 0
       TangentOut:
         x: 0
         y: 0
-        z: 0.30046266
+        z: 0
       Rotation:
         value:
-          x: 0
-          y: 0.999615
-          z: 0
-          w: 0.02774568
+          x: -0.010582759
+          y: 0.999699
+          z: -0.01087234
+          w: 0.019281656
+    - Position:
+        x: 0.028
+        y: 0.072999954
+        z: -1.1159997
+      TangentIn:
+        x: 0
+        y: -0.0000000055879354
+        z: -0.3186782
+      TangentOut:
+        x: -0.0000000037252903
+        y: 0
+        z: 0.31867814
+      Rotation:
+        value:
+          x: 0.0088470485
+          y: 0.998447
+          z: -0.038148753
+          w: 0.039623566
     - Position:
         x: 0.1
-        y: 0
-        z: -1.8
+        y: -0.012000084
+        z: -1.8539999
       TangentIn:
         x: 0
         y: 0
-        z: -0
+        z: 0
       TangentOut:
         x: 0
         y: 0
         z: 0
       Rotation:
         value:
-          x: 0
-          y: 0
-          z: 0
-          w: 1
+          x: 0.003272707
+          y: 0.99719054
+          z: -0.056944136
+          w: 0.04855688
     m_MetaData:
-    - Mode: 2
+    - Mode: 1
       Tension: 0.5
-    - Mode: 2
+    - Mode: 1
       Tension: 0.5
-    - Mode: 2
+    - Mode: 4
+      Tension: 0.5
+    - Mode: 1
       Tension: 0.5
     m_Closed: 0
     m_IntData:
@@ -4044,7 +4064,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907506231}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5342500578afb24a9b83d6343d32a0f, type: 3}
   m_Name: 
@@ -4059,7 +4079,7 @@ Transform:
   m_GameObject: {fileID: 1907506231}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.563584, z: 5.19}
+  m_LocalPosition: {x: 0, y: 1.7, z: 4.911}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
