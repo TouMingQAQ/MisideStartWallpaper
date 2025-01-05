@@ -2453,7 +2453,6 @@ Transform:
   - {fileID: 34858555}
   - {fileID: 158783087}
   - {fileID: 189189137}
-  - {fileID: 1907506234}
   - {fileID: 1552070735}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2784,7 +2783,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1552070735}
   - component: {fileID: 1552070738}
-  - component: {fileID: 1552070737}
+  - component: {fileID: 1552070740}
+  - component: {fileID: 1552070739}
   m_Layer: 0
   m_Name: "\u865A\u62DF\u76F8\u673A(\u76F8\u673A\u53C2\u6570\u5728\u8FD9\u8C03)"
   m_TagString: Untagged
@@ -2807,42 +2807,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 796871744}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &1552070737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552070734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90eebaab98e4b44b0ba8c79821e554e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SplineSettings:
-    Spline: {fileID: 1907506232}
-    Position: 0
-    Units: 1
-  SplineOffset: {x: 0, y: 0, z: 0}
-  CameraRotation: 0
-  Damping:
-    Enabled: 0
-    Position: {x: 0, y: 0, z: 0}
-    Angular: 4.1
-  AutomaticDolly:
-    Enabled: 1
-    Method:
-      rid: 7609400115716423745
-  m_LegacyPosition: -1
-  m_LegacyUnits: 0
-  m_LegacySpline: {fileID: 0}
-  references:
-    version: 2
-    RefIds:
-    - rid: 7609400115716423745
-      type: {class: SplineAutoDolly/FixedSpeed, ns: Unity.Cinemachine, asm: Unity.Cinemachine}
-      data:
-        Speed: 0.15
 --- !u!114 &1552070738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2886,6 +2850,47 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
+--- !u!95 &1552070739
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552070734}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!320 &1552070740
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552070734}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 89bab316446d47a4f84d3491d9d6fbc4, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -9022878399713323085, guid: 89bab316446d47a4f84d3491d9d6fbc4, type: 2}
+    value: {fileID: 1552070739}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1552443974
 GameObject:
   m_ObjectHideFlags: 0
@@ -3919,172 +3924,6 @@ MonoBehaviour:
   direction: 1
   radiusSeparation: 1
   alignedOnCenter: 1
---- !u!1 &1907506231
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1907506234}
-  - component: {fileID: 1907506232}
-  - component: {fileID: 1907506233}
-  m_Layer: 0
-  m_Name: "\u76F8\u673A\u8F68\u9053"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1907506232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1907506231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab5c7d4c32e743048dfca98e2d5914f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Spline:
-    m_EditModeType: 1
-    m_Knots: []
-    m_MetaData: []
-    m_Closed: 0
-    m_IntData:
-      m_Data: []
-    m_FloatData:
-      m_Data: []
-    m_Float4Data:
-      m_Data: []
-    m_ObjectData:
-      m_Data: []
-  m_Splines:
-  - m_EditModeType: 1
-    m_Knots:
-    - Position:
-        x: 0
-        y: 0.085999966
-        z: 0.7220001
-      TangentIn:
-        x: 0
-        y: 0
-        z: 0
-      TangentOut:
-        x: 0
-        y: 0
-        z: 0
-      Rotation:
-        value:
-          x: 0.01040639
-          y: 0.9999119
-          z: 0.0075623095
-          w: -0.00328457
-    - Position:
-        x: 0
-        y: 0.085999966
-        z: -0.16899967
-      TangentIn:
-        x: 0
-        y: 0
-        z: 0
-      TangentOut:
-        x: 0
-        y: 0
-        z: 0
-      Rotation:
-        value:
-          x: -0.010582759
-          y: 0.999699
-          z: -0.01087234
-          w: 0.019281656
-    - Position:
-        x: 0.028
-        y: 0.072999954
-        z: -1.1159997
-      TangentIn:
-        x: 0
-        y: -0.0000000055879354
-        z: -0.3186782
-      TangentOut:
-        x: -0.0000000037252903
-        y: 0
-        z: 0.31867814
-      Rotation:
-        value:
-          x: 0.0088470485
-          y: 0.998447
-          z: -0.038148753
-          w: 0.039623566
-    - Position:
-        x: 0.1
-        y: -0.012000084
-        z: -1.8539999
-      TangentIn:
-        x: 0
-        y: 0
-        z: 0
-      TangentOut:
-        x: 0
-        y: 0
-        z: 0
-      Rotation:
-        value:
-          x: 0.003272707
-          y: 0.99719054
-          z: -0.056944136
-          w: 0.04855688
-    m_MetaData:
-    - Mode: 1
-      Tension: 0.5
-    - Mode: 1
-      Tension: 0.5
-    - Mode: 4
-      Tension: 0.5
-    - Mode: 1
-      Tension: 0.5
-    m_Closed: 0
-    m_IntData:
-      m_Data: []
-    m_FloatData:
-      m_Data: []
-    m_Float4Data:
-      m_Data: []
-    m_ObjectData:
-      m_Data: []
-  m_Knots:
-    m_KnotsLink: []
---- !u!114 &1907506233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1907506231}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5342500578afb24a9b83d6343d32a0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AutoSmooth: 1
---- !u!4 &1907506234
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1907506231}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.7, z: 4.911}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 796871744}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1997130025
 GameObject:
   m_ObjectHideFlags: 0
@@ -5117,6 +4956,7 @@ MonoBehaviour:
   smoothTime: 0.3
   maxSpeed: 10
   velocity: {x: 0, y: 0, z: 0}
+  offset: {x: 4, y: 4}
 --- !u!114 &919132148587044793
 MonoBehaviour:
   m_ObjectHideFlags: 0

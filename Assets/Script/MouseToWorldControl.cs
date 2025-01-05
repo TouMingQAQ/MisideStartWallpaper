@@ -10,6 +10,7 @@ public class MouseToWorldControl : MonoBehaviour
     public float smoothTime = 0.3f;
     public float maxSpeed = 10;
     public Vector3 velocity;
+    public Vector2 offset = Vector2.one;
     private Vector3 targetPositionCache;
     private void OnEnable()
     {
@@ -25,7 +26,9 @@ public class MouseToWorldControl : MonoBehaviour
     {
         if(control == null)
             return;
-        var mousePos = Input.mousePosition;
+        var center = Screen.safeArea.center;
+        var mousePos = (Vector2)Input.mousePosition;
+        mousePos = offset * (mousePos - center);
         var position = camera.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, depth));
         control.position = Vector3.SmoothDamp(control.position, position, ref velocity, smoothTime, maxSpeed);
     }
