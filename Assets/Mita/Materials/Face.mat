@@ -14,12 +14,12 @@ Material:
   m_ValidKeywords:
   - N_F_DDMD_ON
   - N_F_DNO_ON
-  - N_F_EAL_ON
   - N_F_HDLS_ON
   - N_F_NLASOBF_ON
   - N_F_O_ON
   - N_F_RDC_ON
   - N_F_RELGI_ON
+  - N_F_SL_ON
   - N_F_ST_ON
   - N_F_TRANSAFFSHA_ON
   m_InvalidKeywords:
@@ -44,7 +44,7 @@ Material:
   - _VERTEXCOLORBLUEAFFECTOUTLINEWITDH_OFF
   - _VERTEXCOLORGREENCONTROLSELFSHADOWTHRESHOLD_OFF
   - _VERTEXCOLORREDCONTROLSMOOTHOBJECTNORMAL_OFF
-  m_LightmapFlags: 0
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -236,7 +236,7 @@ Material:
     - _N_F_COEDGL: 0
     - _N_F_DCS: 0
     - _N_F_DDMD: 1
-    - _N_F_EAL: 1
+    - _N_F_EAL: 0
     - _N_F_ESSAO: 0
     - _N_F_FR: 0
     - _N_F_GLO: 0
@@ -258,7 +258,7 @@ Material:
     - _N_F_SCO: 0
     - _N_F_SCT: 0
     - _N_F_SE: 0
-    - _N_F_SL: 0
+    - _N_F_SL: 1
     - _N_F_SON: 0
     - _N_F_SS: 0
     - _N_F_ST: 1
@@ -303,7 +303,7 @@ Material:
     - _STIL: 0
     - _Saturation: 1
     - _SelfLitHighContrast: 1
-    - _SelfLitIntensity: 0.199
+    - _SelfLitIntensity: 0.741
     - _SelfLitPower: 2
     - _SelfShadowAffectedByLightShadowStrength: 0
     - _SelfShadowHardness: 0.216
@@ -330,7 +330,7 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _TEXMCOLINT: 1
+    - _TEXMCOLINT: 0.8
     - _TRANSMODE: 0
     - _TexturePatternStyle: 0
     - _TrailSize: 1.5
@@ -365,7 +365,7 @@ Material:
     - _PrevPosition: {r: 0, g: 0, b: 0, a: 0}
     - _RimLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _SSAOColor: {r: 0, g: 0, b: 0, a: 0}
-    - _SelfLitColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SelfLitColor: {r: 0.66666657, g: 0.6279178, b: 0.5932913, a: 1}
     - _SelfShadowRealTimeShadowColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowTColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
