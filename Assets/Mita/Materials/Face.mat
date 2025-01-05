@@ -51,7 +51,7 @@ Material:
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
-  m_LockedProperties: 
+  m_LockedProperties: _SelfLitColor
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -224,7 +224,7 @@ Material:
     - _MCIALO: 0
     - _MCapIntensity: 1
     - _MVCOL: 0
-    - _MaiColPo: 0.8
+    - _MaiColPo: 1.125
     - _MaxFadDistance: 2.45
     - _Metallic: 0
     - _MinFadDistance: 0
@@ -303,8 +303,8 @@ Material:
     - _STIL: 0
     - _Saturation: 1
     - _SelfLitHighContrast: 1
-    - _SelfLitIntensity: 0.741
-    - _SelfLitPower: 2
+    - _SelfLitIntensity: 1
+    - _SelfLitPower: 1
     - _SelfShadowAffectedByLightShadowStrength: 0
     - _SelfShadowHardness: 0.216
     - _SelfShadowRealTimeShadowColorPower: 1
@@ -330,7 +330,7 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _TEXMCOLINT: 0.8
+    - _TEXMCOLINT: 1
     - _TRANSMODE: 0
     - _TexturePatternStyle: 0
     - _TrailSize: 1.5
@@ -354,7 +354,7 @@ Material:
     - _GlossColor: {r: 1, g: 1, b: 1, a: 1}
     - _Glow_Color: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MainColor: {r: 1, g: 0.9098039, b: 0.9490196, a: 1}
     - _ObjPosi: {r: 0, g: 0, b: 0, a: 0}
     - _ObjectForward: {r: 0, g: 0, b: 0, a: 0}
     - _ObjectRight: {r: 0, g: 0, b: 0, a: 0}
@@ -365,7 +365,7 @@ Material:
     - _PrevPosition: {r: 0, g: 0, b: 0, a: 0}
     - _RimLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _SSAOColor: {r: 0, g: 0, b: 0, a: 0}
-    - _SelfLitColor: {r: 0.66666657, g: 0.6279178, b: 0.5932913, a: 1}
+    - _SelfLitColor: {r: 0, g: 0, b: 0, a: 1}
     - _SelfShadowRealTimeShadowColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowTColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
