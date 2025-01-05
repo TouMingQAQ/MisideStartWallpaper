@@ -273,7 +273,7 @@ Material:
     - _Opacity: 1
     - _Oper: 0
     - _OutlineExtrudeMethod: 0
-    - _OutlineWidth: 0.06
+    - _OutlineWidth: 0.05
     - _OutlineWidthAffectedByViewDistance: 1
     - _OutlineZPostionInCamera: 3
     - _OverallShadowColorPower: 1
@@ -358,7 +358,7 @@ Material:
     - _ObjPosi: {r: 0, g: 0, b: 0, a: 0}
     - _ObjectForward: {r: 0, g: 0, b: 0, a: 0}
     - _ObjectRight: {r: 0, g: 0, b: 0, a: 0}
-    - _OutlineColor: {r: 2.5157228, g: 0.11866585, b: 1.3217388, a: 1}
+    - _OutlineColor: {r: 0.55, g: 0, b: 0.39217377, a: 1}
     - _OutlineOffset: {r: 0, g: 0, b: 0, a: 1}
     - _OverallShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _PTCol: {r: 0, g: 0, b: 0, a: 1}
