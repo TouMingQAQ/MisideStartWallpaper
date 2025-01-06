@@ -20,11 +20,8 @@ public class OnClickAnimation : MonoBehaviour,IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Left)
-        {
-            mitaStart.HideControl();
-            audioSource.PlayOneShot(clickAudioClip);
-            animator.SetTrigger(OnClick);
-        }
+        mitaStart.HideControl();
+        audioSource.PlayOneShot(clickAudioClip);
+        animator.SetTrigger(OnClick);
     }
 }
