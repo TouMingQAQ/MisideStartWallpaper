@@ -96,7 +96,7 @@ MonoBehaviour:
     m_Value: {x: 1, y: 1, z: 1, w: -0.029282581}
   gain:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.93102354, z: 0.9909466, w: -0.10248904}
+    m_Value: {x: 0.94666874, y: 0.88177764, z: 1, w: -0.1332378}
 --- !u!114 &-1856249232936451419
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221518ef91623a7438a71fef23660601, type: 3}
   m_Name: WhiteBalance
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   temperature:
     m_OverrideState: 0
     m_Value: 0
