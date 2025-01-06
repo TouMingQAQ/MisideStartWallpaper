@@ -758,7 +758,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: -9.137703e-10, y: 0.9997815, z: -0.020904629, w: -0.00000004370184}
+  m_LocalRotation: {x: -9.1377034e-10, y: 0.9997815, z: -0.020904629, w: -0.00000004370184}
   m_LocalPosition: {x: 0, y: 1.786, z: 5.633}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2510,10 +2510,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u524D\u7F6EUI"
       objectReference: {fileID: 0}
+    - target: {fileID: 3655475546566231939, guid: 17f21525f1a55ee42a417a73b43d2b73, type: 3}
+      propertyPath: simulationSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020113429145705118, guid: 17f21525f1a55ee42a417a73b43d2b73, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1476
+      objectReference: {fileID: 0}
+    - target: {fileID: 5034300939601828110, guid: 17f21525f1a55ee42a417a73b43d2b73, type: 3}
+      propertyPath: simulationSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729486875645724875, guid: 17f21525f1a55ee42a417a73b43d2b73, type: 3}
+      propertyPath: simulationSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095775887537842701, guid: 17f21525f1a55ee42a417a73b43d2b73, type: 3}
+      propertyPath: simulationSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8031168476004889902, guid: 17f21525f1a55ee42a417a73b43d2b73, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 330585545}
+    - target: {fileID: 9151452098436482653, guid: 17f21525f1a55ee42a417a73b43d2b73, type: 3}
+      propertyPath: simulationSpeed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
