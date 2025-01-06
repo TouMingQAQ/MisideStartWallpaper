@@ -4956,7 +4956,7 @@ MonoBehaviour:
   smoothTime: 0.3
   maxSpeed: 10
   velocity: {x: 0, y: 0, z: 0}
-  offset: {x: 4, y: 4}
+  offset: {x: 0, y: 2, z: 3, w: 2}
 --- !u!114 &919132148587044793
 MonoBehaviour:
   m_ObjectHideFlags: 0
