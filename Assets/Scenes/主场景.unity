@@ -570,7 +570,7 @@ MonoBehaviour:
   solver:
     executedInEditor: 0
     IKPosition: {x: 0.0114173265, y: 1.4816922, z: 3.0770736}
-    IKPositionWeight: 1
+    IKPositionWeight: 0.55
     root: {fileID: 189189137}
     target: {fileID: 158783087}
     spine:
@@ -616,9 +616,9 @@ MonoBehaviour:
       sqrMag: 0
       axis: {x: 0.21418367, y: 0.9510547, z: 0.2227574}
       baseForwardOffsetEuler: {x: 0, y: 0, z: 0}
-    bodyWeight: 0.189
-    headWeight: 0.189
-    eyesWeight: 0.892
+    bodyWeight: 0.15
+    headWeight: 0.15
+    eyesWeight: 0.925
     clampWeight: 0.4
     clampWeightHead: 0.4
     clampWeightEyes: 0.6
@@ -9806,7 +9806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!137 &5128063985983617125
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
