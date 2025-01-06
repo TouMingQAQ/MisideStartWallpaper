@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cd58f1a0a758e0847824ae50d11c9103
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 258376
+  packageName: Piloto Studio Shaders
+  packageVersion: 1.5
+  assetPath: Assets/Piloto Studio/Shaders/README.txt
+  uploadId: 705412

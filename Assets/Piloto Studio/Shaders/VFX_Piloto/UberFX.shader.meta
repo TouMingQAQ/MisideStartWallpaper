@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: d985403ea514e7c46bf7c2fab31b9d95
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 258376
+  packageName: Piloto Studio Shaders
+  packageVersion: 1.5
+  assetPath: Assets/Piloto Studio/Shaders/VFX_Piloto/UberFX.shader
+  uploadId: 705412

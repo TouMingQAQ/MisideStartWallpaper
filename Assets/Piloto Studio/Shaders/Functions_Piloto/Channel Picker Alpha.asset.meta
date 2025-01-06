@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e49841402b321534583d1dc019041b68
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 258376
+  packageName: Piloto Studio Shaders
+  packageVersion: 1.5
+  assetPath: Assets/Piloto Studio/Shaders/Functions_Piloto/Channel Picker Alpha.asset
+  uploadId: 705412

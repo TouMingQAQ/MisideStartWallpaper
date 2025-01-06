@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5da1e8c85a29e5a47ac99c50f15047ec
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 258376
+  packageName: Piloto Studio Shaders
+  packageVersion: 1.5
+  assetPath: Assets/Piloto Studio/Shaders/PBR_Piloto/m_pbr_gradient.mat
+  uploadId: 705412

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 20c67d5eab17c2f4ca3bb7471da4cd45
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 258376
+  packageName: Piloto Studio Shaders
+  packageVersion: 1.5
+  assetPath: Assets/Piloto Studio/Shaders/PBR_Piloto/PBR_Gradient_Character_OneSided.mat
+  uploadId: 705412

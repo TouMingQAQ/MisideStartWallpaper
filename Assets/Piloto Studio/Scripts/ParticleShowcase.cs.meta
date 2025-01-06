@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: effabd88fdbf01745babd2bcc8bebf68
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 242936
+  packageName: "Ultimate Loot VFX Pack \u269C\uFE0F 175 Effects"
+  packageVersion: 1.0
+  assetPath: Assets/Piloto Studio/Scripts/ParticleShowcase.cs
+  uploadId: 713609

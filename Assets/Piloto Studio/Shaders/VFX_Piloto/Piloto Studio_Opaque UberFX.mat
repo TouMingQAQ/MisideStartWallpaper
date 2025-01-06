@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Piloto Studio_Opaque UberFX
+  m_Shader: {fileID: 4800000, guid: a9ddf3d70cc860145928b5703dc151ec, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _ALPHATEST_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaOverride:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNoise:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 8192d3c793047b449a685ae19102dfe6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaClip: 0.605
+    - _AlphaCutoff: 0.5
+    - _Culling: 2
+    - _Desaturate: 0
+    - _DisableErosion: 0
+    - _DistortionIntensity: 2
+    - _Fresnel: 0
+    - _FresnelPower: 1
+    - _FresnelScale: 1
+    - _MiddlePointPos: 0.5
+    - _MiddlePointPos1: 0.5
+    - _MultiplyNoiseDesaturation: 1
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _SoftFadeFactor: 0.1
+    - _SourceBlendRGB: 10
+    - _UseAlphaOverride: 0
+    - _UsePixelation: 0
+    - _UseRamp: 0
+    - _UseSoftAlpha: 0
+    - _UseUVOffset: 0
+    m_Colors:
+    - _AlphaOverrideChannel: {r: 0, g: 0, b: 0, a: 1}
+    - _AlphaOverridePanning: {r: 0, g: 0, b: 0, a: 0}
+    - _DetailAdditiveChannel: {r: 0, g: 0, b: 0, a: 0}
+    - _DetailDisolveChannel: {r: 1, g: 0, b: 0, a: 0}
+    - _DetailDistortionChannel: {r: 0, g: 0, b: 0, a: 0}
+    - _DetailMultiplyChannel: {r: 0, g: 0, b: 0, a: 0}
+    - _DetailNoisePanning: {r: 0, g: 0, b: 0, a: 0}
+    - _DetailVertexOffsetChannel: {r: 1, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
+    - _LastColor: {r: 1, g: 0, b: 0, a: 0}
+    - _MainAlphaChannel: {r: 0, g: 0, b: 0, a: 1}
+    - _MainTextureChannel: {r: 1, g: 1, b: 1, a: 0}
+    - _MainTexturePanning: {r: 0, g: 0, b: 0, a: 0}
+    - _MidColor: {r: 1, g: 0.4447915, b: 0, a: 0}
+    - _Resolution: {r: 64, g: 64, b: 0, a: 0}
+    - _WhiteColor: {r: 1, g: 0.8950032, b: 0, a: 0}
+  m_BuildTextureStacks: []

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 706af9240d81cc24e867e178aa30cdbc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 258376
+  packageName: Piloto Studio Shaders
+  packageVersion: 1.5
+  assetPath: Assets/Piloto Studio/Shaders/SimplyToon_Piloto/GradModels_Toony_DoubleSided.mat
+  uploadId: 705412

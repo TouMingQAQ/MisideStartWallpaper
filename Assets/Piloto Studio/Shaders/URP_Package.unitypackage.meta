@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2c2cc3bb625b4e0409f8a4250cf53e48
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 258376
+  packageName: Piloto Studio Shaders
+  packageVersion: 1.5
+  assetPath: Assets/Piloto Studio/Shaders/URP_Package.unitypackage
+  uploadId: 705412

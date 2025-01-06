@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 134df03d154adcb4daa9a7f1419c25fc
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 258376
+  packageName: Piloto Studio Shaders
+  packageVersion: 1.5
+  assetPath: Assets/Piloto Studio/Shaders/SimplyToon_Piloto/Simply Toon.shader
+  uploadId: 705412

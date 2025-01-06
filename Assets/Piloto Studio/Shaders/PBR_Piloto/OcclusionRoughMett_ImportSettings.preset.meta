@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c1d559d1c7f71de41bce4e7be0557381
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2655988077585873504
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 258376
+  packageName: Piloto Studio Shaders
+  packageVersion: 1.5
+  assetPath: Assets/Piloto Studio/Shaders/PBR_Piloto/OcclusionRoughMett_ImportSettings.preset
+  uploadId: 705412

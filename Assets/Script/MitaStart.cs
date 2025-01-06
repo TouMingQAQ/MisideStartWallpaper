@@ -10,12 +10,18 @@ public class MitaStart : MonoBehaviour
     public MouseToWorldControl mouseControl;
     public OnClickAnimation onClickAnimation;
     public LookAtIK lookAtIk;
-
+    public Vector2Int startAnimationRange;
+    public ParticleSystem winkParticles;
     private void Awake()
     {
         Application.targetFrameRate = 60;
         HideControl();
-        animator.SetInteger(Init,Random.Range(0,5));
+        animator.SetInteger(Init,Random.Range(startAnimationRange.x,startAnimationRange.y));
+    }
+
+    public void Wink()
+    {
+        winkParticles.Play();
     }
 
     public void HideControl()

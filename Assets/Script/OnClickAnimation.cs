@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Random = UnityEngine.Random;
 
 public class OnClickAnimation : MonoBehaviour,IPointerClickHandler
 {
@@ -9,16 +10,50 @@ public class OnClickAnimation : MonoBehaviour,IPointerClickHandler
     public AudioClip clickAudioClip;
     public AudioSource audioSource;
     public MitaStart mitaStart;
+    public ClickParticle clickParticle;
+
+    public int clickCount = 2;
+    public float clickTimer = 0;
+    public int clickCountTimer = 0;
+    public Vector2 clickDelayRange = new Vector2(1f, 2f);
+    public Vector2Int clickRange = new Vector2Int(2, 3);
+
+    private void Awake()
+    {
+       
+    }
+
     private void Update()
     {
-        // if (Input.GetMouseButtonDown(0))
-        // {
-        //     audioSource.PlayOneShot(clickAudioClip);
-        //     animator.SetTrigger(OnClick);
-        // }
+        if (clickTimer >= 0)
+        {
+            clickTimer -= Time.deltaTime;
+            if (clickTimer <= 0)
+            {
+                //点击清零
+                clickCountTimer = 0;
+            }
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
+    {
+        clickCountTimer++;
+        if (clickTimer <= 0)
+        {
+            clickTimer = Random.Range(clickDelayRange.x, clickDelayRange.y);
+        }
+        if (clickCountTimer >= clickCount)
+        {
+            SetAnimation();
+            clickCountTimer = 0;
+            clickCount = Random.Range(clickRange.x, clickRange.y);
+            clickTimer = 0;
+        }
+        clickParticle.OnClick();
+    }
+
+    void SetAnimation()
     {
         mitaStart.HideControl();
         audioSource.PlayOneShot(clickAudioClip);

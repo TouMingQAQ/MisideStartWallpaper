@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2a968aa3406ef9441a14e5e68e2f7bab
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 258376
+  packageName: Piloto Studio Shaders
+  packageVersion: 1.5
+  assetPath: Assets/Piloto Studio/Shaders/SimplyToon_Piloto/GradModels_Toony.mat
+  uploadId: 705412
