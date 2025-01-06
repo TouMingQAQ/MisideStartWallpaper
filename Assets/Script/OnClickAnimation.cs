@@ -51,12 +51,12 @@ public class OnClickAnimation : MonoBehaviour,IPointerClickHandler
             clickTimer = 0;
         }
         clickParticle.OnClick();
+        audioSource.PlayOneShot(clickAudioClip);
     }
 
     void SetAnimation()
     {
         mitaStart.HideControl();
-        audioSource.PlayOneShot(clickAudioClip);
         animator.SetTrigger(OnClick);
     }
 }
