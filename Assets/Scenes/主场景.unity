@@ -7453,6 +7453,11 @@ MonoBehaviour:
   audioSource: {fileID: 919132148587044794}
   mitaStart: {fileID: 919132148587044793}
   clickParticle: {fileID: 1654891430}
+  clickCount: 3
+  clickTimer: 0
+  clickCountTimer: 0
+  clickDelayRange: {x: 0.2, y: 0.4}
+  clickRange: {x: 2, y: 4}
 --- !u!136 &919132148587044791
 CapsuleCollider:
   m_ObjectHideFlags: 0
