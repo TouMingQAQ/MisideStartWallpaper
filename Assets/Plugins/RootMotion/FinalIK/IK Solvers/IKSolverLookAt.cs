@@ -72,6 +72,9 @@ namespace RootMotion.FinalIK {
 		/// </summary>
 		public Vector3 spineTargetOffset;
 		
+		public Vector3 headTargetOffset;
+		
+		
 		/// <summary>
 		/// Sets the look at weight. NOTE: You are welcome edit the weights directly, this method is here only to match the Unity's built in %IK API.
 		/// </summary>
@@ -365,7 +368,7 @@ namespace RootMotion.FinalIK {
 			GetForwards(ref headForwards, baseForward, targetForward, 1, clampWeightHead);
 			
 			// Rotate the head to face its look at vector
-			head.LookAt(headForwards[0], headWeight * IKPositionWeight);
+			head.LookAt(headForwards[0]+headTargetOffset, headWeight * IKPositionWeight);
 		}
 
         protected bool eyesIsValid {

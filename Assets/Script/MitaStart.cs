@@ -12,12 +12,19 @@ public class MitaStart : MonoBehaviour
     public LookAtIK lookAtIk;
     public Vector2Int startAnimationRange;
     public ParticleSystem winkParticles;
+    public Vector3 headOffset;
     private void Awake()
     {
         Application.targetFrameRate = 60;
         HideControl();
         animator.SetInteger(Init,Random.Range(startAnimationRange.x,startAnimationRange.y));
     }
+
+    private void Update()
+    {
+        lookAtIk.solver.headTargetOffset = headOffset;
+    }
+
 
     public void Wink()
     {
@@ -27,14 +34,15 @@ public class MitaStart : MonoBehaviour
     public void HideControl()
     {
         mouseControl.enabled = false;
-        lookAtIk.enabled = false;
+        lookAtIk.solver.SetLookAtWeight(0);
         onClickAnimation.enabled = false;
     }
+    
 
     public void OnStartAnimationEnd()
     {
         mouseControl.enabled = true;
         onClickAnimation.enabled = true;
-        lookAtIk.enabled = true;
+        lookAtIk.solver.SetLookAtWeight(1);
     }
 }
