@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using RootMotion.FinalIK;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -19,7 +20,39 @@ public class MitaStart : MonoBehaviour
         HideControl();
         animator.SetInteger(Init,Random.Range(startAnimationRange.x,startAnimationRange.y));
     }
+    [SerializeField]
+    private bool noding;
+    [SerializeField]
+    private Vector3 nodEnd;
+    [SerializeField]
+    private AnimationCurve nodCurve;
+    [SerializeField]
+    private float waitTime;
+    [SerializeField]
+    private Vector2 nodDuration;
 
+    
+    
+    [ContextMenu("NodOnShot")]
+    public void NodOnShot()
+    {
+        if(noding)
+            return;
+        noding = true;
+        var offset =headOffset;
+        var q = DOTween.Sequence();
+        var tween = DOTween.To(()=>headOffset,x=>headOffset=x,nodEnd,nodDuration.x).SetEase(nodCurve);
+        q.Append(tween);
+        q.AppendInterval(waitTime);
+        tween = DOTween.To(()=>headOffset,x=>headOffset=x,offset,nodDuration.y).SetEase(nodCurve);
+        q.Append(tween);
+        q.AppendCallback(()=>
+        {
+            noding = false;
+            headOffset =offset;
+        });
+        q.Play();
+    }
     private void Update()
     {
         lookAtIk.solver.headTargetOffset = headOffset;
