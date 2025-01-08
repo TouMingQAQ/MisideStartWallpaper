@@ -1,4 +1,5 @@
 using System;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
@@ -7,8 +8,7 @@ public class OnClickAnimation : MonoBehaviour,IPointerClickHandler
 {
     private static readonly int OnClick = Animator.StringToHash("OnClick");
     public Animator animator;
-    public AudioClip clickAudioClip;
-    public AudioSource audioSource;
+    public EventReference onClickMisideAudio;
     public MitaStart mitaStart;
     public ClickParticle clickParticle;
 
@@ -51,7 +51,7 @@ public class OnClickAnimation : MonoBehaviour,IPointerClickHandler
             clickTimer = 0;
         }
         clickParticle.OnClick();
-        audioSource.PlayOneShot(clickAudioClip);
+        RuntimeManager.PlayOneShot(onClickMisideAudio);
     }
 
     void SetAnimation()
