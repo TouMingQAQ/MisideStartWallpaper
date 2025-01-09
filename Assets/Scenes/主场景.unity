@@ -2807,7 +2807,7 @@ Transform:
   m_GameObject: {fileID: 1096281637}
   serializedVersion: 2
   m_LocalRotation: {x: 0.10190814, y: -0.11869089, z: 0.9861223, w: 0.055588562}
-  m_LocalPosition: {x: 0.0733, y: 1.611, z: 0.35}
+  m_LocalPosition: {x: 0.0733, y: 1.608, z: 0.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2937,7 +2937,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1.8
+      scalar: 1.825
       minScalar: 0.5
       maxCurve:
         serializedVersion: 2
@@ -2954,7 +2954,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.15
+      scalar: 0.125
       minScalar: 0.1
       maxCurve:
         serializedVersion: 2
@@ -3036,8 +3036,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.15
-      minScalar: 0.05
+      scalar: 0.125
+      minScalar: 0.025
       maxCurve:
         serializedVersion: 2
         m_Curve: []
@@ -7598,7 +7598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 158783087}
-  depth: 2.1
+  depth: 2.125
   camera: {fileID: 330585545}
   smoothTime: 0.3
   maxSpeed: 10
@@ -7622,9 +7622,9 @@ MonoBehaviour:
   lookAtIk: {fileID: 189189138}
   startAnimationRange: {x: 1, y: 2}
   winkParticles: {fileID: 1096281640}
-  headOffset: {x: 0, y: -0.5, z: 0}
+  headOffset: {x: 0, y: 0.375, z: 0}
   noding: 0
-  nodEnd: {x: 0, y: -0.8, z: 0}
+  nodEnd: {x: 0, y: -0.1, z: 0}
   nodCurve:
     serializedVersion: 2
     m_Curve:
@@ -7638,7 +7638,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1
+      time: 1.335
       value: 1
       inSlope: 0
       outSlope: 0
@@ -7649,7 +7649,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  waitTime: 0.03
+  waitTime: 0.025
   nodDuration: {x: 0.3, y: 0.4}
 --- !u!114 &919132148587044794
 MonoBehaviour:
@@ -7666,7 +7666,7 @@ MonoBehaviour:
   audioSamples: []
   energy: 0
   mita: {fileID: 919132148587044793}
-  nodEnergy: 0.035
+  nodEnergy: 0.0175
 --- !u!4 &1004492853676531681
 Transform:
   m_ObjectHideFlags: 0
