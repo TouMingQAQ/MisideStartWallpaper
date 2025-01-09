@@ -527,7 +527,7 @@ MonoBehaviour:
   HasSourceProject: 0
   HasPlatforms: 1
   sourceProjectPath: FMOD/MisideStart/MisideStart.fspro
-  sourceBankPath: FMOD/MisideStart/Build
+  sourceBankPath: FMOD/MisideStart/FmodBuild
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 0
