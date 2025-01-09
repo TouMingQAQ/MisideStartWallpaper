@@ -51,7 +51,7 @@ public class MitaStart : MonoBehaviour
             noding = false;
             headOffset =offset;
         });
-        q.Play();
+        q.Play().SetAutoKill(true);
     }
     private void Update()
     {

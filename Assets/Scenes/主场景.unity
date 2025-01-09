@@ -7563,7 +7563,7 @@ MonoBehaviour:
   smoothTime: 0.3
   maxSpeed: 10
   velocity: {x: 0, y: 0, z: 0}
-  offset: {x: 0, y: 2, z: 3, w: 2}
+  offset: {x: 2, y: 2, z: 3, w: 2}
 --- !u!114 &919132148587044793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7582,7 +7582,7 @@ MonoBehaviour:
   lookAtIk: {fileID: 189189138}
   startAnimationRange: {x: 1, y: 2}
   winkParticles: {fileID: 1096281640}
-  headOffset: {x: 0, y: 0.5, z: 0}
+  headOffset: {x: 0, y: -0.5, z: 0}
   noding: 0
   nodEnd: {x: 0, y: -0.8, z: 0}
   nodCurve:
@@ -7591,8 +7591,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 2
-      outSlope: 2
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -7609,8 +7609,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  waitTime: 0.2
-  nodDuration: {x: 0.6, y: 0.4}
+  waitTime: 0.03
+  nodDuration: {x: 0.3, y: 0.4}
 --- !u!114 &919132148587044794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7625,8 +7625,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSamples: []
   energy: 0
-  mita: {fileID: 0}
-  nodEnergy: 0
+  mita: {fileID: 919132148587044793}
+  nodEnergy: 0.035
 --- !u!4 &1004492853676531681
 Transform:
   m_ObjectHideFlags: 0
