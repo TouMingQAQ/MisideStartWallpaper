@@ -7666,7 +7666,7 @@ MonoBehaviour:
   audioSamples: []
   energy: 0
   mita: {fileID: 919132148587044793}
-  nodEnergy: 0.0175
+  nodEnergy: 0.01625
 --- !u!4 &1004492853676531681
 Transform:
   m_ObjectHideFlags: 0
