@@ -752,7 +752,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: -9.1377034e-10, y: 0.9997815, z: -0.020904629, w: -0.00000004370184}
-  m_LocalPosition: {x: 0, y: 1.786, z: 5.633}
+  m_LocalPosition: {x: -3.1655457e-12, y: 1.785998, z: 5.632946}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2605,6 +2605,8 @@ GameObject:
   m_Component:
   - component: {fileID: 832575519}
   - component: {fileID: 832575518}
+  - component: {fileID: 832575520}
+  - component: {fileID: 832575521}
   m_Layer: 0
   m_Name: "PP\u540E\u5904\u7406"
   m_TagString: Untagged
@@ -2644,6 +2646,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 796871744}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &832575520
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832575517}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &832575521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832575517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c794d8b51c1047d4e86d28215ef75047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  postExposure: 0
+  volume: {fileID: 832575518}
 --- !u!1 &1013576547
 GameObject:
   m_ObjectHideFlags: 0
@@ -5474,6 +5512,8 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -9022878399713323085, guid: 89bab316446d47a4f84d3491d9d6fbc4, type: 2}
     value: {fileID: 1552070739}
+  - key: {fileID: -1456598033597624251, guid: 89bab316446d47a4f84d3491d9d6fbc4, type: 2}
+    value: {fileID: 832575520}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1552443974
