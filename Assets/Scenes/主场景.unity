@@ -1078,7 +1078,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
     radius:
-      value: 0.02
+      value: 0.0225
       useCurve: 0
       curve:
         serializedVersion: 2
@@ -5158,6 +5158,7 @@ MonoBehaviour:
   startAnimationRange: {x: 1, y: 4}
   canControl: 1
   noding: 0
+  nodStartDelay: 0.0225
   headOffset: {x: 0, y: 0.375, z: 0}
   nodEnd: {x: 0, y: -0.1, z: 0}
   nodCurve:
@@ -5213,7 +5214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSamples: []
   miside: {fileID: 919132148587044793}
-  nodEnergy: 0.01625
+  nodEnergy: 0.016
   currentEnergy: 0
   disEnergy: 0
   nod: 0
