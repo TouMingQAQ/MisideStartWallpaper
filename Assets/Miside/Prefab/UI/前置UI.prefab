@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 3462003328993649631}
   - component: {fileID: 3655475546566231939}
   - component: {fileID: 3658973655095276749}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4881,7 +4881,7 @@ GameObject:
   - component: {fileID: 4020113429145705118}
   - component: {fileID: 1265493969588611994}
   - component: {fileID: 7700632177803711786}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: "\u70B9\u51FB\u7C92\u5B50\u7279\u6548"
   m_TagString: Untagged
   m_Icon: {fileID: 0}

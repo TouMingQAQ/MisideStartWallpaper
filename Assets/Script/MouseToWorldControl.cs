@@ -44,7 +44,6 @@ public class MouseToWorldControl : MonoBehaviour
         {
             distance.y = -screenHeight * limitY.y;
         }
-        Debug.Log(distance);
         mousePos = new Vector2(mulX, mulY) * distance;
         var position = camera.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, depth));
         control.position = Vector3.SmoothDamp(control.position, position, ref velocity, smoothTime, maxSpeed);

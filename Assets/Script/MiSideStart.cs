@@ -76,6 +76,11 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     public Vector2Int startAnimationRange = new Vector2Int(0, 5);
     [SerializeField,ReadOnly]
     private bool canControl = true;
+    [SerializeField,ReadOnly]
+    private float lookAtIkWeight = 0;
+    [SerializeField,ReadOnly]
+    private float lookAtTargetIkWeight = 0;
+
     [Tab("Nod")]
     [SerializeField,ReadOnly]
     private bool noding;
@@ -102,7 +107,7 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     private float clickTimer = 0;
     [SerializeField,ReadOnly]
     private int clickCountTimer = 0;
-
+    
     private void Awake()
     {
         ConfigPath = Application.persistentDataPath + "/MiSideStartConfig.json";
@@ -201,6 +206,8 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     private void Update()
     {
         lookAtIk.solver.headTargetOffset = headOffset;
+        lookAtIkWeight = Mathf.Lerp(lookAtIkWeight, lookAtTargetIkWeight, 0.1f);
+        lookAtIk.solver.SetLookAtWeight(lookAtIkWeight);
         if (clickTimer >= 0)
         {
             clickTimer -= Time.deltaTime;
@@ -221,7 +228,8 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     public void HideControl()
     {
         mouseControl.enabled = false;
-        lookAtIk.solver.SetLookAtWeight(0);
+        lookAtTargetIkWeight = 0;
+        lookAtIkWeight = 0;
         canControl = false;
     }
     
@@ -230,7 +238,7 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     {
         mouseControl.enabled = true;
         canControl = true;
-        lookAtIk.solver.SetLookAtWeight(1);
+        lookAtTargetIkWeight = 1;
     }
 
     public void OnPointerClick(PointerEventData eventData)
