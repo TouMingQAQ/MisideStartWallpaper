@@ -77,6 +77,8 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     [SerializeField,ReadOnly]
     private bool noding;
     [SerializeField]
+    private float nodStartDelay = 0.03f;
+    [SerializeField]
     private Vector3 headOffset = new Vector3(0,0.375f,0);
     [SerializeField]
     private Vector3 nodEnd = new Vector3(0,-0.1f,0);
@@ -152,6 +154,7 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
         noding = true;
         var offset =headOffset;
         var q = DOTween.Sequence();
+        q.AppendInterval(nodStartDelay);
         var tween = DOTween.To(()=>headOffset,x=>headOffset=x,nodEnd,nodDuration.x).SetEase(nodCurve);
         q.Append(tween);
         q.AppendInterval(waitTime);
