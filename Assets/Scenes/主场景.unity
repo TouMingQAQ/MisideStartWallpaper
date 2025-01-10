@@ -5134,6 +5134,7 @@ MonoBehaviour:
   camera: {fileID: 330585545}
   smoothTime: 0.3
   maxSpeed: 10
+  limitY: {x: 0.8, y: 0}
   velocity: {x: 0, y: 0, z: 0}
   offset: {x: 3, y: 3, z: 3, w: 3}
 --- !u!114 &919132148587044793
