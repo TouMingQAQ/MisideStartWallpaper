@@ -5155,6 +5155,12 @@ MonoBehaviour:
   winkRoot: {fileID: 1149349151}
   ConfigPath: 
   targetFrameRate: 0
+  weightList:
+  - 0.5
+  - 0.2
+  - 0.14
+  - 0.1
+  - 0.06
   startAnimationRange: {x: 1, y: 4}
   canControl: 1
   noding: 0

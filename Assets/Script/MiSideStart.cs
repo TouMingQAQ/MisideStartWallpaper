@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using DG.Tweening;
 using FMODUnity;
@@ -69,6 +70,8 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     [Tab("Normal")] 
     [InspectorName("帧率限制")]
     public int targetFrameRate = 60;
+    [InspectorName("权重列表")]
+    public List<float> weightList;
     [InspectorName("开场动画随机范围")]
     public Vector2Int startAnimationRange = new Vector2Int(0, 5);
     [SerializeField,ReadOnly]
@@ -108,7 +111,35 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
         Application.targetFrameRate = targetFrameRate;
         HideControl();
         winkParticles = Instantiate(winkParticles,winkRoot);
-        animator.SetInteger(Init,Random.Range(startAnimationRange.x,startAnimationRange.y));
+        animator.SetInteger(Init,GetStartAnimationIndex());
+    }
+    [Button,Tab("Normal")]
+    public void TestAnimationWeight()
+    {
+        Debug.Log($"Index:{GetStartAnimationIndex()}");
+    }
+    int GetStartAnimationIndex()
+    {
+        if(startAnimationRange.x >= startAnimationRange.y)
+            return startAnimationRange.x;
+        var r = Random.Range(0,1f);
+        var totalWeight = 0f;
+        for (int i = startAnimationRange.x; i < startAnimationRange.y; i++)
+        {
+            totalWeight+=weightList[i];
+        }
+        var targetWeight = totalWeight * r;
+        var currentWeight = 0f;
+        for (int i = startAnimationRange.x; i < startAnimationRange.y; i++)
+        {
+            currentWeight += weightList[i];
+            if (currentWeight >= targetWeight)
+            {
+                return i;
+            }
+        }
+
+        return 0;
     }
 
 #if UNITY_EDITOR
