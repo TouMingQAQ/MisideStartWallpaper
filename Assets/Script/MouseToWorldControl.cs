@@ -24,7 +24,7 @@ public class MouseToWorldControl : MonoBehaviour
 
     private void Update()
     {
-        if(control == null)
+        if(control == null || !MiSideStart.config.LookAtMouse)
             return;
         var center = Screen.safeArea.center;
         var mousePos = (Vector2)Input.mousePosition;

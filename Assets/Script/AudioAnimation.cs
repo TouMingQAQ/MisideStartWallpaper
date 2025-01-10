@@ -4,6 +4,7 @@ using System.IO;
 using CSCore.SoundIn;
 using CSCore.Streams;
 using UnityEngine;
+using VInspector;
 
 public class AudioAnimation : MonoBehaviour
 {
@@ -14,9 +15,14 @@ public class AudioAnimation : MonoBehaviour
     private float[] audioSamples;
     private int offset;
     private int byteCount;
-    public float energy;
+   
     public MiSideStart miside;
     public float nodEnergy;
+    [SerializeField,ReadOnly]
+    private float currentEnergy;
+    [SerializeField,ReadOnly]
+    private float disEnergy;
+    [SerializeField,ReadOnly]
     private bool nod = false;
     private void Awake()
     {
@@ -29,6 +35,8 @@ public class AudioAnimation : MonoBehaviour
 
     private void Update()
     {
+        if(!MiSideStart.config.MusicHead)
+            return;
         if (nod)
         {
             miside.NodOnShot();
@@ -54,7 +62,7 @@ public class AudioAnimation : MonoBehaviour
         int startCount = offset / sizeof(float);
         int count = sampleCount-startCount;
         audioSamples = new float[count];
-        energy = 0;
+        float energy = 0;
         for (int i = startCount; i < sampleCount; i++)
         {
             var sample = BitConverter.ToSingle(buffer, i * sizeof(float));
@@ -62,7 +70,9 @@ public class AudioAnimation : MonoBehaviour
             energy += sample * sample; // 能量为振幅的平方和
         }
         energy /= count; // 平均能量
-        if (energy > nodEnergy)
+        disEnergy = currentEnergy - energy;
+        currentEnergy = energy;
+        if (currentEnergy > nodEnergy && disEnergy > 0)
             nod = true;
     }
   

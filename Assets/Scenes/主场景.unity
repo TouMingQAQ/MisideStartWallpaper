@@ -752,7 +752,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: -9.1377034e-10, y: 0.9997815, z: -0.020904629, w: -0.00000004370184}
-  m_LocalPosition: {x: -3.1655457e-12, y: 1.785998, z: 5.632946}
+  m_LocalPosition: {x: 0, y: 1.786, z: 5.633}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2541,7 +2541,7 @@ GameObject:
   m_Component:
   - component: {fileID: 796871744}
   m_Layer: 0
-  m_Name: MITA
+  m_Name: MiSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5135,7 +5135,7 @@ MonoBehaviour:
   smoothTime: 0.3
   maxSpeed: 10
   velocity: {x: 0, y: 0, z: 0}
-  offset: {x: 2, y: 2, z: 3, w: 2}
+  offset: {x: 3, y: 3, z: 3, w: 3}
 --- !u!114 &919132148587044793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5153,7 +5153,8 @@ MonoBehaviour:
   lookAtIk: {fileID: 189189138}
   winkParticles: {fileID: 6874025987665515182, guid: 7ae6988dd0b86f54191eca211f7a6daa, type: 3}
   winkRoot: {fileID: 1149349151}
-  targetFrameRate: 60
+  ConfigPath: 
+  targetFrameRate: 0
   startAnimationRange: {x: 1, y: 4}
   canControl: 1
   noding: 0
@@ -5211,9 +5212,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSamples: []
-  energy: 0
   miside: {fileID: 919132148587044793}
   nodEnergy: 0.01625
+  currentEnergy: 0
+  disEnergy: 0
+  nod: 0
 --- !u!4 &1004492853676531681
 Transform:
   m_ObjectHideFlags: 0
