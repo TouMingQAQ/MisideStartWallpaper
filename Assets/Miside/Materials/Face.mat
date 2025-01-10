@@ -14,7 +14,6 @@ Material:
   m_ValidKeywords:
   - N_F_DDMD_ON
   - N_F_DNO_ON
-  - N_F_HDLS_ON
   - N_F_NLASOBF_ON
   - N_F_O_ON
   - N_F_RDC_ON
@@ -241,7 +240,7 @@ Material:
     - _N_F_FR: 0
     - _N_F_GLO: 0
     - _N_F_GLOT: 0
-    - _N_F_HDLS: 1
+    - _N_F_HDLS: 0
     - _N_F_HPSS: 0
     - _N_F_MC: 0
     - _N_F_MSSOLTFO: 0
