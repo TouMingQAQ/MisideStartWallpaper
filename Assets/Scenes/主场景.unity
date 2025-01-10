@@ -5167,7 +5167,7 @@ MonoBehaviour:
   lookAtIkWeight: 0
   lookAtTargetIkWeight: 0
   noding: 0
-  nodStartDelay: 0.0225
+  nodStartDelay: 0
   headOffset: {x: 0, y: 0.375, z: 0}
   nodEnd: {x: 0, y: -0.1, z: 0}
   nodCurve:
@@ -5223,7 +5223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSamples: []
   miside: {fileID: 919132148587044793}
-  nodEnergy: 0.016
+  nodEnergy: 0.01625
   currentEnergy: 0
   disEnergy: 0
   nod: 0
