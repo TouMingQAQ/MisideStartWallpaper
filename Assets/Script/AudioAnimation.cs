@@ -15,7 +15,7 @@ public class AudioAnimation : MonoBehaviour
     private int offset;
     private int byteCount;
     public float energy;
-    public MitaStart mita;
+    public MiSideStart miside;
     public float nodEnergy;
     private bool nod = false;
     private void Awake()
@@ -31,7 +31,7 @@ public class AudioAnimation : MonoBehaviour
     {
         if (nod)
         {
-            mita.NodOnShot();
+            miside.NodOnShot();
             nod = false;
         }
     }

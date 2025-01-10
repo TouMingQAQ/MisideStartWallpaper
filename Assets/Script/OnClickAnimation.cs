@@ -9,7 +9,7 @@ public class OnClickAnimation : MonoBehaviour,IPointerClickHandler
     private static readonly int OnClick = Animator.StringToHash("OnClick");
     public Animator animator;
     public EventReference onClickMisideAudio;
-    public MitaStart mitaStart;
+    public MiSideStart misideStart;
     public ClickParticle clickParticle;
 
     public int clickCount = 2;
@@ -56,7 +56,7 @@ public class OnClickAnimation : MonoBehaviour,IPointerClickHandler
 
     void SetAnimation()
     {
-        mitaStart.HideControl();
+        misideStart.HideControl();
         animator.SetTrigger(OnClick);
     }
 }

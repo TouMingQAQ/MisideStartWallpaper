@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using VInspector;
 using Random = UnityEngine.Random;
 
 public class ClickParticle : MonoBehaviour
 {
-    public ParticleSystem particleSystem;
+    [SerializeField,ReadOnly]
+    private ParticleSystem particleSystem;
     public List<ParticleSystem> clickParticles = new();
     public Canvas canvas;
     

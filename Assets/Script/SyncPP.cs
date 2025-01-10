@@ -11,7 +11,6 @@ public class SyncPP : MonoBehaviour
     private void Awake()
     {
         volume.profile.TryGet(out colorAdjustments);
-
     }
 
     private void Update()
