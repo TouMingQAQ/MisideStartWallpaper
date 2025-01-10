@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: MitaStart
+  companyName: MisideStart
   productName: "\u7C73\u5854\u5F00\u573A"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
