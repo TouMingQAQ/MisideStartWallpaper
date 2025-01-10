@@ -5161,7 +5161,7 @@ MonoBehaviour:
   - 0.14
   - 0.1
   - 0.06
-  startAnimationRange: {x: 1, y: 4}
+  startAnimationRange: {x: 0, y: 5}
   canControl: 1
   noding: 0
   nodStartDelay: 0.0225
