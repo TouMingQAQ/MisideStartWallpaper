@@ -47,7 +47,7 @@ public struct MiSideConfig
         {
             StartAnimationRange = new Vector2Int(0, 5),
             TargetFrameRate = 60,
-            LookAtState = LookAtState.OnlyPress,
+            LookAtState = LookAtState.Always,
             MusicHead = true,
             ClickCount = 2,
             LookAtOffsetMultiplier = new Vector4(3f, 3f, 3f, 3f),
