@@ -36,7 +36,7 @@ public class MouseToWorldControl : MonoBehaviour
     }
     void UpdateTargetPosition()
     {
-        if(control == null || !MiSideStart.config.LookAtMouse)
+        if(control == null || MiSideStart.config.LookAtState == LookAtState.None)
             return;
         var center = Screen.safeArea.center;
 #if !UNITY_ANDROID
@@ -45,7 +45,7 @@ public class MouseToWorldControl : MonoBehaviour
         var mousePos = (Vector2)Input.mousePosition;
 #endif
 #if !UNITY_ANDROID
-        if (!Mouse.current.leftButton.isPressed)
+        if (!Mouse.current.leftButton.isPressed && MiSideStart.config.LookAtState == LookAtState.OnlyPress)
         {
             targetPosition = targetPositionCache;
             return;

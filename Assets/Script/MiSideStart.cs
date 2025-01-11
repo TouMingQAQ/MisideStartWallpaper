@@ -26,10 +26,11 @@ public struct MiSideConfig
     /// 限制帧率
     /// </summary>
     public int TargetFrameRate;
+
     /// <summary>
     /// 跟随鼠标
     /// </summary>
-    public bool LookAtMouse;
+    public LookAtState LookAtState;
     /// <summary>
     /// 跟随音乐点头
     /// </summary>
@@ -46,12 +47,18 @@ public struct MiSideConfig
         {
             StartAnimationRange = new Vector2Int(0, 5),
             TargetFrameRate = 60,
-            LookAtMouse = true,
+            LookAtState = LookAtState.OnlyPress,
             MusicHead = true,
             ClickCount = 2,
             LookAtOffsetMultiplier = new Vector4(3f, 3f, 3f, 3f),
         };
     }
+}
+public enum LookAtState
+{
+    None,
+    Always,
+    OnlyPress,
 }
 public class MiSideStart : MonoBehaviour,IPointerClickHandler
 {
