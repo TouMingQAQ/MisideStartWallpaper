@@ -68,3 +68,4 @@ fmod_editor.log
 Assets/Plugins/FMOD/Cache
 Assets/Plugins/FMOD/Cache
 FMOD/MisideStart/.cache
+.utmp

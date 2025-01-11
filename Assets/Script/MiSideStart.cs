@@ -120,13 +120,6 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
         animator.SetInteger(Init,GetStartAnimationIndex());
     }
 
-    private void Start()
-    {
-#if UNITY_ANDROID
-        StartWallpaperService();
-#endif
-    }
-
     [Button,Tab("Normal")]
     public void TestAnimationWeight()
     {
@@ -155,32 +148,6 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
 
         return 0;
     }
-#if UNITY_ANDROID
-    private AndroidJavaClass activityClass;
-    private AndroidJavaClass wrapperClass;
-    // private AndroidJavaObject wrapperObject;
-    private string activity = "com.unity3d.player.UnityPlayerGameActivity";
-    // private string wrapper = "";
-    public void StartWallpaperService()
-    {
-        // wrapperClass = new AndroidJavaClass(wrapper);
-        // wrapperObject = wrapperClass.CallStatic<AndroidJavaObject>("instance");
-        // wrapperObject.Call("Start");
-        Debug.Log("On Start WallpaperService");
-        activityClass = new AndroidJavaClass(activity);
-        if (activityClass == null)
-        {
-            Debug.LogWarning("activityClass is null");
-        }
-        else
-        {
-            Debug.Log("Start Service");
-            activityClass.CallStatic("StartService");
-        }
-      
-
-    }
-#endif
 
 #if UNITY_EDITOR
     [Button,Tab("Config")]

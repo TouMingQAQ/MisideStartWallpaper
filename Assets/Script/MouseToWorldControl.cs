@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
+#if !UNITY_ANDROID
 using UnityEngine.InputSystem;
+#endif
 using VInspector;
 
 public class MouseToWorldControl : MonoBehaviour
@@ -37,9 +39,19 @@ public class MouseToWorldControl : MonoBehaviour
         if(control == null || !MiSideStart.config.LookAtMouse)
             return;
         var center = Screen.safeArea.center;
+#if !UNITY_ANDROID
         var mousePos = Mouse.current.position.ReadValue();
-#if UNITY_ANDROID
+#else
+        var mousePos = (Vector2)Input.mousePosition;
+#endif
+#if !UNITY_ANDROID
         if (!Mouse.current.leftButton.isPressed)
+        {
+            targetPosition = targetPositionCache;
+            return;
+        }
+#else
+        if (Input.touchCount <= 0)
         {
             targetPosition = targetPositionCache;
             return;
