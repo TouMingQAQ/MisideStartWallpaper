@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using VInspector;
 
 public class MouseToWorldControl : MonoBehaviour
@@ -16,6 +17,7 @@ public class MouseToWorldControl : MonoBehaviour
     public Vector3 velocity;
     public Vector4 offset = Vector4.one;
     private Vector3 targetPositionCache;
+    private Vector3 targetPosition;
     private void OnEnable()
     {
         targetPositionCache = control.position;
@@ -27,10 +29,22 @@ public class MouseToWorldControl : MonoBehaviour
     }
     private void Update()
     {
+        UpdateTargetPosition();
+        control.position = Vector3.SmoothDamp(control.position, targetPosition, ref velocity, smoothTime, maxSpeed);
+    }
+    void UpdateTargetPosition()
+    {
         if(control == null || !MiSideStart.config.LookAtMouse)
             return;
         var center = Screen.safeArea.center;
-        var mousePos = (Vector2)Input.mousePosition;
+        var mousePos = Mouse.current.position.ReadValue();
+#if UNITY_ANDROID
+        if (!Mouse.current.leftButton.isPressed)
+        {
+            targetPosition = targetPositionCache;
+            return;
+        }
+#endif
         var distance = mousePos - center;
       
         var mulX = distance.x < 0 ? offset.x : offset.z;
@@ -45,7 +59,6 @@ public class MouseToWorldControl : MonoBehaviour
             distance.y = -screenHeight * limitY.y;
         }
         mousePos = new Vector2(mulX, mulY) * distance;
-        var position = camera.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, depth));
-        control.position = Vector3.SmoothDamp(control.position, position, ref velocity, smoothTime, maxSpeed);
+        targetPosition = camera.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, depth));
     }
 }

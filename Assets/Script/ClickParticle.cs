@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using VInspector;
 using Random = UnityEngine.Random;
 
@@ -24,7 +25,7 @@ public class ClickParticle : MonoBehaviour
             particleSystem = null;
         }
         particleSystem = particle;
-        var mousePos = Input.mousePosition;
+        var mousePos = Mouse.current.position.ReadValue();
         var position = canvas.worldCamera.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, canvas.planeDistance));
 
         particleSystem.transform.position = position;
