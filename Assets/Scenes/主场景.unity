@@ -5194,7 +5194,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  waitTime: 0.025
+  waitTime: 0
   nodDuration: {x: 0.3, y: 0.4}
   onClickMiSideAudio:
     Guid:
@@ -5223,7 +5223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSamples: []
   miside: {fileID: 919132148587044793}
-  nodEnergy: 0.01625
+  nodEnergy: 0.01725
   currentEnergy: 0
   disEnergy: 0
   nod: 0
