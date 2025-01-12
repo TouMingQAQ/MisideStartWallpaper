@@ -98,7 +98,9 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     [SerializeField]
     private Vector3 nodEnd = new Vector3(0,-0.1f,0);
     [SerializeField]
-    private AnimationCurve nodCurve = AnimationCurve.Linear(0,0,1,1);
+    private AnimationCurve nodCurveStart = AnimationCurve.Linear(0,0,1,1);
+    [SerializeField]
+    private AnimationCurve nodCurveEnd = AnimationCurve.Linear(0,0,1,1);
     [SerializeField]
     private float waitTime = 0.025f;
     [SerializeField]
@@ -199,11 +201,11 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
         noding = true;
         var offset =headOffset;
         var q = DOTween.Sequence();
-        q.AppendInterval(nodStartDelay);
-        var tween = DOTween.To(()=>headOffset,x=>headOffset=x,nodEnd,nodDuration.x).SetEase(nodCurve);
+        // q.AppendInterval(nodStartDelay);
+        var tween = DOTween.To(()=>headOffset,x=>headOffset=x,nodEnd,nodDuration.x).SetEase(nodCurveStart);
         q.Append(tween);
         q.AppendInterval(waitTime);
-        tween = DOTween.To(()=>headOffset,x=>headOffset=x,offset,nodDuration.y).SetEase(nodCurve);
+        tween = DOTween.To(()=>headOffset,x=>headOffset=x,offset,nodDuration.y).SetEase(nodCurveEnd);
         q.Append(tween);
         q.AppendCallback(()=>
         {
