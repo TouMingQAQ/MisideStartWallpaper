@@ -1,3 +1,18 @@
-Unity版本6000.0.32f1，链接unityhub://6000.0.32f1/b2e806cf271c
-使用插件：Final IK,MagicCloth2，RealToon
-模型和动作来自源游戏
+# Unity 项目文档
+
+## Unity 版本
+- **版本：** 6000.0.32f1  
+- **链接：** [在 Unity Hub 中打开](unityhub://6000.0.32f1/b2e806cf271c)
+
+## 使用的插件
+1. **Final IK**
+2. **MagicCloth2**
+3. **RealToon**
+
+## 资源
+- **模型和动画：** 来自原始游戏。
+
+---
+
+### 注意
+请确保所有插件均已正确安装，并与指定的 Unity 版本兼容，以确保功能正常。
