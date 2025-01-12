@@ -2,7 +2,7 @@
 
 ## Unity 版本
 - **版本：** 6000.0.32f1  
-- **链接：** [在 Unity Hub 中打开](unityhub://6000.0.32f1/b2e806cf271c)
+- **链接：** unityhub://6000.0.32f1/b2e806cf271c(先下载UnityHub,然后浏览器输入)
 
 ## 使用的插件
 1. **Final IK**
@@ -10,7 +10,7 @@
 3. **RealToon**
 
 ## 资源
-- **模型和动画：** 来自原始游戏。
+- **模型和动画：** 原游戏解包。游戏链接：https://store.steampowered.com/app/2527500/_MiSide/
 
 ---
 
