@@ -5169,8 +5169,8 @@ MonoBehaviour:
   noding: 0
   nodStartDelay: 0
   headOffset: {x: 0, y: 0.375, z: 0}
-  nodEnd: {x: 0, y: -0.1, z: 0}
-  nodCurve:
+  nodEnd: {x: 0, y: -0.2, z: 0}
+  nodCurveStart:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
@@ -5183,7 +5183,31 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1.335
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  nodCurveEnd:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
       value: 1
       inSlope: 0
       outSlope: 0
