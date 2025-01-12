@@ -8,6 +8,7 @@
 1. **Final IK**
 2. **MagicCloth2**
 3. **RealToon**
+4. **CSCore**
 
 ## 资源
 - **模型和动画：** 原游戏解包。游戏链接：https://store.steampowered.com/app/2527500/_MiSide/
