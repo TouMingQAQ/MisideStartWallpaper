@@ -17,7 +17,7 @@
 10. **vFavorites 2(编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vfavorites-2-263643)**
 
 ## 配置路径
-C:\Users\UserName\AppData\LocalLow\MisideStart\MisideStartWallpaper\MiSideStartConfig.json
+Root\MisideStartWallpaper_Data\StreamingAssets\MiSideStartConfig.json
 ```json
 {
   "StartAnimationRange": {
