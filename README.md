@@ -39,7 +39,7 @@
 
 ## 其他相关链接
 1. [演示视频](https://www.bilibili.com/video/BV1XZcNeaEsd/)
-2. [使用教程]()
+2. [使用教程](https://www.bilibili.com/video/BV1qJc1eDEiU/)
 ---
 
 ### 注意
