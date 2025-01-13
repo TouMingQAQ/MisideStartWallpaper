@@ -1,7 +1,9 @@
 using System;
+using CSCore.CoreAudioAPI;
 using CSCore.SoundIn;
 using CSCore.Streams;
 using UnityEngine;
+using VInspector;
 
 public class AudioAnimation : MonoBehaviour
 {
@@ -24,6 +26,10 @@ public class AudioAnimation : MonoBehaviour
     private float previousEnergy;
     [SerializeField]
     private bool nod = false;
+    [SerializeField,ReadOnly]
+    private string audioDeviceName;
+    [SerializeField,ReadOnly]
+    private string audioDeviceID;
 
     private float averageEnergy = 0f;
     private float energyDecayFactor = 0.95f; // 衰减因子
@@ -64,6 +70,15 @@ public class AudioAnimation : MonoBehaviour
 
     private void Update()
     {
+        var device = _enumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
+        var deviceName = device.FriendlyName;
+        if (deviceName != audioDeviceName)
+        {
+            Debug.Log($"[<color=green>AudioDeviceChange</color>]:{audioDeviceName}=>{deviceName}");
+            audioDeviceName = device.FriendlyName;
+            audioDeviceID = device.DeviceID;
+            ResetCapture();
+        }
         if (!MiSideStart.config.MusicHead)
             return;
         if (nod)
