@@ -17,12 +17,12 @@
 2. 购买WallpaperEngine壁纸引擎。[商店链接](https://store.steampowered.com/app/431960/Wallpaper_Engine/)
 3. 下载并打开WallpaperEngine。
 4. 下载Release程序包并解压。 [下载链接](https://github.com/TouMingQAQ/MisideStartWallpaper/releases/download/0.0.1/MisideStartWallpapaer.zip)
-5. 点击左下角壁纸编辑器。 ![PixPin_2025-01-13_11-33-02](https://github.com/user-attachments/assets/5647d193-f797-4f00-99f3-e50e36d42dd5)
-6. 点击创建壁纸。![PixPin_2025-01-13_11-34-09](https://github.com/user-attachments/assets/cceca657-4196-416b-a0cb-2a200def1c67)
-7. 在文件选择框里选择刚刚下载并解压的程序包里的MisideStartWallpaper.exe文件。![PixPin_2025-01-13_11-37-11](https://github.com/user-attachments/assets/3f079cbc-5c80-4591-a0c1-26ebb0e82962)
-8. 应用壁纸。![PixPin_2025-01-13_11-37-58](https://github.com/user-attachments/assets/9e254048-0ef8-4dcc-b1e2-05cede487dee)
-9. 预览如图。![PixPin_2025-01-13_11-38-12](https://github.com/user-attachments/assets/4fcbdefa-d5b5-410d-a17d-e3a19e50c089)
-10. 关闭编辑器界面，然后就能在WallpapaerEngine中找到设置好的壁纸啦。![PixPin_2025-01-13_11-39-21](https://github.com/user-attachments/assets/bea5f994-9676-4678-a0e5-ef4c993f1e08)
+5. 点击左下角壁纸编辑器。 <br>![PixPin_2025-01-13_11-33-02](https://github.com/user-attachments/assets/5647d193-f797-4f00-99f3-e50e36d42dd5)
+6. 点击创建壁纸。<br>![PixPin_2025-01-13_11-34-09](https://github.com/user-attachments/assets/cceca657-4196-416b-a0cb-2a200def1c67)
+7. 在文件选择框里选择刚刚下载并解压的程序包里的MisideStartWallpaper.exe文件。<br>![PixPin_2025-01-13_11-37-11](https://github.com/user-attachments/assets/3f079cbc-5c80-4591-a0c1-26ebb0e82962)
+8. 应用壁纸。<br>![PixPin_2025-01-13_11-37-58](https://github.com/user-attachments/assets/9e254048-0ef8-4dcc-b1e2-05cede487dee)
+9. 预览如图。<br>![PixPin_2025-01-13_11-38-12](https://github.com/user-attachments/assets/4fcbdefa-d5b5-410d-a17d-e3a19e50c089)
+10. 关闭编辑器界面，然后就能在WallpapaerEngine中找到设置好的壁纸啦。<br>![PixPin_2025-01-13_11-39-21](https://github.com/user-attachments/assets/bea5f994-9676-4678-a0e5-ef4c993f1e08)
 
 
 ## 未来可能实现的功能
