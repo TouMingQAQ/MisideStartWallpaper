@@ -9,6 +9,7 @@ public class AudioAnimation : MonoBehaviour
 
     private WasapiLoopbackCapture capture;
     private SoundInSource soundInSource;
+    private MMDeviceEnumerator _enumerator;
     private byte[] buffer;
     [SerializeField]
     private float[] audioSamples;
@@ -38,13 +39,27 @@ public class AudioAnimation : MonoBehaviour
         capture.Start();
         soundInSource = new SoundInSource(capture);
         soundInSource.DataAvailable += OnDataAvailable;
+        _enumerator = new MMDeviceEnumerator();
+    }
+
+    void ResetCapture()
+    {
+        capture.Stop();
+        capture.Dispose();
+        soundInSource.Dispose();
+        capture = new WasapiLoopbackCapture();
+        capture.Initialize();
+        capture.Start();
+        soundInSource = new SoundInSource(capture);
+        soundInSource.DataAvailable += OnDataAvailable;
     }
 
     private void OnDestroy()
     {
-        soundInSource.Dispose();
+        _enumerator.Dispose();
         capture.Stop();
         capture.Dispose();
+        soundInSource.Dispose();
     }
 
     private void Update()
