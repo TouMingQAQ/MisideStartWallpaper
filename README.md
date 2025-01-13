@@ -47,23 +47,23 @@ Root\MisideStartWallpaper_Data\StreamingAssets\MiSideStartConfig.json
 }
 ```
 > [!NOTE]
->StartAnimationRange:开场动画的范围，假如x为0，y为1则必定播放下标为0的动画(邪恶米塔在哪呢？)
+>StartAnimationRange : 开场动画的范围，假如x为0，y为1则必定播放下标为0的动画(邪恶米塔在哪呢？)
 > 
->LookAtOffsetMultiplier:视野跟踪的倍率，x,y是屏幕左侧XY轴的倍率，z,w是屏幕右侧XY轴的倍率。
+>LookAtOffsetMultiplier : 视野跟踪的倍率，x,y是屏幕左侧XY轴的倍率，z,w是屏幕右侧XY轴的倍率。
 > 
->TargetFrameRate:壁纸目标刷新率，如果出现GPU占用过高，可以尝试调低此数值看看。
+>TargetFrameRate : 壁纸目标刷新率，如果出现GPU占用过高，可以尝试调低此数值看看。
 > 
->Resolution:分辨率设置。
+>Resolution : 分辨率设置。
 > 
->LookAtState:视野跟踪模式，目前有三种模式，0:无任何跟踪、1：始终跟踪鼠标、2：只有当鼠标左键按下时才会跟踪。
+>LookAtState : 视野跟踪模式，目前有三种模式，0:无任何跟踪、1：始终跟踪鼠标、2：只有当鼠标左键按下时才会跟踪。
 > 
->MusicHead:跟随音乐点头的开关。
+>MusicHead : 跟随音乐点头的开关。
 > 
->MusicMinEnergy:点头触发的最小值。
+>MusicMinEnergy : 点头触发的最小值。
 > 
->ClickCount:短时间内触发点击动画需要的点击次数。(小于等于0时不触发)
+>ClickCount : 短时间内触发点击动画需要的点击次数。(小于等于0时不触发)
 > 
->PlaySoundOnClick:点击音频是否播放
+>PlaySoundOnClick : 点击音频是否播放
 
 > [!TIP]
 > 修改配置表后需要重启壁纸来应用配置表
