@@ -1,5 +1,5 @@
-using NAudio.CoreAudioApi;
-using NAudio.Wave;
+using CSCore.SoundIn;
+using CSCore.Streams;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,19 +11,23 @@ namespace MitaMisiteAction.Nod
     // 米塔点头控制器
     {
         private WasapiLoopbackCapture capture;
+        private SoundInSource soundInSource;
         private byte[] buffer;
-        private int byteCount;
+        [SerializeField]
         private float[] audioSamples;
+        private int byteCount;
+        private int offset;
+        [SerializeField,ReadOnly]
         public bool nod { get; private set; };
         private bool verbose = false;
-        private float currentEnergy = 0;
+        [SerializeField,ReadOnly]
+        private float currentEnergy;
         private float nodEnergy = 0.01f;
-        private object lockObject = new object(); // 用于线程同步
         private bool isListening = false;
 
         public void Stop()
         {
-            capture.StopRecording();
+            capture.Stop();
             capture.Dispose();
             isListening = false;
             if (verbose)
@@ -34,7 +38,8 @@ namespace MitaMisiteAction.Nod
 
         public void Start()
         {
-            capture.StartRecording();
+            capture.Initialize();
+            capture.Start();
             isListening = true;
             if (verbose)
             {
@@ -51,7 +56,8 @@ namespace MitaMisiteAction.Nod
         {
             this.verbose = verbose;
             capture = new WasapiLoopbackCapture();
-            capture.DataAvailable += onDataRecv;
+            soundInSource = new SoundInSource(capture);
+            soundInSource.DataAvailable += onDataRecv;
             audioSamples = new float[bufferSize];
             if (startListen) 
             {
@@ -59,49 +65,46 @@ namespace MitaMisiteAction.Nod
             }
         }
 
-        private void onDataRecv(object sender, WaveInEventArgs e)
+        private void onDataRecv(object sender, DataAvailableEventArgs e)
         {
-            buffer = e.Buffer;
-            byteCount = e.BytesRecorded;
-            lock (lockObject) // 确保线程安全
-            {
-                ParseBuffer();
-            }
+            buffer = e.Data;
+            byteCount = e.ByteCount;
+            offset = e.Offset;
+            ParseBuffer();
         }
 
         private void ParseBuffer()
         {
-            if (buffer == null || buffer.Length % sizeof(float) != 0)
+            if (buffer == null || buffer.Length == 0)
                 return;
 
+            // 将 buffer 转换为浮点数据
             int sampleCount = byteCount / sizeof(float);
+            int startCount = offset / sizeof(float);
+            int count = sampleCount-startCount;
+            audioSamples = new float[count];
             float energy = 0;
-
-            for (int i = 0; i < sampleCount; i++)
+            for (int i = startCount; i < sampleCount; i++)
             {
                 var sample = BitConverter.ToSingle(buffer, i * sizeof(float));
+                audioSamples[i] = sample;
                 energy += sample * sample; // 能量为振幅的平方和
             }
-
-            energy /= sampleCount; // 平均能量
-
-            lock (lockObject) // 确保线程安全
+            energy /= count; // 平均能量
+            disEnergy = currentEnergy - energy;
+            currentEnergy = energy;
+            if (currentEnergy > nodEnergy && disEnergy > 0)
             {
-                float energyDifference = currentEnergy - energy;
-                currentEnergy = energy;
-
-                if (currentEnergy > nodEnergy && energyDifference > 0)
-                {
-                    nod = true;
-                }
-                else
-                {
-                    nod = false;
-                }
-                if (verbose)
-                {
-                    Console.WriteLine($"Energy: {currentEnergy:F3}, Nod: {nod}")
-                }
+                nod = true;
+            }
+            else
+            {
+                nod = false;
+            }
+            if (verbose)
+            {
+                string debugStr = $"Energy: {currentEnergy:F2} DisEnergy: {disEnergy:F2} Nod: {nod}";
+                Console.WriteLine(debugStr);
             }
         }
     }
