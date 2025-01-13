@@ -50,6 +50,8 @@ StartAnimationRange:开场动画的范围，假如x为0，y为1则必定播放�
 - **模型和动画：** 原游戏解包。[游戏商店链接](https://store.steampowered.com/app/2527500/_MiSide/)
 
 ## 使用教程
+
+### WallpaperEngine壁纸引擎
 1. 下载Steam并注册账号。[官网](https://store.steampowered.com/)
 2. 购买WallpaperEngine壁纸引擎。[商店链接](https://store.steampowered.com/app/431960/Wallpaper_Engine/)
 3. 下载并打开WallpaperEngine。
@@ -60,6 +62,14 @@ StartAnimationRange:开场动画的范围，假如x为0，y为1则必定播放�
 8. 应用壁纸。<br>![PixPin_2025-01-13_11-37-58](https://github.com/user-attachments/assets/9e254048-0ef8-4dcc-b1e2-05cede487dee)
 9. 预览如图。<br>![PixPin_2025-01-13_11-38-12](https://github.com/user-attachments/assets/4fcbdefa-d5b5-410d-a17d-e3a19e50c089)
 10. 关闭编辑器界面，然后就能在WallpapaerEngine中找到设置好的壁纸啦。<br>![PixPin_2025-01-13_11-39-21](https://github.com/user-attachments/assets/bea5f994-9676-4678-a0e5-ef4c993f1e08)
+
+### Lively Wallpaper(免费开源替代)
+1. [下载Lively Wallpaper](https://github.com/rocksdanister/lively/releases)<br>![Screenshot 2025-01-13 134451](https://github.com/user-attachments/assets/bf2fd4e0-0d6d-489d-8131-2b643ef84785)
+2. 点击Add Wallpaper。<br>![Screenshot 2025-01-13 135141](https://github.com/user-attachments/assets/0cc550b3-aa6d-4f21-a690-66ddab0cd8b1)
+3. 点击Choose a file。<br>![image](https://github.com/user-attachments/assets/dfd7533f-cdd9-4a38-92f6-0bbfcccc650e)
+4. 选中所有文件。<br>![Screenshot 2025-01-13 134728](https://github.com/user-attachments/assets/79d18528-38c3-43e6-b4a5-f849b176d11b)
+5. 点击确定，如果有弹窗提示，继续点击确定<br>![Screenshot 2025-01-13 134806](https://github.com/user-attachments/assets/8bbc37f3-0885-40db-8765-e16d0dabfb7e)
+6. 选择壁纸，然后就可以使用啦。<br>![image](https://github.com/user-attachments/assets/a8264aff-f553-4c38-9eb2-45861d6666c3)
 
 ## 0.0.2版本更新计划
 - [ ] 点击动画开关
