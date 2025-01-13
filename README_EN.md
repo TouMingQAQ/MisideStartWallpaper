@@ -9,7 +9,7 @@
 2. **MagicCloth2(cloth simulation)  [Asset store link](https://assetstore.unity.com/packages/tools/physics/magica-cloth-2-242307)**
 3. **RealToon(anime rendering)  [Asset store link](https://assetstore.unity.com/packages/vfx/shaders/realtoon-pro-anime-toon-shader-65518)**
 4. **CSCore(decice audio sampling)  [Nuget](https://www.nuget.org/packages/CSCode)**
-5. **Fmod(audio plaing) [Official link](https://www.fmod.com/)**
+5. **Fmod(audio playing) [Official link](https://www.fmod.com/)**
 6. **vFolders 2(editor extension) [Asset store link](https://assetstore.unity.com/packages/tools/utilities/vfolders-2-255470)**
 7. **vInspector 2(editor extension) [Asset store link](https://assetstore.unity.com/packages/tools/utilities/vinspector-2-252297)**
 8. **vHierarchy 2(editor extension) [Asset store link](https://assetstore.unity.com/packages/tools/utilities/vhierarchy-2-251320)**
