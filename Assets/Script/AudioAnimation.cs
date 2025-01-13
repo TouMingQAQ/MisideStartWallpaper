@@ -7,8 +7,6 @@ using MitaMisiteAction.Nod;
 
 public class AudioAnimation : MonoBehaviour
 {
-    private MitaNodController nodController;
-
     [SerializeField]
     private MitaNodController nodController;
 
