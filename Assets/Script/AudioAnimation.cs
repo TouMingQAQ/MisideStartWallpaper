@@ -33,6 +33,13 @@ public class AudioAnimation : MonoBehaviour
         soundInSource.DataAvailable += OnDataAvailable;
     }
 
+    private void OnDestroy()
+    {
+        soundInSource.Dispose();
+        capture.Stop();
+        capture.Dispose();
+    }
+
     private void Update()
     {
         if(!MiSideStart.config.MusicHead)

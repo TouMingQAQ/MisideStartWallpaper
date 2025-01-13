@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using DG.Tweening;
-using FMODUnity;
 using Newtonsoft.Json;
 using RootMotion.FinalIK;
 using UnityEngine;
@@ -28,6 +27,10 @@ public struct MiSideConfig
     public int TargetFrameRate;
 
     /// <summary>
+    /// 分辨率
+    /// </summary>
+    public Vector2Int Resolution;
+    /// <summary>
     /// 跟随鼠标
     /// </summary>
     public LookAtState LookAtState;
@@ -37,9 +40,19 @@ public struct MiSideConfig
     public bool MusicHead;
 
     /// <summary>
+    /// 点头需要的最小能量值
+    /// </summary>
+    public float MusicMinEnergy;
+
+    /// <summary>
     /// 触发点击动画的连续点击次数
     /// </summary>
     public int ClickCount;
+
+    /// <summary>
+    /// 点击时是否播放音频
+    /// </summary>
+    public bool PlaySoundOnClick;
     
     public static MiSideConfig Default()
     {
@@ -51,6 +64,9 @@ public struct MiSideConfig
             MusicHead = true,
             ClickCount = 2,
             LookAtOffsetMultiplier = new Vector4(3f, 3f, 3f, 3f),
+            PlaySoundOnClick = true,
+            MusicMinEnergy = 0.0125f,
+            Resolution = new Vector2Int(1920, 1080),
         };
     }
 }
@@ -72,6 +88,7 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     public LookAtIK lookAtIk;
     public ParticleSystem winkParticles;
     public Transform winkRoot;
+    public AudioAnimation audioAnimation;
     [Tab("Config")]
     [SerializeField] private string ConfigPath;
     [Tab("Normal")] 
@@ -107,7 +124,8 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     private Vector2 nodDuration = new Vector2(0.3f,0.4f);
     
     [Tab("OnClick")]
-    public EventReference onClickMiSideAudio;
+    public AudioSource audioSource;
+    public AudioClip onClickClip;
     public ClickParticle clickParticle;
     public int clickCount = 2;
     public Vector2 clickDelayRange = new Vector2(0.4f, 0.6f);
@@ -119,9 +137,10 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     
     private void Awake()
     {
-
-        ConfigPath = Application.persistentDataPath + "/MiSideStartConfig.json";
+        ConfigPath = Application.streamingAssetsPath + "/MiSideStartConfig.json";
         LoadConfig();
+        Screen.SetResolution(config.Resolution.x, config.Resolution.y, true);
+        audioAnimation.nodEnergy = config.MusicMinEnergy;
         mouseControl.offset = config.LookAtOffsetMultiplier;
         Application.targetFrameRate = targetFrameRate;
         HideControl();
@@ -162,12 +181,20 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     [Button,Tab("Config")]
     public void OpenConfig()
     {
-        EditorUtility.RevealInFinder(Application.persistentDataPath);
+        EditorUtility.RevealInFinder(Application.streamingAssetsPath);
     }
 #endif
     void LoadConfig()
     {
-        if (!File.Exists(ConfigPath))
+        FileInfo fileInfo = new FileInfo(ConfigPath);
+        if (fileInfo.Directory == null)
+        {
+            Debug.LogError($"ConfigFileError:{ConfigPath}");
+            return;
+        }
+        if(!fileInfo.Directory.Exists)
+            Directory.CreateDirectory(fileInfo.Directory.FullName);
+        if (!fileInfo.Exists)
         {
             config = MiSideConfig.Default();
             var json = JsonConvert.SerializeObject(config, Formatting.Indented,new VectorConverter());
@@ -256,6 +283,8 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     {
         if(!canControl)
             return;
+        if(clickCount <= 0)
+            return;
         clickCountTimer++;
         if (clickTimer <= 0)
         {
@@ -269,7 +298,8 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
             clickTimer = 0;
         }
         clickParticle.OnClick();
-        RuntimeManager.PlayOneShot(onClickMiSideAudio);
+        if(config.PlaySoundOnClick)
+            audioSource.PlayOneShot(onClickClip);
         void SetAnimation()
         {
             HideControl();
