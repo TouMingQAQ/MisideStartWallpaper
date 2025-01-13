@@ -1,12 +1,14 @@
 using System;
 using UnityEngine;
-#if !UNITY_ANDROID
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-#endif
+
 using VInspector;
 
 public class MouseToWorldControl : MonoBehaviour
 {
+    public EventSystem normalEventSystem;
+    public EventSystem androidEventSystem;
     public Transform control;
     public float depth = 2;
 
@@ -39,24 +41,24 @@ public class MouseToWorldControl : MonoBehaviour
         if(control == null || MiSideStart.config.LookAtState == LookAtState.None)
             return;
         var center = Screen.safeArea.center;
-#if !UNITY_ANDROID
-        var mousePos = Mouse.current.position.ReadValue();
+#if UNITY_ANDROID
+        var mousePos = Touchscreen.current.position.ReadValue();
 #else
-        var mousePos = (Vector2)Input.mousePosition;
+        var mousePos = Mouse.current.position.ReadValue();
 #endif
-#if !UNITY_ANDROID
+        #if UNITY_ANDROID
+        if (Touchscreen.current.primaryTouch.isInProgress)
+        {
+            targetPosition = targetPositionCache;
+            return;
+        }
+        #else
         if (!Mouse.current.leftButton.isPressed && MiSideStart.config.LookAtState == LookAtState.OnlyPress)
         {
             targetPosition = targetPositionCache;
             return;
         }
-#else
-        if (Input.touchCount <= 0)
-        {
-            targetPosition = targetPositionCache;
-            return;
-        }
-#endif
+        #endif
         var distance = mousePos - center;
       
         var mulX = distance.x < 0 ? offset.x : offset.z;

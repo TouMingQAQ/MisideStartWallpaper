@@ -140,7 +140,11 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     
     private void Awake()
     {
+        #if UNITY_ANDROID
+        ConfigPath = Application.persistentDataPath + "/MiSideStartConfig.json";
+        #else
         ConfigPath = Application.streamingAssetsPath + "/MiSideStartConfig.json";
+        #endif
         LoadConfig();
         // Screen.SetResolution(config.Resolution.x, config.Resolution.y, true);
         audioAnimation.nodEnergy = config.MusicMinEnergy;
