@@ -89,6 +89,7 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     public ParticleSystem winkParticles;
     public Transform winkRoot;
     public AudioAnimation audioAnimation;
+    public AudioSource audioSource;
     [Tab("Config")]
     [SerializeField] private string ConfigPath;
     [Tab("Normal")] 
@@ -124,8 +125,6 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     private Vector2 nodDuration = new Vector2(0.3f,0.4f);
     
     [Tab("OnClick")]
-    public AudioSource audioSource;
-    public AudioClip onClickClip;
     public ClickParticle clickParticle;
     public int clickCount = 2;
     public Vector2 clickDelayRange = new Vector2(0.4f, 0.6f);
@@ -134,6 +133,10 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     private float clickTimer = 0;
     [SerializeField,ReadOnly]
     private int clickCountTimer = 0;
+
+    [Tab("AudioClip")]
+    public AudioClip winkClip;
+    public AudioClip onClickClip;
     
     private void Awake()
     {
@@ -260,6 +263,7 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
 
     public void Wink()
     {
+        audioSource.PlayOneShot(winkClip);
         winkParticles.Play();
     }
 
