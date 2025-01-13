@@ -4,14 +4,21 @@
 - **版本：** 6000.0.32f1  
 - **链接：** unityhub://6000.0.32f1/b2e806cf271c(先下载UnityHub,然后浏览器输入)
 
-## 使用的插件
+## 主要插件
 1. **Final IK(头部和眼球跟踪)  [商店地址](https://assetstore.unity.com/packages/tools/animation/final-ik-14290)**
 2. **MagicCloth2(布料模拟)  [商店地址](https://assetstore.unity.com/packages/tools/physics/magica-cloth-2-242307)**
 3. **RealToon(三渲二)  [商店地址](https://assetstore.unity.com/packages/vfx/shaders/realtoon-pro-anime-toon-shader-65518)**
 4. **CSCore(设备音频采样)  [Nuget](https://www.nuget.org/packages/CSCode)**
 5. **Fmod(音频播放中间件) [官网](https://www.fmod.com/)**
+6. **vFolders 2(编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vfolders-2-255470)**
+7. **vInspector 2(编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vinspector-2-252297)**
+8. **vHierarchy 2(编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vhierarchy-2-251320)**
+9. **vTabs 2(编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vtabs-2-253396)**
+10. **vFavorites 2(编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vfavorites-2-263643)**
+
 ## 资源
 - **模型和动画：** 原游戏解包。[游戏商店链接](https://store.steampowered.com/app/2527500/_MiSide/)
+
 ## 使用教程
 1. 下载Steam并注册账号。[官网](https://store.steampowered.com/)
 2. 购买WallpaperEngine壁纸引擎。[商店链接](https://store.steampowered.com/app/431960/Wallpaper_Engine/)
@@ -24,12 +31,15 @@
 9. 预览如图。<br>![PixPin_2025-01-13_11-38-12](https://github.com/user-attachments/assets/4fcbdefa-d5b5-410d-a17d-e3a19e50c089)
 10. 关闭编辑器界面，然后就能在WallpapaerEngine中找到设置好的壁纸啦。<br>![PixPin_2025-01-13_11-39-21](https://github.com/user-attachments/assets/bea5f994-9676-4678-a0e5-ef4c993f1e08)
 
-
 ## 未来可能实现的功能
 - [ ] 换装
 - [ ] 更多的开屏动画
 - [ ] 自定义背景
 - [ ] 安卓壁纸（短时间没希望）
+
+## 其他相关链接
+1. [演示视频](https://www.bilibili.com/video/BV1XZcNeaEsd/)
+2. [使用教程]()
 ---
 
 ### 注意
