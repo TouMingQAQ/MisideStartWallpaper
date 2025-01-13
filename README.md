@@ -1,20 +1,24 @@
-# MisideStartWallpapaer
+![MisideStartWallpapaer](https://socialify.git.ci/TouMingQAQ/MisideStartWallpaper/image?description=1&font=Raleway&forks=1&issues=1&language=1&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
+
+# Miside Start Wallpapaer
+
+- 一款使用 Blender 对于 Miside 主菜单页面的壁纸实现 
 
 ## Unity 版本
 - **版本：** 6000.0.32f1  
 - **链接：** unityhub://6000.0.32f1/b2e806cf271c(先下载UnityHub,然后浏览器输入)
 
 ## 主要插件
-1. **Final IK(头部和眼球跟踪)  [商店地址](https://assetstore.unity.com/packages/tools/animation/final-ik-14290)**
-2. **MagicCloth2(布料模拟)  [商店地址](https://assetstore.unity.com/packages/tools/physics/magica-cloth-2-242307)**
-3. **RealToon(三渲二)  [商店地址](https://assetstore.unity.com/packages/vfx/shaders/realtoon-pro-anime-toon-shader-65518)**
-4. **CSCore(设备音频采样)  [Nuget](https://www.nuget.org/packages/CSCode)**
-5. **Fmod(音频播放中间件) [官网](https://www.fmod.com/)**
-6. **vFolders 2(编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vfolders-2-255470)**
-7. **vInspector 2(编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vinspector-2-252297)**
-8. **vHierarchy 2(编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vhierarchy-2-251320)**
-9. **vTabs 2(编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vtabs-2-253396)**
-10. **vFavorites 2(编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vfavorites-2-263643)**
+1. **Final IK (头部和眼球跟踪)  [商店地址](https://assetstore.unity.com/packages/tools/animation/final-ik-14290)**
+2. **MagicCloth2 (布料模拟)  [商店地址](https://assetstore.unity.com/packages/tools/physics/magica-cloth-2-242307)**
+3. **RealToon (三渲二)  [商店地址](https://assetstore.unity.com/packages/vfx/shaders/realtoon-pro-anime-toon-shader-65518)**
+4. **CSCore (设备音频采样)  [Nuget](https://www.nuget.org/packages/CSCode)**
+5. **Fmod (音频播放中间件) [官网](https://www.fmod.com/)**
+6. **vFolders 2 (编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vfolders-2-255470)**
+7. **vInspector 2 (编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vinspector-2-252297)**
+8. **vHierarchy 2 (编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vhierarchy-2-251320)**
+9. **vTabs 2 (编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vtabs-2-253396)**
+10. **vFavorites 2 (编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vfavorites-2-263643)**
 
 ## 配置路径
 Root\MisideStartWallpaper_Data\StreamingAssets\MiSideStartConfig.json
@@ -42,33 +46,36 @@ Root\MisideStartWallpaper_Data\StreamingAssets\MiSideStartConfig.json
   "PlaySoundOnClick": true
 }
 ```
-StartAnimationRange:开场动画的范围，假如x为0，y为1则必定播放下标为0的动画(邪恶米塔在哪呢？)
-<br>LookAtOffsetMultiplier:视野跟踪的倍率，x,y是屏幕左侧XY轴的倍率，z,w是屏幕右侧XY轴的倍率。
-<br>TargetFrameRate:壁纸目标刷新率，如果出现GPU占用过高，可以尝试调低此数值看看。
-<br>Resolution:分辨率设置。
-<br>LookAtState:视野跟踪模式，目前有三种模式，0:无任何跟踪、1：始终跟踪鼠标、2：只有当鼠标左键按下时才会跟踪。
-<br>MusicHead:跟随音乐点头的开关。
-<br>MusicMinEnergy:点头触发的最小值。
-<br>ClickCount:短时间内触发点击动画需要的点击次数。(小于等于0时不触发)
-<br>PlaySoundOnClick:点击音频是否播放
-### PS
-修改配置表后需要重启壁纸来应用配置表
+> [!NOTE]
+>StartAnimationRange:开场动画的范围，假如x为0，y为1则必定播放下标为0的动画(邪恶米塔在哪呢？)
+>LookAtOffsetMultiplier:视野跟踪的倍率，x,y是屏幕左侧XY轴的倍率，z,w是屏幕右侧XY轴的倍率。
+>TargetFrameRate:壁纸目标刷新率，如果出现GPU占用过高，可以尝试调低此数值看看。
+>Resolution:分辨率设置。
+>LookAtState:视野跟踪模式，目前有三种模式，0:无任何跟踪、1：始终跟踪鼠标、2：只有当鼠标左键按下时才会跟踪。
+>MusicHead:跟随音乐点头的开关。
+>MusicMinEnergy:点头触发的最小值。
+>ClickCount:短时间内触发点击动画需要的点击次数。(小于等于0时不触发)
+>PlaySoundOnClick:点击音频是否播放
 
+> [!TIP]
+> 修改配置表后需要重启壁纸来应用配置表
 
 ## 资源
 - **模型和动画：** 原游戏解包。[游戏商店链接](https://store.steampowered.com/app/2527500/_MiSide/)
 
-## 0.0.2版本更新计划
+## TODO
+
+### 0.0.2
 - [x] 点击动画开关
 - [x] 添加眨眼音效
 - [x] 分辨率自定义
 - [x] 音乐点头触发阈值自定义
 - [x] 修复已知BUG
 
-## 0.0.3版本更新计划
+### 0.0.3
 - [ ] 更多的米塔
 
-## 未来可能实现的功能
+### Future
 - [ ] 换装
 - [ ] 更多的开屏动画
 - [ ] 自定义背景
@@ -103,5 +110,5 @@ StartAnimationRange:开场动画的范围，假如x为0，y为1则必定播放�
 2. [使用教程](https://www.bilibili.com/video/BV1qJc1eDEiU/)
 ---
 
-### 注意
-请确保所有插件均已正确安装，并与指定的 Unity 版本兼容，以确保功能正常。
+> [!TIP]
+> 请确保所有插件均已正确安装，并与指定的 Unity 版本兼容，以确保功能正常。
