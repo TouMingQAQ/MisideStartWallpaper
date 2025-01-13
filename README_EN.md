@@ -89,5 +89,5 @@ After changes to config, restart to apply.
 2. [Usage tutorial](https://www.bilibili.com/video/BV1qJc1eDEiU/)
 ---
 
-### 注意
-请确保所有插件均已正确安装，并与指定的 Unity 版本兼容，以确保功能正常。
+### Attention
+Please make sure all plugins are installed correctly and compatible with the specified Unity version to ensure it works properly.
