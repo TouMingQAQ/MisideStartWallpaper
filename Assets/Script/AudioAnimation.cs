@@ -1,14 +1,12 @@
 using System;
-using System.Collections.Generic;
-using System.IO;
-using CSCore.CoreAudioAPI;
 using CSCore.SoundIn;
 using CSCore.Streams;
 using UnityEngine;
-using VInspector;
 
 public class AudioAnimation : MonoBehaviour
 {
+    private const int BufferSize = 2048;   // 缓冲区大小
+
     private WasapiLoopbackCapture capture;
     private SoundInSource soundInSource;
     private MMDeviceEnumerator _enumerator;
@@ -19,17 +17,20 @@ public class AudioAnimation : MonoBehaviour
     private int byteCount;
    
     public MiSideStart miside;
-    public float nodEnergy;
-    [SerializeField,ReadOnly]
+    public float nodEnergyThreshold = 0.01f; // 初始阈值
+    [SerializeField]
     private float currentEnergy;
-    [SerializeField,ReadOnly]
-    private float disEnergy;
-    [SerializeField,ReadOnly]
+    [SerializeField]
+    private float previousEnergy;
+    [SerializeField]
     private bool nod = false;
-    [SerializeField,ReadOnly]
-    private string audioDeviceName;
-    [SerializeField,ReadOnly]
-    private string audioDeviceID;
+
+    private float averageEnergy = 0f;
+    private float energyDecayFactor = 0.95f; // 衰减因子
+    private float peakDetectionThreshold = 1.5f; // 峰值检测阈值
+    private float smoothingFactor = 0.7f; // 平滑滤波因子
+
+    public float nodEnergy; // 添加 nodEnergy 属性
 
     private void Awake()
     {
@@ -63,16 +64,7 @@ public class AudioAnimation : MonoBehaviour
 
     private void Update()
     {
-        var device = _enumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
-        var deviceName = device.FriendlyName;
-        if (deviceName != audioDeviceName)
-        {
-            Debug.Log($"[<color=green>AudioDeviceChange</color>]:{audioDeviceName}=>{deviceName}");
-            audioDeviceName = device.FriendlyName;
-            audioDeviceID = device.DeviceID;
-            ResetCapture();
-        }
-        if(!MiSideStart.config.MusicHead)
+        if (!MiSideStart.config.MusicHead)
             return;
         if (nod)
         {
@@ -97,21 +89,38 @@ public class AudioAnimation : MonoBehaviour
         // 将 buffer 转换为浮点数据
         int sampleCount = byteCount / sizeof(float);
         int startCount = offset / sizeof(float);
-        int count = sampleCount-startCount;
+        int count = sampleCount - startCount;
         audioSamples = new float[count];
         float energy = 0;
         for (int i = startCount; i < sampleCount; i++)
         {
             var sample = BitConverter.ToSingle(buffer, i * sizeof(float));
-            audioSamples[i] = sample;
+            audioSamples[i - startCount] = sample; // Corrected index
             energy += sample * sample; // 能量为振幅的平方和
         }
         energy /= count; // 平均能量
-        disEnergy = currentEnergy - energy;
-        currentEnergy = energy;
-        if (currentEnergy > nodEnergy && disEnergy > 0)
-            nod = true;
-    }
-  
 
+        // 平滑滤波
+        energy = SmoothingFilter(energy);
+
+        // 更新平均能量
+        averageEnergy = averageEnergy * energyDecayFactor + energy * (1 - energyDecayFactor);
+
+        // 自适应阈值检测
+        float adaptiveThreshold = nodEnergy + nodEnergyThreshold * averageEnergy;
+
+        // 检测节拍
+        if (energy > adaptiveThreshold && energy > peakDetectionThreshold * averageEnergy)
+        {
+            nod = true;
+        }
+
+        previousEnergy = energy;
+        currentEnergy = energy;
+    }
+
+    private float SmoothingFilter(float value)
+    {
+        return smoothingFactor * previousEnergy + (1 - smoothingFactor) * value;
+    }
 }
