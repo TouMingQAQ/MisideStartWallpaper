@@ -31,23 +31,48 @@ C:\Users\UserName\AppData\LocalLow\MisideStart\MisideStartWallpaper\MiSideStartC
     "w": 3.0
   },
   "TargetFrameRate": 60,
+  "Resolution": {
+    "x": 1600,
+    "y": 900
+  },
   "LookAtState": 1,
   "MusicHead": true,
-  "ClickCount": 2
+  "MusicMinEnergy": 0.0125,
+  "ClickCount": 2,
+  "PlaySoundOnClick": true
 }
 ```
 StartAnimationRange:开场动画的范围，假如x为0，y为1则必定播放下标为0的动画(邪恶米塔在哪呢？)
 <br>LookAtOffsetMultiplier:视野跟踪的倍率，x,y是屏幕左侧XY轴的倍率，z,w是屏幕右侧XY轴的倍率。
 <br>TargetFrameRate:壁纸目标刷新率，如果出现GPU占用过高，可以尝试调低此数值看看。
+<br>Resolution:分辨率设置。
 <br>LookAtState:视野跟踪模式，目前有三种模式，0:无任何跟踪、1：始终跟踪鼠标、2：只有当鼠标左键按下时才会跟踪。
 <br>MusicHead:跟随音乐点头的开关。
-<br>ClickCount:短时间内触发点击动画需要的点击次数。
+<br>MusicMinEnergy:点头触发的最小值。
+<br>ClickCount:短时间内触发点击动画需要的点击次数。(小于等于0时不触发)
+<br>PlaySoundOnClick:点击音频是否播放
 ### PS
 修改配置表后需要重启壁纸来应用配置表
 
 
 ## 资源
 - **模型和动画：** 原游戏解包。[游戏商店链接](https://store.steampowered.com/app/2527500/_MiSide/)
+
+## 0.0.2版本更新计划
+- [x] 点击动画开关
+- [x] 添加眨眼音效
+- [x] 分辨率自定义
+- [x] 音乐点头触发阈值自定义
+- [x] 修复已知BUG
+
+## 0.0.3版本更新计划
+- [ ] 更多的米塔
+
+## 未来可能实现的功能
+- [ ] 换装
+- [ ] 更多的开屏动画
+- [ ] 自定义背景
+- [ ] 安卓壁纸（短时间没希望）
 
 ## 使用教程
 
@@ -71,18 +96,7 @@ StartAnimationRange:开场动画的范围，假如x为0，y为1则必定播放�
 5. 点击确定，如果有弹窗提示，继续点击确定<br>![Screenshot 2025-01-13 134806](https://github.com/user-attachments/assets/8bbc37f3-0885-40db-8765-e16d0dabfb7e)
 6. 选择壁纸，然后就可以使用啦。<br>![image](https://github.com/user-attachments/assets/a8264aff-f553-4c38-9eb2-45861d6666c3)
 
-## 0.0.2版本更新计划
-- [ ] 点击动画开关
-- [ ] 添加眨眼音效
-- [ ] 分辨率自定义
-- [ ] 音乐点头触发阈值自定义
-- [ ] 更多的米塔
 
-## 未来可能实现的功能
-- [ ] 换装
-- [ ] 更多的开屏动画
-- [ ] 自定义背景
-- [ ] 安卓壁纸（短时间没希望）
 
 ## 其他相关链接
 1. [演示视频](https://www.bilibili.com/video/BV1XZcNeaEsd/)
