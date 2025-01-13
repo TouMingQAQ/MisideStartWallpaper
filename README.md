@@ -16,6 +16,36 @@
 9. **vTabs 2(编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vtabs-2-253396)**
 10. **vFavorites 2(编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vfavorites-2-263643)**
 
+## 配置路径
+C:\Users\{User}\AppData\LocalLow\MisideStart\MisideStartWallpaper\MiSideStartConfig.json
+```json
+{
+  "StartAnimationRange": {
+    "x": 0,
+    "y": 5
+  },
+  "LookAtOffsetMultiplier": {
+    "x": 3.0,
+    "y": 3.0,
+    "z": 3.0,
+    "w": 3.0
+  },
+  "TargetFrameRate": 60,
+  "LookAtState": 1,
+  "MusicHead": true,
+  "ClickCount": 2
+}
+```
+StartAnimationRange:开场动画的范围，假如x为0，y为1则必定播放下标为0的动画(邪恶米塔在哪呢？)
+<br>LookAtOffsetMultiplier:视野跟踪的倍率，x,y是屏幕左侧XY轴的倍率，z,w是屏幕右侧XY轴的倍率。
+<br>TargetFrameRate:壁纸目标刷新率，如果出现GPU占用过高，可以尝试调低此数值看看。
+<br>LookAtState:视野跟踪模式，目前有三种模式，0:无任何跟踪、1：始终跟踪鼠标、2：只有当鼠标左键按下时才会跟踪。
+<br>MusicHead:跟随音乐点头的开关。
+<br>ClickCount:短时间内触发点击动画需要的点击次数。
+### PS
+修改配置表后需要重启壁纸来应用配置表
+
+
 ## 资源
 - **模型和动画：** 原游戏解包。[游戏商店链接](https://store.steampowered.com/app/2527500/_MiSide/)
 
