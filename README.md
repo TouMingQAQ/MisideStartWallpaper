@@ -2,7 +2,7 @@
 
 # Miside Start Wallpapaer
 
-- 一款使用 Blender 对于 Miside 主菜单页面的壁纸实现 
+- 一款基于 Unity 对于 Miside 主菜单页面的壁纸实现 
 
 ## Unity 版本
 - **版本：** 6000.0.32f1  
