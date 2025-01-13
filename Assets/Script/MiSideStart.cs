@@ -142,7 +142,7 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     {
         ConfigPath = Application.streamingAssetsPath + "/MiSideStartConfig.json";
         LoadConfig();
-        Screen.SetResolution(config.Resolution.x, config.Resolution.y, true);
+        // Screen.SetResolution(config.Resolution.x, config.Resolution.y, true);
         audioAnimation.nodEnergy = config.MusicMinEnergy;
         mouseControl.offset = config.LookAtOffsetMultiplier;
         Application.targetFrameRate = targetFrameRate;
