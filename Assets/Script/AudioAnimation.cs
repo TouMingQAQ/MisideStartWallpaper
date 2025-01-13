@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using CSCore.CoreAudioAPI;
 using CSCore.SoundIn;
 using CSCore.Streams;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class AudioAnimation : MonoBehaviour
 {
     private WasapiLoopbackCapture capture;
     private SoundInSource soundInSource;
+    private MMDeviceEnumerator _enumerator;
     private byte[] buffer;
     [SerializeField]
     private float[] audioSamples;
@@ -24,8 +26,26 @@ public class AudioAnimation : MonoBehaviour
     private float disEnergy;
     [SerializeField,ReadOnly]
     private bool nod = false;
+    [SerializeField,ReadOnly]
+    private string audioDeviceName;
+    [SerializeField,ReadOnly]
+    private string audioDeviceID;
+
     private void Awake()
     {
+        capture = new WasapiLoopbackCapture();
+        capture.Initialize();
+        capture.Start();
+        soundInSource = new SoundInSource(capture);
+        soundInSource.DataAvailable += OnDataAvailable;
+        _enumerator = new MMDeviceEnumerator();
+    }
+
+    void ResetCapture()
+    {
+        capture.Stop();
+        capture.Dispose();
+        soundInSource.Dispose();
         capture = new WasapiLoopbackCapture();
         capture.Initialize();
         capture.Start();
@@ -35,13 +55,23 @@ public class AudioAnimation : MonoBehaviour
 
     private void OnDestroy()
     {
-        soundInSource.Dispose();
+        _enumerator.Dispose();
         capture.Stop();
         capture.Dispose();
+        soundInSource.Dispose();
     }
 
     private void Update()
     {
+        var device = _enumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
+        var deviceName = device.FriendlyName;
+        if (deviceName != audioDeviceName)
+        {
+            Debug.Log($"[<color=green>AudioDeviceChange</color>]:{audioDeviceName}=>{deviceName}");
+            audioDeviceName = device.FriendlyName;
+            audioDeviceID = device.DeviceID;
+            ResetCapture();
+        }
         if(!MiSideStart.config.MusicHead)
             return;
         if (nod)
