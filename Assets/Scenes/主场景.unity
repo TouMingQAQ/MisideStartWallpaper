@@ -5126,7 +5126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 158783087}
   depth: 2.125
-  camera: {fileID: 330585545}
+  worldCamera: {fileID: 330585545}
   smoothTime: 0.3
   maxSpeed: 10
   limitY: {x: 0.8, y: 0}
@@ -5164,7 +5164,6 @@ MonoBehaviour:
   lookAtIkWeight: 0
   lookAtTargetIkWeight: 0
   noding: 0
-  nodStartDelay: 0
   headOffset: {x: 0, y: 0.375, z: 0}
   nodEnd: {x: 0, y: -0.2, z: 0}
   nodCurveStart:
@@ -5239,10 +5238,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSamples: []
   miside: {fileID: 919132148587044793}
-  nodEnergy: 0.01725
+  nodEnergyThreshold: 0.01
   currentEnergy: 0
-  disEnergy: 0
+  previousEnergy: 0
   nod: 0
+  audioDeviceName: 
+  audioDeviceID: 
 --- !u!82 &919132148587044795
 AudioSource:
   m_ObjectHideFlags: 0
