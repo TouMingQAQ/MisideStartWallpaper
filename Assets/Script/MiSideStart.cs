@@ -109,8 +109,8 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     [Tab("Nod")]
     [SerializeField,ReadOnly]
     private bool noding;
-    [SerializeField]
-    private float nodStartDelay = 0.03f;
+    //[SerializeField]
+    //private float nodStartDelay = 0.03f;   //尚未使用？
     [SerializeField]
     private Vector3 headOffset = new Vector3(0,0.375f,0);
     [SerializeField]
@@ -199,12 +199,12 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
             Debug.LogError($"ConfigFileError:{ConfigPath}");
             return;
         }
-        if(!fileInfo.Directory.Exists)
+        if (!fileInfo.Directory.Exists)
             Directory.CreateDirectory(fileInfo.Directory.FullName);
         if (!fileInfo.Exists)
         {
             config = MiSideConfig.Default();
-            var json = JsonConvert.SerializeObject(config, Formatting.Indented,new VectorConverter());
+            var json = JsonConvert.SerializeObject(config, Formatting.Indented, new VectorConverter());
             File.WriteAllText(ConfigPath, json);
         }
         else
@@ -212,19 +212,19 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
             var json = File.ReadAllText(ConfigPath);
             try
             {
-                config = JsonConvert.DeserializeObject<MiSideConfig>(json,new VectorConverter());
+                config = JsonConvert.DeserializeObject<MiSideConfig>(json, new VectorConverter());
             }
-            catch (Exception e)
+            catch (Exception e) // 使用异常对象来记录错误信息（解决捕捉异常而忽略了异常对象本身）
             {
+                Debug.LogError($"Failed to deserialize config file: {e.Message}"); // 记录错误信息（此处为记录异常信息以便于调试和维护没有省略变量名）
                 config = MiSideConfig.Default();
-                json = JsonConvert.SerializeObject(config, Formatting.Indented,new VectorConverter());
+                json = JsonConvert.SerializeObject(config, Formatting.Indented, new VectorConverter());
                 File.WriteAllText(ConfigPath, json);
             }
         }
         clickCount = config.ClickCount;
         targetFrameRate = config.TargetFrameRate;
         startAnimationRange = config.StartAnimationRange;
-        
     }
     
     [ContextMenu("NodOnShot")]
@@ -263,7 +263,6 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
             }
         }
     }
-
 
     public void Wink()
     {

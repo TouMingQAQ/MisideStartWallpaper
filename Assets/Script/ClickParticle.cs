@@ -1,41 +1,48 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 #if !UNITY_ANDROID
-using UnityEngine.InputSystem;
+using UnityEngine.InputSystem; //注:非Android平台
 #endif
-using VInspector;
-using Random = UnityEngine.Random;
+using VInspector; 
+using Random = UnityEngine.Random; 
 
 public class ClickParticle : MonoBehaviour
 {
-    [SerializeField,ReadOnly]
-    private ParticleSystem particleSystem;
-    public List<ParticleSystem> clickParticles = new();
-    public Canvas canvas;
-    
+    [SerializeField, ReadOnly] 
+    private ParticleSystem currentParticleSystem; // 更改：重命名为currentParticleSystem避免与Unity组件中的属性名冲突
+
+    public List<ParticleSystem> clickParticles = new(); 
+    public Canvas canvas; 
 
     public void OnClick()
     {
+        // 更改：增加对clickParticles是否为空的检查，防止空列表导致异常
+        if (clickParticles == null || clickParticles.Count == 0) return;
+
         var randomIndex = Random.Range(0, clickParticles.Count);
         var particle = clickParticles[randomIndex];
         if(particle == null)
             return;
-        if (particleSystem != null)
+
+        if (currentParticleSystem != null) // 更改：使用currentParticleSystem代替particleSystem
         {
-            particleSystem.Stop();
-            particleSystem = null;
+            currentParticleSystem.Stop();
+            currentParticleSystem = null; 
         }
-        particleSystem = particle;
-        #if !UNITY_ANDROID
+        currentParticleSystem = particle; 
+
+#if !UNITY_ANDROID
         var mousePos = Mouse.current.position.ReadValue();
-        #else
+#else
         var mousePos = (Vector2)Input.mousePosition;
-        #endif
+#endif
+
+        // 更改：增加对canvas.worldCamera是否为null的检查，避免NullReferenceException
+        if (canvas.worldCamera == null) return;
+
         var position = canvas.worldCamera.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, canvas.planeDistance));
 
-        particleSystem.transform.position = position;
-        particleSystem.Play();
+        currentParticleSystem.transform.position = position;
+        currentParticleSystem.Play();
     }
-    
 }
