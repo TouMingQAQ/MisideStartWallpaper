@@ -197,7 +197,6 @@ public class AudioAnimation : MonoBehaviour
             }
             catch (Exception ex)
             {
-                ExceptionCall(ex, nameof(CheckIsMusic));
                 return false;
             }
         }
