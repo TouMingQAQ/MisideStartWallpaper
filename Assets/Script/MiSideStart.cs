@@ -147,7 +147,7 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
         #endif
         LoadConfig();
         // Screen.SetResolution(config.Resolution.x, config.Resolution.y, true);
-        audioAnimation.nodEnergy = config.MusicMinEnergy;
+        //audioAnimation.nodEnergy = config.MusicMinEnergy;
         mouseControl.offset = config.LookAtOffsetMultiplier;
         Application.targetFrameRate = targetFrameRate;
         HideControl();
