@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using CSCore.CoreAudioAPI;
 using CSCore.SoundIn;
 using CSCore.Streams;
@@ -43,11 +41,6 @@ public class AudioAnimation : MonoBehaviour
     // 添加 nodEnergy 属性
     public float nodEnergy { get; private set; }
     private bool isMusic = false; // 新增：用于存储音乐检测结果
-
-    private Queue<float> zeroCrossingRateHistory = new Queue<float>(10);
-    private Queue<float> shortTimeEnergyHistory = new Queue<float>(10);
-    private Queue<float> spectralCentroidHistory = new Queue<float>(10);
-    private Queue<float> spectralFlatnessHistory = new Queue<float>(10);
 
     private void Awake()
     {
@@ -153,126 +146,35 @@ public class AudioAnimation : MonoBehaviour
         currentEnergy = energy;
     }
 
-    public bool CheckIsMusic()
+    private float CalculateZeroCrossingRate(float[] audioSamples)
+    {
+        int zeroCrossingCount = 0;
+        for (int i = 1; i < audioSamples.Length; i++)
         {
-            if (!IsListening)
+            if (audioSamples[i] * audioSamples[i - 1] < 0)
             {
-                return false;
-            }
-
-            try
-            {
-                float zeroCrossingRate = CalculateZeroCrossingRate(audioSamples);
-                float shortTimeEnergy = CalculateShortTimeEnergy(audioSamples);
-                float spectralCentroid = CalculateSpectralCentroid(audioSamples, 44100); // 假设采样率为44100
-                float spectralFlatness = CalculateSpectralFlatness(audioSamples);
-
-                // 更新历史数据
-                zeroCrossingRateHistory.Enqueue(zeroCrossingRate);
-                shortTimeEnergyHistory.Enqueue(shortTimeEnergy);
-                spectralCentroidHistory.Enqueue(spectralCentroid);
-                spectralFlatnessHistory.Enqueue(spectralFlatness);
-
-                if (zeroCrossingRateHistory.Count > 10)
-                {
-                    zeroCrossingRateHistory.Dequeue();
-                    shortTimeEnergyHistory.Dequeue();
-                    spectralCentroidHistory.Dequeue();
-                    spectralFlatnessHistory.Dequeue();
-                }
-
-                // 计算平均值
-                float avgZeroCrossingRate = zeroCrossingRateHistory.Average();
-                float avgShortTimeEnergy = shortTimeEnergyHistory.Average();
-                float avgSpectralCentroid = spectralCentroidHistory.Average();
-                float avgSpectralFlatness = spectralFlatnessHistory.Average();
-
-                const float zeroCrossingRateThreshold = 0.05f;
-                const float shortTimeEnergyThreshold = 0.01f;
-                const float spectralCentroidThreshold = 1000.0f; // 1000 Hz
-                const float spectralFlatnessThreshold = 0.5f;
-
-                return avgZeroCrossingRate > zeroCrossingRateThreshold &&
-                       avgShortTimeEnergy > shortTimeEnergyThreshold &&
-                       avgSpectralCentroid > spectralCentroidThreshold &&
-                       avgSpectralFlatness > spectralFlatnessThreshold;
-            }
-            catch (Exception ex)
-            {
-                return false;
+                zeroCrossingCount++;
             }
         }
+        return (float)zeroCrossingCount / audioSamples.Length;
+    }
 
-        private float CalculateZeroCrossingRate(float[] audioSamples)
+    private float CalculateShortTimeEnergy(float[] audioSamples)
+    {
+        float energy = 0;
+        foreach (float sample in audioSamples)
         {
-            int zeroCrossingCount = 0;
-            for (int i = 1; i < audioSamples.Length; i++)
-            {
-                if (audioSamples[i] * audioSamples[i - 1] < 0)
-                {
-                    zeroCrossingCount++;
-                }
-            }
-            return (float)zeroCrossingCount / audioSamples.Length;
+            energy += sample * sample;
         }
+        return energy / audioSamples.Length;
+    }
 
-        private float CalculateShortTimeEnergy(float[] audioSamples)
-        {
-            float energy = 0;
-            foreach (float sample in audioSamples)
-            {
-                energy += sample * sample;
-            }
-            return energy / audioSamples.Length;
-        }
-
-        private float CalculateSpectralCentroid(float[] audioSamples, int sampleRate)
-        {
-            float numerator = 0;
-            float denominator = 0;
-            float[] magnitudes = new float[audioSamples.Length / 2];
-
-            // 计算频谱
-            for (int i = 0; i < audioSamples.Length / 2; i++)
-            {
-                magnitudes[i] = (float)Math.Sqrt(audioSamples[2 * i] * audioSamples[2 * i] + audioSamples[2 * i + 1] * audioSamples[2 * i + 1]);
-            }
-
-            // 计算频谱质心
-            for (int i = 0; i < magnitudes.Length; i++)
-            {
-                float frequency = i * (float)sampleRate / audioSamples.Length;
-                numerator += frequency * magnitudes[i];
-                denominator += magnitudes[i];
-            }
-
-            return numerator / denominator;
-        }
-
-        private float CalculateSpectralFlatness(float[] audioSamples)
-        {
-            float geometricMean = 0;
-            float arithmeticMean = 0;
-
-            // 计算频谱
-            float[] magnitudes = new float[audioSamples.Length / 2];
-            for (int i = 0; i < audioSamples.Length / 2; i++)
-            {
-                magnitudes[i] = (float)Math.Sqrt(audioSamples[2 * i] * audioSamples[2 * i] + audioSamples[2 * i + 1] * audioSamples[2 * i + 1]);
-            }
-
-            // 计算几何平均和算术平均
-            for (int i = 0; i < magnitudes.Length; i++)
-            {
-                geometricMean += (float)Math.Log(magnitudes[i]);
-                arithmeticMean += magnitudes[i];
-            }
-
-            geometricMean = (float)Math.Exp(geometricMean / magnitudes.Length);
-            arithmeticMean /= magnitudes.Length;
-
-            return geometricMean / arithmeticMean;
-        }
+    private bool CheckIsMusic(float[] audioSamples)
+    {
+        float zeroCrossingRate = CalculateZeroCrossingRate(audioSamples);
+        float shortTimeEnergy = CalculateShortTimeEnergy(audioSamples);
+        return zeroCrossingRate > zeroCrossingRateThreshold && shortTimeEnergy > shortTimeEnergyThreshold;
+    }
 
     private float SmoothingFilter(float value)
     {
