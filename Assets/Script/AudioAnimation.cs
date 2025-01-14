@@ -176,8 +176,10 @@ public class AudioAnimation : MonoBehaviour
 
         try
         {
-            float zeroCrossingRate = CalculateZeroCrossingRate(audioSamples);
-            float shortTimeEnergy = CalculateShortTimeEnergy(audioSamples);
+            // 合并计算过零率和短时能量
+            float[] audioFeatures = CalculateAudioFeatures(audioSamples);
+            float zeroCrossingRate = audioFeatures[0];
+            float shortTimeEnergy = audioFeatures[1];
             float spectralCentroid = CalculateSpectralCentroid(audioSamples, SampleRate);
             float spectralFlatness = CalculateSpectralFlatness(audioSamples);
 
@@ -195,39 +197,43 @@ public class AudioAnimation : MonoBehaviour
             float avgSpectralCentroid = CalculateAverage(spectralCentroidHistory);
             float avgSpectralFlatness = CalculateAverage(spectralFlatnessHistory);
 
+            const float zeroCrossingRateThreshold = 0.05f;
+            const float shortTimeEnergyThreshold = 0.01f;
+            const float spectralCentroidThreshold = 1000.0f; // 1000 Hz
+            const float spectralFlatnessThreshold = 0.5f;
+
             return avgZeroCrossingRate > zeroCrossingRateThreshold &&
-                   avgShortTimeEnergy > shortTimeEnergyThreshold &&
-                   avgSpectralCentroid > 1000.0f && // 1000 Hz
-                   avgSpectralFlatness > 0.5f;
+                avgShortTimeEnergy > shortTimeEnergyThreshold &&
+                avgSpectralCentroid > spectralCentroidThreshold &&
+                avgSpectralFlatness > spectralFlatnessThreshold;
         }
         catch (Exception ex)
         {
-            Debug.LogError($"Error in CheckIsMusic: {ex.Message}");
+            ExceptionCall(ex, nameof(CheckIsMusic));
             return false;
         }
     }
 
-    private float CalculateZeroCrossingRate(float[] audioSamples)
+    private float[] CalculateAudioFeatures(float[] audioSamples)
     {
         int zeroCrossingCount = 0;
+        float energySum = 0;
+
+        // 计算过零率和能量
         for (int i = 1; i < audioSamples.Length; i++)
         {
             if (audioSamples[i] * audioSamples[i - 1] < 0)
             {
                 zeroCrossingCount++;
             }
+            energySum += audioSamples[i] * audioSamples[i];
         }
-        return (float)zeroCrossingCount / audioSamples.Length;
-    }
+        float energy = energySum / audioSamples.Length;
 
-    private float CalculateShortTimeEnergy(float[] audioSamples)
-    {
-        float energy = 0;
-        foreach (float sample in audioSamples)
-        {
-            energy += sample * sample;
-        }
-        return energy / audioSamples.Length;
+        // 计算过零率
+        float zeroCrossingRate = (float)zeroCrossingCount / audioSamples.Length;
+
+        return new float[] { zeroCrossingRate, energy };
     }
 
     private float CalculateSpectralCentroid(float[] audioSamples, int sampleRate)
