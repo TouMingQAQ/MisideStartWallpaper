@@ -13,7 +13,7 @@
 2. **MagicCloth2 (布料模拟)  [商店地址](https://assetstore.unity.com/packages/tools/physics/magica-cloth-2-242307)**
 3. **RealToon (三渲二)  [商店地址](https://assetstore.unity.com/packages/vfx/shaders/realtoon-pro-anime-toon-shader-65518)**
 4. **CSCore (设备音频采样)  [Nuget](https://www.nuget.org/packages/CSCode)**
-5. **Fmod (音频播放中间件) [官网](https://www.fmod.com/)**
+5. **~~Fmod (音频播放中间件) [官网](https://www.fmod.com/)~~**
 6. **vFolders 2 (编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vfolders-2-255470)**
 7. **vInspector 2 (编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vinspector-2-252297)**
 8. **vHierarchy 2 (编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vhierarchy-2-251320)**
@@ -53,7 +53,7 @@ Root\MisideStartWallpaper_Data\StreamingAssets\MiSideStartConfig.json
 > 
 >TargetFrameRate : 壁纸目标刷新率，如果出现GPU占用过高，可以尝试调低此数值看看。
 > 
->Resolution : 分辨率设置。
+>~~Resolution : 分辨率设置。~~
 > 
 >LookAtState : 视野跟踪模式，目前有三种模式，0:无任何跟踪、1：始终跟踪鼠标、2：只有当鼠标左键按下时才会跟踪。
 > 
