@@ -264,7 +264,6 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
         }
     }
 
-
     public void Wink()
     {
         audioSource.PlayOneShot(winkClip);
