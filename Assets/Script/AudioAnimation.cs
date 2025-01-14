@@ -125,12 +125,16 @@ public class AudioAnimation : MonoBehaviour
         int sampleCount = byteCount / sizeof(float);
         int startCount = offset / sizeof(float);
         int count = sampleCount - startCount;
-        audioSamples = new float[count];
+        if (count > audioSamplesBuffer.Length)
+        {
+            count = audioSamplesBuffer.Length;
+        }
+
         float energy = 0;
-        for (int i = startCount; i < sampleCount; i++)
+        for (int i = startCount; i < startCount + count; i++)
         {
             var sample = BitConverter.ToSingle(buffer, i * sizeof(float));
-            audioSamples[i - startCount] = sample; // Corrected index
+            audioSamplesBuffer[i - startCount] = sample; // 存储解析后的音频样本
             energy += sample * sample; // 能量为振幅的平方和
         }
         energy /= count; // 平均能量
