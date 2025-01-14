@@ -1,14 +1,10 @@
-using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 using VInspector;
 
 public class MouseToWorldControl : MonoBehaviour
 {
-    public EventSystem normalEventSystem;
-    public EventSystem androidEventSystem;
     public Transform control;
     public float depth = 2;
 
