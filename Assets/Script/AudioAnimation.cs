@@ -1,9 +1,36 @@
 using System;
+using System.IO;
 using CSCore.CoreAudioAPI;
 using CSCore.SoundIn;
 using CSCore.Streams;
+using Newtonsoft.Json;
 using UnityEngine;
-
+using VInspector;
+public enum MusicHeadVersion
+{
+    V1 = 1,
+    V2 = 2
+}
+[Serializable]
+public class MusicHeadConfig
+{
+    public MusicHeadVersion MusicHeadVersion = MusicHeadVersion.V1;
+    public V1Info v1Info = new();
+    public V2Info v2Info = new();
+    [Serializable]
+    public class V1Info
+    {
+        public float NodMinEnergy =  0.0125f;//触发阈值
+    }
+    [Serializable]
+    public class V2Info
+    {
+        public float NodEnergyThreshold = 0.01f; // 初始阈值
+        public float EnergyDecayFactor = 0.95f; // 衰减因子
+        public float PeakDetectionThreshold = 1.5f; // 峰值检测阈值
+        public float SmoothingFactor = 0.7f; // 平滑滤波因子
+    }
+}
 public class AudioAnimation : MonoBehaviour
 {
     private const int BufferSize = 2048;   // 缓冲区大小
@@ -18,25 +45,33 @@ public class AudioAnimation : MonoBehaviour
     private int byteCount;
 
     public MiSideStart miside;
+    [Tab("V1")]
+    public float nodMinEnergy = 0.0125f;
+    [Tab("V2")]
     public float nodEnergyThreshold = 0.01f; // 初始阈值
-    [SerializeField]
-    private float currentEnergy;
-    [SerializeField]
-    private float previousEnergy;
-    [SerializeField]
-    private bool nod = false;
-    [SerializeField]
-    private string audioDeviceName;
-    [SerializeField]
-    private string audioDeviceID;
-
+    public float energyDecayFactor = 0.95f; // 衰减因子
+    public float peakDetectionThreshold = 1.5f; // 峰值检测阈值
+    public float smoothingFactor = 0.7f; // 平滑滤波因子
+    [SerializeField,ReadOnly]
     private float averageEnergy = 0f;
-    private float energyDecayFactor = 0.95f; // 衰减因子
-    private float peakDetectionThreshold = 1.5f; // 峰值检测阈值
-    private float smoothingFactor = 0.7f; // 平滑滤波因子
-
     private const float zeroCrossingRateThreshold = 0.05f;
     private const float shortTimeEnergyThreshold = 0.01f;
+    [Tab("Config")]
+    public MusicHeadConfig config;
+    public string configPath;
+    [Tab("Info")]
+    [SerializeField,ReadOnly]
+    private float currentEnergy;
+    [SerializeField,ReadOnly]
+    private float previousEnergy;
+    [SerializeField,ReadOnly]
+    private bool nod = false;
+    [SerializeField,ReadOnly]
+    private string audioDeviceName;
+    [SerializeField,ReadOnly]
+    private string audioDeviceID;
+
+
 
     // 添加 nodEnergy 属性
     public float nodEnergy { get; private set; }
@@ -44,6 +79,12 @@ public class AudioAnimation : MonoBehaviour
 
     private void Awake()
     {
+#if UNITY_ANDROID
+        configPath = Application.persistentDataPath + "/MusicHeadConfig.json";
+#else
+        configPath = Application.streamingAssetsPath + "/MusicHeadConfig.json";
+#endif
+        LoadConfig();
         capture = new WasapiLoopbackCapture();
         capture.Initialize();
         capture.Start();
@@ -51,7 +92,43 @@ public class AudioAnimation : MonoBehaviour
         soundInSource.DataAvailable += OnDataAvailable;
         _enumerator = new MMDeviceEnumerator();
     }
-
+    void LoadConfig()
+    {
+        FileInfo fileInfo = new FileInfo(configPath);
+        if (fileInfo.Directory == null)
+        {
+            Debug.LogError($"ConfigFileError:{configPath}");
+            return;
+        }
+        if (!fileInfo.Directory.Exists)
+            Directory.CreateDirectory(fileInfo.Directory.FullName);
+        if (!fileInfo.Exists)
+        {
+            config = new();
+            var json = JsonConvert.SerializeObject(config, Formatting.Indented, new VectorConverter());
+            File.WriteAllText(configPath, json);
+        }
+        else
+        {
+            var json = File.ReadAllText(configPath);
+            try
+            {
+                config = JsonConvert.DeserializeObject<MusicHeadConfig>(json, new VectorConverter());
+            }
+            catch (Exception e) // 使用异常对象来记录错误信息（解决捕捉异常而忽略了异常对象本身）
+            {
+                Debug.LogError($"Failed to deserialize config file: {e.Message}"); // 记录错误信息（此处为记录异常信息以便于调试和维护没有省略变量名）
+                config = new();
+                json = JsonConvert.SerializeObject(config, Formatting.Indented, new VectorConverter());
+                File.WriteAllText(configPath, json);
+            }
+        }
+        nodMinEnergy = config.v1Info.NodMinEnergy;
+        nodEnergyThreshold = config.v2Info.NodEnergyThreshold;
+        energyDecayFactor = config.v2Info.EnergyDecayFactor;
+        peakDetectionThreshold = config.v2Info.PeakDetectionThreshold;
+        smoothingFactor = config.v2Info.SmoothingFactor;
+    }
     void ResetCapture()
     {
         capture.Stop();
@@ -85,11 +162,23 @@ public class AudioAnimation : MonoBehaviour
         }
         if (!MiSideStart.config.MusicHead)
             return;
-        if (nod && isMusic) // 确保只在检测为音乐且nod为true时执行
+        if (config.MusicHeadVersion == MusicHeadVersion.V2)
         {
-            miside.NodOnShot();
-            nod = false;
+            if (nod)
+            {
+                miside.NodOnShot();
+                nod = false;
+            }
         }
+        else
+        {
+            if (nod && isMusic) // 确保只在检测为音乐且nod为true时执行
+            {
+                miside.NodOnShot();
+                nod = false;
+            }
+        }
+     
     }
 
     private void OnDataAvailable(object sender, DataAvailableEventArgs e)
@@ -121,29 +210,40 @@ public class AudioAnimation : MonoBehaviour
         // 更新 nodEnergy
         nodEnergy = energy;
 
-        // 平滑滤波
-        energy = SmoothingFilter(energy);
-
-        // 更新平均能量
-        averageEnergy = averageEnergy * energyDecayFactor + energy * (1 - energyDecayFactor);
-
-        // 检查是否为音乐
-        isMusic = CheckIsMusic(audioSamples); // 实时更新音乐检测结果
-
-        // 自适应阈值检测（仅当是音乐时）
-        if (isMusic)
+        if (config.MusicHeadVersion == MusicHeadVersion.V2)
         {
-            float adaptiveThreshold = nodEnergyThreshold + nodEnergyThreshold * averageEnergy;
+            // 平滑滤波
+            energy = SmoothingFilter(energy);
 
-            // 检测节拍
-            if (energy > adaptiveThreshold && energy > peakDetectionThreshold * averageEnergy)
+            // 更新平均能量
+            averageEnergy = averageEnergy * energyDecayFactor + energy * (1 - energyDecayFactor);
+
+            // 检查是否为音乐
+            isMusic = CheckIsMusic(audioSamples); // 实时更新音乐检测结果
+
+            // 自适应阈值检测（仅当是音乐时）
+            if (isMusic)
             {
-                nod = true;
-            }
-        }
+                float adaptiveThreshold = nodEnergyThreshold + nodEnergyThreshold * averageEnergy;
 
-        previousEnergy = energy;
-        currentEnergy = energy;
+                // 检测节拍
+                if (energy > adaptiveThreshold && energy > peakDetectionThreshold * averageEnergy)
+                {
+                    nod = true;
+                }
+            }
+
+            previousEnergy = energy;
+            currentEnergy = energy;
+        }
+        else
+        {
+            var disEnergy = currentEnergy - energy;
+            currentEnergy = energy;
+            if (currentEnergy > nodMinEnergy && disEnergy > 0)
+                nod = true;
+        }
+    
     }
 
     private float CalculateZeroCrossingRate(float[] audioSamples)
