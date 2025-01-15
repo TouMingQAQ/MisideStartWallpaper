@@ -25,11 +25,7 @@ public struct MiSideConfig
     /// 限制帧率
     /// </summary>
     public int TargetFrameRate;
-
-    /// <summary>
-    /// 分辨率
-    /// </summary>
-    public Vector2Int Resolution;
+    
     /// <summary>
     /// 跟随鼠标
     /// </summary>
@@ -66,7 +62,6 @@ public struct MiSideConfig
             ClickCount = 2,
             LookAtOffsetMultiplier = new Vector4(3f, 3f, 3f, 3f),
             PlaySoundOnClick = true,
-            Resolution = new Vector2Int(1920, 1080),
             WallpaperVersion = "0.0.2_03"
         };
     }

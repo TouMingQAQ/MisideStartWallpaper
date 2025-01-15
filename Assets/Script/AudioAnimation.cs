@@ -47,6 +47,8 @@ public class AudioAnimation : MonoBehaviour
     public MiSideStart miside;
     [Tab("V1")]
     public float nodMinEnergy = 0.0125f;
+    [SerializeField,ReadOnly]
+    private float disEnergy;
     [Tab("V2")]
     public float nodEnergyThreshold = 0.01f; // 初始阈值
     public float energyDecayFactor = 0.95f; // 衰减因子
@@ -60,8 +62,8 @@ public class AudioAnimation : MonoBehaviour
     public MusicHeadConfig config;
     public string configPath;
     [Tab("Info")]
-    [SerializeField,ReadOnly]
-    private float currentEnergy;
+    [ReadOnly]
+    public float currentEnergy;
     [SerializeField,ReadOnly]
     private float previousEnergy;
     [SerializeField,ReadOnly]
@@ -140,13 +142,13 @@ public class AudioAnimation : MonoBehaviour
         soundInSource = new SoundInSource(capture);
         soundInSource.DataAvailable += OnDataAvailable;
     }
-
-    private void OnDestroy()
+    
+    private void OnApplicationQuit()
     {
-        _enumerator.Dispose();
-        capture.Stop();
-        capture.Dispose();
-        soundInSource.Dispose();
+        _enumerator?.Dispose();
+        soundInSource?.Dispose();
+        capture?.Stop();
+        capture?.Dispose();
     }
 
     private void Update()
@@ -162,11 +164,11 @@ public class AudioAnimation : MonoBehaviour
         }
         if (!MiSideStart.config.MusicHead)
             return;
-        if (config.MusicHeadVersion == MusicHeadVersion.V2)
+        if (config.MusicHeadVersion == MusicHeadVersion.V1)
         {
             if (nod)
             {
-                miside.NodOnShot();
+                miside?.NodOnShot();
                 nod = false;
             }
         }
@@ -174,7 +176,7 @@ public class AudioAnimation : MonoBehaviour
         {
             if (nod && isMusic) // 确保只在检测为音乐且nod为true时执行
             {
-                miside.NodOnShot();
+                miside?.NodOnShot();
                 nod = false;
             }
         }
@@ -238,7 +240,7 @@ public class AudioAnimation : MonoBehaviour
         }
         else
         {
-            var disEnergy = currentEnergy - energy;
+            disEnergy = currentEnergy - energy;
             currentEnergy = energy;
             if (currentEnergy > nodMinEnergy && disEnergy > 0)
                 nod = true;
