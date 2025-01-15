@@ -79,12 +79,19 @@
 >MusicHeadVersion : 算法版本，V1为1，V2为2
 >
 >v1Info : V1参数
+>
 >NodMinEnergy : 触发的最小能量值
+>
 >v2Info : V2参数
+>
 >NodEnergyThreshold :
+>
 >EnergyDecayFactor :
+>
 >PeakDetectionThreshold :
+>
 >SmoothingFactor :
+>
 
 修改配置表后需要重启壁纸来应用配置表
 ## 资源
