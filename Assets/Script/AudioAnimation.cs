@@ -51,9 +51,9 @@ public class AudioAnimation : MonoBehaviour
     private float disEnergy;
     [Tab("V2")]
     public float nodEnergyThreshold = 0.01f; // 初始阈值
-    public float energyDecayFactor = 0.95f; // 衰减因子
-    public float peakDetectionThreshold = 1.5f; // 峰值检测阈值
-    public float smoothingFactor = 0.7f; // 平滑滤波因子
+    public float energyDecayFactor = 0.325f; // 衰减因子
+    public float peakDetectionThreshold = 0.975f; // 峰值检测阈值
+    public float smoothingFactor = 0.675f; // 平滑滤波因子
     [SerializeField,ReadOnly]
     private float averageEnergy = 0f;
     private const float zeroCrossingRateThreshold = 0.05f;
