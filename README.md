@@ -21,7 +21,7 @@
 10. **vFavorites 2 (编辑器拓展) [商店地址](https://assetstore.unity.com/packages/tools/utilities/vfavorites-2-263643)**
 
 ## 配置路径
-Root\MisideStartWallpaper_Data\StreamingAssets\MiSideStartConfig.json
+.\MisideStartWallpaper_Data\StreamingAssets\MiSideStartConfig.json
 ```json
 {
   "StartAnimationRange": {
@@ -35,15 +35,11 @@ Root\MisideStartWallpaper_Data\StreamingAssets\MiSideStartConfig.json
     "w": 3.0
   },
   "TargetFrameRate": 60,
-  "Resolution": {
-    "x": 1600,
-    "y": 900
-  },
   "LookAtState": 1,
   "MusicHead": true,
-  "MusicMinEnergy": 0.0125,
   "ClickCount": 2,
-  "PlaySoundOnClick": true
+  "PlaySoundOnClick": true,
+  "WallpaperVersion": "0.0.2_03"
 }
 ```
 > [!NOTE]
@@ -53,21 +49,44 @@ Root\MisideStartWallpaper_Data\StreamingAssets\MiSideStartConfig.json
 > 
 >TargetFrameRate : 壁纸目标刷新率，如果出现GPU占用过高，可以尝试调低此数值看看。
 > 
->~~Resolution : 分辨率设置。~~
-> 
 >LookAtState : 视野跟踪模式，目前有三种模式，0:无任何跟踪、1：始终跟踪鼠标、2：只有当鼠标左键按下时才会跟踪。
 > 
 >MusicHead : 跟随音乐点头的开关。
 > 
->MusicMinEnergy : 点头触发的最小值。
-> 
 >ClickCount : 短时间内触发点击动画需要的点击次数。(小于等于0时不触发)
-> 
+>
+>WallpaperVersion : 程序版本
+>
 >PlaySoundOnClick : 点击音频是否播放
 
-> [!TIP]
-> 修改配置表后需要重启壁纸来应用配置表
 
+.\MisideStartWallpaper_Data\StreamingAssets\MusicHeadConfig.json
+```json
+{
+  "MusicHeadVersion": 1,
+  "v1Info": {
+    "NodMinEnergy": 0.0125
+  },
+  "v2Info": {
+    "NodEnergyThreshold": 0.01,
+    "EnergyDecayFactor": 0.325,
+    "PeakDetectionThreshold": 0.975,
+    "SmoothingFactor": 0.675
+  }
+}
+```
+>[!NOTE]
+>MusicHeadVersion : 算法版本，V1为1，V2为2
+>
+>v1Info : V1参数
+>NodMinEnergy : 触发的最小能量值
+>v2Info : V2参数
+>NodEnergyThreshold :
+>EnergyDecayFactor :
+>PeakDetectionThreshold :
+>SmoothingFactor :
+
+修改配置表后需要重启壁纸来应用配置表
 ## 资源
 - **模型和动画：** 原游戏解包。[游戏商店链接](https://store.steampowered.com/app/2527500/_MiSide/)
 
