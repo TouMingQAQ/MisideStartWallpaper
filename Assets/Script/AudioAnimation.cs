@@ -33,6 +33,7 @@ public class MusicHeadConfig
         public float SmoothingFactor = 0.7f; // 平滑滤波因子
     }
 }
+
 public class AudioAnimation : MonoBehaviour
 {
     private const int BufferSize = 2048;   // 缓冲区大小
@@ -239,7 +240,7 @@ public class AudioAnimation : MonoBehaviour
             averageEnergy = averageEnergy * energyDecayFactor + energy * (1 - energyDecayFactor);
 
             // 检查是否为音乐
-            isMusic = CheckIsMusic(audioSamples); // 实时更新音乐检测结果
+            isMusic = CheckIsMusic(); // 实时更新音乐检测结果
 
             // 自适应阈值检测（仅当是音乐时）
             if (isMusic)
@@ -265,6 +266,9 @@ public class AudioAnimation : MonoBehaviour
                 nod = true;
             }
         }
+
+        // 将解析后的音频样本复制到 audioSamples 中，供 CheckIsMusic 方法使用
+        Array.Copy(audioSamplesBuffer, 0, audioSamples, 0, count);
     }
 
     public bool CheckIsMusic()
@@ -309,7 +313,6 @@ public class AudioAnimation : MonoBehaviour
         }
         catch (Exception ex)
         {
-            ExceptionCall(ex, nameof(CheckIsMusic));
             return false;
         }
     }
