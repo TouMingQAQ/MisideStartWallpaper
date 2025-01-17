@@ -25,11 +25,7 @@ public struct MiSideConfig
     /// 限制帧率
     /// </summary>
     public int TargetFrameRate;
-
-    /// <summary>
-    /// 分辨率
-    /// </summary>
-    public Vector2Int Resolution;
+    
     /// <summary>
     /// 跟随鼠标
     /// </summary>
@@ -38,11 +34,7 @@ public struct MiSideConfig
     /// 跟随音乐点头
     /// </summary>
     public bool MusicHead;
-
-    /// <summary>
-    /// 点头需要的最小能量值
-    /// </summary>
-    public float MusicMinEnergy;
+    
 
     /// <summary>
     /// 触发点击动画的连续点击次数
@@ -53,6 +45,11 @@ public struct MiSideConfig
     /// 点击时是否播放音频
     /// </summary>
     public bool PlaySoundOnClick;
+
+    /// <summary>
+    /// 壁纸版本
+    /// </summary>
+    public string WallpaperVersion;
     
     public static MiSideConfig Default()
     {
@@ -65,8 +62,7 @@ public struct MiSideConfig
             ClickCount = 2,
             LookAtOffsetMultiplier = new Vector4(3f, 3f, 3f, 3f),
             PlaySoundOnClick = true,
-            MusicMinEnergy = 0.0125f,
-            Resolution = new Vector2Int(1920, 1080),
+            WallpaperVersion = "0.0.2_03"
         };
     }
 }
@@ -76,6 +72,8 @@ public enum LookAtState
     Always,
     OnlyPress,
 }
+
+
 public class MiSideStart : MonoBehaviour,IPointerClickHandler
 {
     private static readonly int Init = Animator.StringToHash("Init");
@@ -147,7 +145,6 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
         #endif
         LoadConfig();
         // Screen.SetResolution(config.Resolution.x, config.Resolution.y, true);
-        //audioAnimation.nodEnergy = config.MusicMinEnergy;
         mouseControl.offset = config.LookAtOffsetMultiplier;
         Application.targetFrameRate = targetFrameRate;
         HideControl();

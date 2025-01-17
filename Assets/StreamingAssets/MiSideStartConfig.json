@@ -10,13 +10,9 @@
     "w": 3.0
   },
   "TargetFrameRate": 60,
-  "Resolution": {
-    "x": 1600,
-    "y": 900
-  },
   "LookAtState": 1,
   "MusicHead": true,
-  "MusicMinEnergy": 0.0125,
   "ClickCount": 2,
-  "PlaySoundOnClick": true
+  "PlaySoundOnClick": true,
+  "WallpaperVersion": "0.0.2_03"
 }
