@@ -74,20 +74,14 @@ public enum LookAtState
 }
 
 
-public class MiSideStart : MonoBehaviour,IPointerClickHandler
+public class MiSideStart : MonoBehaviour
 {
     private static readonly int Init = Animator.StringToHash("Init");
-    private static readonly int OnClick = Animator.StringToHash("OnClick");
     public static MiSideConfig config;
 
     [Tab("Components")]
-    public Animator animator;
+    public MitaControl control;
     public MouseToWorldControl mouseControl;
-    public LookAtIK lookAtIk;
-    public ParticleSystem winkParticles;
-    public Transform winkRoot;
-    public AudioAnimation audioAnimation;
-    public AudioSource audioSource;
     [Tab("Config")]
     [SerializeField] private string ConfigPath;
     [Tab("Normal")] 
@@ -98,7 +92,7 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     [InspectorName("开场动画随机范围")]
     public Vector2Int startAnimationRange = new Vector2Int(0, 5);
     [SerializeField,ReadOnly]
-    private bool canControl = true;
+    public bool canControl = true;
     [SerializeField,ReadOnly]
     private float lookAtIkWeight = 0;
     [SerializeField,ReadOnly]
@@ -128,14 +122,12 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     public Vector2 clickDelayRange = new Vector2(0.4f, 0.6f);
     public Vector2Int clickRange = new Vector2Int(2, 4);
     [SerializeField,ReadOnly]
-    private float clickTimer = 0;
+    public float clickTimer = 0;
     [SerializeField,ReadOnly]
-    private int clickCountTimer = 0;
-
-    [Tab("AudioClip")]
-    public AudioClip winkClip;
-    public AudioClip onClickClip;
+    public int clickCountTimer = 0;
     
+    [Tab("Mita")]
+    public List<MitaControl> controlPrefabs = new();
     private void Awake()
     {
         #if UNITY_ANDROID
@@ -144,18 +136,21 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
         ConfigPath = Application.streamingAssetsPath + "/MiSideStartConfig.json";
         #endif
         LoadConfig();
-        // Screen.SetResolution(config.Resolution.x, config.Resolution.y, true);
+        LoadControl();
         mouseControl.offset = config.LookAtOffsetMultiplier;
         Application.targetFrameRate = targetFrameRate;
         HideControl();
-        winkParticles = Instantiate(winkParticles,winkRoot);
-        animator.SetInteger(Init,GetStartAnimationIndex());
+        control.animator.SetInteger(Init,GetStartAnimationIndex());
     }
 
-    [Button,Tab("Normal")]
-    public void TestAnimationWeight()
+    void LoadControl()
     {
-        Debug.Log($"Index:{GetStartAnimationIndex()}");
+        var index = Random.Range(0,controlPrefabs.Count);
+        control = controlPrefabs[index];
+        control = Instantiate(control,this.transform);
+        control.start = this;
+        //加载IK
+        control.lookAtIk.solver.target = mouseControl.control;
     }
     int GetStartAnimationIndex()
     {
@@ -247,9 +242,9 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
     }
     private void Update()
     {
-        lookAtIk.solver.headTargetOffset = headOffset;
+        control.lookAtIk.solver.headTargetOffset = headOffset;
         lookAtIkWeight = Mathf.Lerp(lookAtIkWeight, lookAtTargetIkWeight, 0.1f);
-        lookAtIk.solver.SetLookAtWeight(lookAtIkWeight);
+        control.lookAtIk.solver.SetLookAtWeight(lookAtIkWeight);
         if (clickTimer >= 0)
         {
             clickTimer -= Time.deltaTime;
@@ -261,11 +256,7 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
         }
     }
 
-    public void Wink()
-    {
-        audioSource.PlayOneShot(winkClip);
-        winkParticles.Play();
-    }
+    
 
     public void HideControl()
     {
@@ -274,42 +265,18 @@ public class MiSideStart : MonoBehaviour,IPointerClickHandler
         lookAtIkWeight = 0;
         canControl = false;
     }
-    
 
-    public void OnStartAnimationEnd()
+    public void EnableControl()
     {
         mouseControl.enabled = true;
         canControl = true;
         lookAtTargetIkWeight = 1;
     }
+    
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if(!canControl)
-            return;
-        if(clickCount <= 0)
-            return;
-        clickCountTimer++;
-        if (clickTimer <= 0)
-        {
-            clickTimer = Random.Range(clickDelayRange.x, clickDelayRange.y);
-        }
-        if (clickCountTimer >= clickCount)
-        {
-            SetAnimation();
-            clickCountTimer = 0;
-            clickCount = Random.Range(clickRange.x, clickRange.y);
-            clickTimer = 0;
-        }
-        clickParticle.OnClick();
-        if(config.PlaySoundOnClick)
-            audioSource.PlayOneShot(onClickClip);
-        void SetAnimation()
-        {
-            HideControl();
-            animator.SetTrigger(OnClick);
-        }
-    }
+ 
+
+   
 
 }
 /// <summary>
