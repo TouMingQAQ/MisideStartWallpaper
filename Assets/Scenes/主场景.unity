@@ -1442,7 +1442,7 @@ Animator:
   m_GameObject: {fileID: 832575517}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b40d24088b1fc0c40abcb7fe8469f5fd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1550,7 +1550,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1552070735}
   - component: {fileID: 1552070738}
-  - component: {fileID: 1552070740}
   - component: {fileID: 1552070739}
   m_Layer: 0
   m_Name: "\u865A\u62DF\u76F8\u673A(\u76F8\u673A\u53C2\u6570\u5728\u8FD9\u8C03)"
@@ -1627,7 +1626,7 @@ Animator:
   m_GameObject: {fileID: 1552070734}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f79d0723831db35459e23c534fcadc3f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1639,27 +1638,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!320 &1552070740
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552070734}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 89bab316446d47a4f84d3491d9d6fbc4, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: -9022878399713323085, guid: 89bab316446d47a4f84d3491d9d6fbc4, type: 2}
-    value: {fileID: 1552070739}
-  - key: {fileID: -1456598033597624251, guid: 89bab316446d47a4f84d3491d9d6fbc4, type: 2}
-    value: {fileID: 832575520}
-  m_ExposedReferences:
-    m_References: []
 --- !u!1 &1603935499
 GameObject:
   m_ObjectHideFlags: 0

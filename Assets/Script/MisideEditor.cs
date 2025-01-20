@@ -1,6 +1,8 @@
+#if UNITY_EDITOR
 using System.Collections.Generic;
 using MagicaCloth2;
 using NUnit.Framework;
+using UnityEditor;
 using UnityEngine;
 using VInspector;
 
@@ -22,6 +24,7 @@ public class MisideEditor : MonoBehaviour
         colliderList.Clear();
         var colliders = root.GetComponentsInChildren<ColliderComponent>();
         colliderList.AddRange(colliders);
+        EditorUtility.SetDirty(this.gameObject);
     }
     [Button]  
     [Tab("Cloth")]
@@ -32,6 +35,7 @@ public class MisideEditor : MonoBehaviour
         clothList.Clear();
         var cloths = root.GetComponentsInChildren<MagicaCloth>();
         clothList.AddRange(cloths);
+        EditorUtility.SetDirty(this.gameObject);
     }
     [Button]  
     [Tab("Cloth")]
@@ -42,5 +46,7 @@ public class MisideEditor : MonoBehaviour
             cloth.SerializeData.colliderCollisionConstraint.colliderList.Clear();
             cloth.SerializeData.colliderCollisionConstraint.colliderList.AddRange(colliderList);
         }
+        EditorUtility.SetDirty(this.gameObject);
     }
 }
+#endif

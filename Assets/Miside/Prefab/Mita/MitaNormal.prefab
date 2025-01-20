@@ -1,5 +1,55 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &22106373324939489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 379609781554243929}
+  - component: {fileID: 3655361182398874686}
+  m_Layer: 0
+  m_Name: Magica Capsule Collider (Spine) (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &379609781554243929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22106373324939489}
+  serializedVersion: 2
+  m_LocalRotation: {x: -1, y: 0, z: 0, w: 0}
+  m_LocalPosition: {x: 0.059, y: 0.0405, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 722721072272636278}
+  m_Father: {fileID: 6400609667350941972}
+  m_LocalEulerAnglesHint: {x: -180, y: 0, z: 0}
+--- !u!114 &3655361182398874686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22106373324939489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f5338a96461264fb9a1132c8509672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {x: 0, y: 0, z: 0}
+  size: {x: 0.062, y: 0.067, z: 0.317}
+  direction: 1
+  radiusSeparation: 1
+  alignedOnCenter: 0
 --- !u!1 &35889976062767563
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,7 +782,28 @@ MonoBehaviour:
     colliderCollisionConstraint:
       mode: 1
       friction: 0.05
-      colliderList: []
+      colliderList:
+      - {fileID: 8648230116793970935}
+      - {fileID: 3984254990241079848}
+      - {fileID: 4806140283162712914}
+      - {fileID: 3402791795980498034}
+      - {fileID: 1730059042263874749}
+      - {fileID: 6221895960310013052}
+      - {fileID: 9102235273293857924}
+      - {fileID: 6160514802087828883}
+      - {fileID: 1744162102191365079}
+      - {fileID: 8799386283805431226}
+      - {fileID: 5831346630337342106}
+      - {fileID: 325139900143322190}
+      - {fileID: 2977371877119952498}
+      - {fileID: 3655361182398874686}
+      - {fileID: 5324023192232961910}
+      - {fileID: 5473188171531348227}
+      - {fileID: 7702953999234530861}
+      - {fileID: 8353561500228623616}
+      - {fileID: 7980560195814113739}
+      - {fileID: 4000338673610271913}
+      - {fileID: 8241454584592016523}
     selfCollisionConstraint:
       selfMode: 0
       surfaceThickness:
@@ -777,23 +848,23 @@ MonoBehaviour:
     selectionData:
       positions:
       - x: -0.06540385
-        y: 1.6717172
-        z: 0.140638
+        y: 1.6717168
+        z: 0.14063796
       - x: -0.06520942
-        y: 1.6124313
-        z: 0.12040186
+        y: 1.6124309
+        z: 0.12040183
       - x: -0.0708771
-        y: 1.5856662
-        z: 0.102006674
+        y: 1.5856658
+        z: 0.10200665
       - x: 0.00977465
-        y: 1.7066933
-        z: 0.13668633
+        y: 1.7066929
+        z: 0.1366863
       - x: 0.018625477
-        y: 1.6620791
-        z: 0.14840567
+        y: 1.6620787
+        z: 0.14840564
       - x: 0.0187668
-        y: 1.627732
-        z: 0.14075112
+        y: 1.6277317
+        z: 0.1407511
       attributes:
       - Value: 1
       - Value: 2
@@ -1273,55 +1344,6 @@ Transform:
   - {fileID: 7541627476169608463}
   m_Father: {fileID: 9102801250051316924}
   m_LocalEulerAnglesHint: {x: 26.701582, y: -8.590998, z: -45.212177}
---- !u!1 &1434040362092739446
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1947770569449372847}
-  - component: {fileID: 8781224395461062358}
-  m_Layer: 0
-  m_Name: Magica Capsule Collider (Spine) (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1947770569449372847
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1434040362092739446}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.5113247, y: -0.6920211, z: 0.34136072, w: 0.37832102}
-  m_LocalPosition: {x: 0.06764379, y: -0.116224065, z: -0.08149158}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3483578873476448337}
-  m_LocalEulerAnglesHint: {x: 9.431, y: -118.305, z: 82.149}
---- !u!114 &8781224395461062358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1434040362092739446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6f5338a96461264fb9a1132c8509672, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  center: {x: 0, y: 0, z: 0}
-  size: {x: 0.062, y: 0.038, z: 0.226}
-  direction: 1
-  radiusSeparation: 1
-  alignedOnCenter: 1
 --- !u!1 &1469754337597382038
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,55 +1614,6 @@ Transform:
   - {fileID: 1731145824071437563}
   m_Father: {fileID: 2053043708780546398}
   m_LocalEulerAnglesHint: {x: -7.572115, y: -0.8235378, z: 8.981736}
---- !u!1 &1834790312507492935
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4945019957098356358}
-  - component: {fileID: 6101519470284803841}
-  m_Layer: 0
-  m_Name: Magica Capsule Collider (Spine) (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4945019957098356358
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834790312507492935}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.20032333, y: 0.01440571, z: -0.12226152, w: 0.9719646}
-  m_LocalPosition: {x: -0.035508797, y: 0.019397983, z: 0.014921706}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3483578873476448337}
-  m_LocalEulerAnglesHint: {x: 15.485, y: -1.161, z: -13.411}
---- !u!114 &6101519470284803841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834790312507492935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6f5338a96461264fb9a1132c8509672, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  center: {x: 0, y: 0, z: 0}
-  size: {x: 0.066, y: 0.055, z: 0.443}
-  direction: 1
-  radiusSeparation: 1
-  alignedOnCenter: 1
 --- !u!1 &1856971477495813136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,6 +1646,56 @@ Transform:
   - {fileID: 7785611586808546650}
   m_Father: {fileID: 1435169826066509351}
   m_LocalEulerAnglesHint: {x: -7.0585127, y: -11.324266, z: 16.802952}
+--- !u!1 &1925918223421784579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5325594500975199911}
+  - component: {fileID: 5473188171531348227}
+  m_Layer: 0
+  m_Name: Magica Capsule Collider (Spine) (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5325594500975199911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925918223421784579}
+  serializedVersion: 2
+  m_LocalRotation: {x: -1, y: 0, z: 0, w: 0}
+  m_LocalPosition: {x: -0.0508, y: 0.0405, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 90682058943458560}
+  m_Father: {fileID: 6400609667350941972}
+  m_LocalEulerAnglesHint: {x: -180, y: 0, z: 0}
+--- !u!114 &5473188171531348227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925918223421784579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f5338a96461264fb9a1132c8509672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {x: 0, y: 0, z: 0}
+  size: {x: 0.062, y: 0.067, z: 0.317}
+  direction: 1
+  radiusSeparation: 1
+  alignedOnCenter: 0
 --- !u!1 &1979888872046004056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,55 +1728,6 @@ Transform:
   - {fileID: 2694367264866925095}
   m_Father: {fileID: 5481361815429836351}
   m_LocalEulerAnglesHint: {x: -7.893996, y: 92.1333, z: 176.37657}
---- !u!1 &2000037958099364069
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 18109093592146570}
-  - component: {fileID: 9037289420268777936}
-  m_Layer: 0
-  m_Name: Magica Capsule Collider (Spine) (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &18109093592146570
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000037958099364069}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.2002215, y: -0.014868964, z: 0.12619393, w: 0.9714759}
-  m_LocalPosition: {x: 0.037303034, y: 0.019459927, z: 0.014895158}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3483578873476448337}
-  m_LocalEulerAnglesHint: {x: 15.431, y: 1.372, z: 15.905}
---- !u!114 &9037289420268777936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000037958099364069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6f5338a96461264fb9a1132c8509672, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  center: {x: 0, y: 0, z: 0}
-  size: {x: 0.066, y: 0.055, z: 0.443}
-  direction: 1
-  radiusSeparation: 1
-  alignedOnCenter: 1
 --- !u!1 &2028961662254663797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,6 +1887,55 @@ Transform:
   - {fileID: 7319128660709796946}
   m_Father: {fileID: 8176080226951491690}
   m_LocalEulerAnglesHint: {x: 0.0000003352112, y: -0.00015211357, z: 0.000012515275}
+--- !u!1 &2158691972640560668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7902922404188881089}
+  - component: {fileID: 2977371877119952498}
+  m_Layer: 0
+  m_Name: Magica Capsule Collider (Spine) (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7902922404188881089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2158691972640560668}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.29779145, y: 0, z: 0, w: 0.954631}
+  m_LocalPosition: {x: -0, y: -0.1946, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6377077910857974170}
+  m_LocalEulerAnglesHint: {x: -34.65, y: 0, z: 0}
+--- !u!114 &2977371877119952498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2158691972640560668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f5338a96461264fb9a1132c8509672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {x: 0, y: 0, z: 0}
+  size: {x: 0.062, y: 0.067, z: 0.317}
+  direction: 1
+  radiusSeparation: 1
+  alignedOnCenter: 0
 --- !u!1 &2193827996803385463
 GameObject:
   m_ObjectHideFlags: 0
@@ -2624,11 +2647,16 @@ MonoBehaviour:
   - {fileID: 1744162102191365079}
   - {fileID: 8799386283805431226}
   - {fileID: 5831346630337342106}
+  - {fileID: 325139900143322190}
+  - {fileID: 2977371877119952498}
+  - {fileID: 3655361182398874686}
+  - {fileID: 5324023192232961910}
+  - {fileID: 5473188171531348227}
+  - {fileID: 7702953999234530861}
   - {fileID: 8353561500228623616}
-  - {fileID: 9037289420268777936}
-  - {fileID: 6101519470284803841}
-  - {fileID: 3901425196326493762}
-  - {fileID: 8781224395461062358}
+  - {fileID: 7980560195814113739}
+  - {fileID: 4000338673610271913}
+  - {fileID: 8241454584592016523}
 --- !u!114 &-8230668359864887265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2947,11 +2975,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7729881501209888628}
-  - {fileID: 8332155801983257756}
-  - {fileID: 18109093592146570}
-  - {fileID: 4945019957098356358}
-  - {fileID: 353233403338192114}
-  - {fileID: 1947770569449372847}
   m_Father: {fileID: 6400609667350941972}
   m_LocalEulerAnglesHint: {x: -17.493317, y: 0.013701767, z: -0.2994485}
 --- !u!1 &3278583329882264972
@@ -3561,7 +3584,28 @@ MonoBehaviour:
     colliderCollisionConstraint:
       mode: 1
       friction: 0.05
-      colliderList: []
+      colliderList:
+      - {fileID: 8648230116793970935}
+      - {fileID: 3984254990241079848}
+      - {fileID: 4806140283162712914}
+      - {fileID: 3402791795980498034}
+      - {fileID: 1730059042263874749}
+      - {fileID: 6221895960310013052}
+      - {fileID: 9102235273293857924}
+      - {fileID: 6160514802087828883}
+      - {fileID: 1744162102191365079}
+      - {fileID: 8799386283805431226}
+      - {fileID: 5831346630337342106}
+      - {fileID: 325139900143322190}
+      - {fileID: 2977371877119952498}
+      - {fileID: 3655361182398874686}
+      - {fileID: 5324023192232961910}
+      - {fileID: 5473188171531348227}
+      - {fileID: 7702953999234530861}
+      - {fileID: 8353561500228623616}
+      - {fileID: 7980560195814113739}
+      - {fileID: 4000338673610271913}
+      - {fileID: 8241454584592016523}
     selfCollisionConstraint:
       selfMode: 0
       surfaceThickness:
@@ -3606,23 +3650,23 @@ MonoBehaviour:
     selectionData:
       positions:
       - x: 0.09575524
-        y: 1.6028106
-        z: 0.05676806
+        y: 1.6028103
+        z: 0.056768045
       - x: 0.09101563
-        y: 1.5691788
-        z: 0.058117628
+        y: 1.5691785
+        z: 0.058117613
       - x: 0.085444935
-        y: 1.5346661
-        z: 0.06214392
+        y: 1.5346657
+        z: 0.062143907
       - x: -0.095755324
-        y: 1.6028109
-        z: 0.05676806
+        y: 1.6028105
+        z: 0.056768045
       - x: -0.0910156
-        y: 1.5691786
-        z: 0.058117628
+        y: 1.5691782
+        z: 0.058117613
       - x: -0.085444935
-        y: 1.534666
-        z: 0.06214392
+        y: 1.5346656
+        z: 0.062143907
       attributes:
       - Value: 1
       - Value: 2
@@ -4229,6 +4273,55 @@ Transform:
   - {fileID: 8052260653950881796}
   m_Father: {fileID: 7729881501209888628}
   m_LocalEulerAnglesHint: {x: -12.407729, y: 178.6077, z: 180}
+--- !u!1 &4433940875655922784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6426380497476941597}
+  - component: {fileID: 7980560195814113739}
+  m_Layer: 0
+  m_Name: 'Magica Capsule Collider (PPR1) '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6426380497476941597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4433940875655922784}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.47325894, y: -0.29517362, z: 0.537763, w: 0.6322259}
+  m_LocalPosition: {x: 0.0000002372024, y: 0.044737626, z: -0.010208964}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6400609667350941972}
+  m_LocalEulerAnglesHint: {x: 66.331, y: 19.767, z: 93.76}
+--- !u!114 &7980560195814113739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4433940875655922784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f5338a96461264fb9a1132c8509672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {x: 0, y: 0, z: 0}
+  size: {x: 0.041, y: 0.055, z: 0.198}
+  direction: 1
+  radiusSeparation: 1
+  alignedOnCenter: 0
 --- !u!1 &4439761493282141674
 GameObject:
   m_ObjectHideFlags: 0
@@ -4278,6 +4371,55 @@ MonoBehaviour:
   direction: 1
   radiusSeparation: 1
   alignedOnCenter: 1
+--- !u!1 &4443322494211417715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2484750485111478267}
+  - component: {fileID: 4000338673610271913}
+  m_Layer: 0
+  m_Name: Magica Capsule Collider (PPL2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2484750485111478267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443322494211417715}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5223027, y: 0.21189329, z: -0.44873276, w: 0.69349843}
+  m_LocalPosition: {x: -0.00000031117457, y: 0.04470997, z: -0.010202631}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6400609667350941972}
+  m_LocalEulerAnglesHint: {x: 66.149, y: -25.621, z: -82.657}
+--- !u!114 &4000338673610271913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443322494211417715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f5338a96461264fb9a1132c8509672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {x: 0, y: 0, z: 0}
+  size: {x: 0.041, y: 0.055, z: 0.198}
+  direction: 1
+  radiusSeparation: 1
+  alignedOnCenter: 0
 --- !u!1 &4462719259989558891
 GameObject:
   m_ObjectHideFlags: 0
@@ -4426,14 +4568,14 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
     radius:
-      value: 0.0225
-      useCurve: 0
+      value: 0.042
+      useCurve: 1
       curve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 1
+          value: 0.9166692
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -4442,7 +4584,7 @@ MonoBehaviour:
           outWeight: 0
         - serializedVersion: 3
           time: 1
-          value: 1
+          value: 0.36320114
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -4624,7 +4766,28 @@ MonoBehaviour:
     colliderCollisionConstraint:
       mode: 1
       friction: 0.05
-      colliderList: []
+      colliderList:
+      - {fileID: 8648230116793970935}
+      - {fileID: 3984254990241079848}
+      - {fileID: 4806140283162712914}
+      - {fileID: 3402791795980498034}
+      - {fileID: 1730059042263874749}
+      - {fileID: 6221895960310013052}
+      - {fileID: 9102235273293857924}
+      - {fileID: 6160514802087828883}
+      - {fileID: 1744162102191365079}
+      - {fileID: 8799386283805431226}
+      - {fileID: 5831346630337342106}
+      - {fileID: 325139900143322190}
+      - {fileID: 2977371877119952498}
+      - {fileID: 3655361182398874686}
+      - {fileID: 5324023192232961910}
+      - {fileID: 5473188171531348227}
+      - {fileID: 7702953999234530861}
+      - {fileID: 8353561500228623616}
+      - {fileID: 7980560195814113739}
+      - {fileID: 4000338673610271913}
+      - {fileID: 8241454584592016523}
     selfCollisionConstraint:
       selfMode: 0
       surfaceThickness:
@@ -4669,149 +4832,149 @@ MonoBehaviour:
     selectionData:
       positions:
       - x: 0.0691032
-        y: 1.1038777
-        z: 0.09849644
+        y: 1.1038774
+        z: 0.098496415
       - x: 0.07635265
-        y: 1.0260646
-        z: 0.10518396
+        y: 1.0260644
+        z: 0.10518394
       - x: 0.08360205
-        y: 0.9482516
-        z: 0.11187136
+        y: 0.94825137
+        z: 0.11187133
       - x: 0.09085143
-        y: 0.8704388
-        z: 0.118558824
+        y: 0.87043864
+        z: 0.118558794
       - x: -0.069103196
-        y: 1.1038775
-        z: 0.09849644
+        y: 1.1038773
+        z: 0.098496415
       - x: -0.07635266
-        y: 1.0260646
-        z: 0.10518396
+        y: 1.0260644
+        z: 0.10518394
       - x: -0.083602086
-        y: 0.94825196
-        z: 0.11187136
+        y: 0.9482517
+        z: 0.11187133
       - x: -0.09085144
-        y: 0.8704391
-        z: 0.118558824
+        y: 0.87043893
+        z: 0.118558794
       - x: 0.11253451
-        y: 1.1076671
-        z: 0.050431848
-      - x: 0.13495338
-        y: 1.0306226
-        z: 0.056100905
-      - x: 0.15737207
-        y: 0.9535784
-        z: 0.061769903
-      - x: 0.17979087
-        y: 0.876534
-        z: 0.06743896
-      - x: -0.11253457
         y: 1.1076669
-        z: 0.050431848
+        z: 0.050431836
+      - x: 0.13495338
+        y: 1.0306224
+        z: 0.05610089
+      - x: 0.15737207
+        y: 0.9535782
+        z: 0.061769888
+      - x: 0.17979087
+        y: 0.87653375
+        z: 0.067438945
+      - x: -0.11253457
+        y: 1.1076666
+        z: 0.050431836
       - x: -0.13495328
-        y: 1.0306231
-        z: 0.056100905
+        y: 1.0306228
+        z: 0.05610089
       - x: -0.15737209
-        y: 0.9535783
-        z: 0.061769962
+        y: 0.95357805
+        z: 0.061769947
       - x: -0.17979081
-        y: 0.8765341
-        z: 0.06743902
+        y: 0.87653387
+        z: 0.067439005
       - x: 0.05299983
-        y: 1.1028377
-        z: -0.07110393
+        y: 1.1028374
+        z: -0.071103916
       - x: 0.065481424
-        y: 1.033165
-        z: -0.10007751
+        y: 1.0331647
+        z: -0.10007749
       - x: 0.075236715
-        y: 0.95392466
-        z: -0.11871076
+        y: 0.9539244
+        z: -0.11871073
       - x: 0.08405366
-        y: 0.8785154
-        z: -0.1279388
+        y: 0.8785152
+        z: -0.12793878
       - x: -0.05299982
-        y: 1.1028378
-        z: -0.07110381
+        y: 1.1028376
+        z: -0.0711038
       - x: -0.06548143
-        y: 1.0331651
-        z: -0.10007763
+        y: 1.0331649
+        z: -0.10007761
       - x: -0.07523671
-        y: 0.95392454
-        z: -0.118710876
+        y: 0.9539243
+        z: -0.118710846
       - x: -0.08405365
-        y: 0.8785151
-        z: -0.12793869
+        y: 0.8785149
+        z: -0.12793866
       - x: 0.11407517
-        y: 1.104777
-        z: -0.041337013
+        y: 1.1047767
+        z: -0.041337002
       - x: 0.13936675
-        y: 1.034291
-        z: -0.06211102
+        y: 1.0342908
+        z: -0.062111005
       - x: 0.15894896
-        y: 0.95454186
-        z: -0.074493945
+        y: 0.9545416
+        z: -0.07449393
       - x: 0.17634583
-        y: 0.878896
-        z: -0.07939774
+        y: 0.87889576
+        z: -0.079397716
       - x: -0.114075154
-        y: 1.1047771
-        z: -0.041336894
+        y: 1.1047769
+        z: -0.041336883
       - x: -0.1393668
-        y: 1.034291
-        z: -0.06211102
+        y: 1.0342908
+        z: -0.062111005
       - x: -0.15894897
-        y: 0.9545415
-        z: -0.074493825
+        y: 0.95454127
+        z: -0.07449381
       - x: -0.17634584
-        y: 0.8788957
-        z: -0.07939762
+        y: 0.87889546
+        z: -0.0793976
       - x: 0.12606521
-        y: 1.1065514
-        z: 0.00096452236
+        y: 1.1065512
+        z: 0.0009645221
       - x: 0.16084868
-        y: 1.0339664
-        z: -0.00083482265
+        y: 1.0339662
+        z: -0.0008348225
       - x: 0.18566215
-        y: 0.9566024
-        z: -0.0032666326
+        y: 0.95660216
+        z: -0.0032666319
       - x: 0.20891617
-        y: 0.87998664
-        z: -0.005687773
+        y: 0.8799864
+        z: -0.005687772
       - x: -0.1260651
-        y: 1.1065515
-        z: 0.00096452236
+        y: 1.1065513
+        z: 0.0009645221
       - x: -0.16084872
-        y: 1.0339664
-        z: -0.00083482265
+        y: 1.0339662
+        z: -0.0008348225
       - x: -0.18566215
-        y: 0.9566023
-        z: -0.0032666326
+        y: 0.95660204
+        z: -0.0032666319
       - x: -0.20891614
-        y: 0.8799865
-        z: -0.005687773
+        y: 0.8799863
+        z: -0.005687772
       - x: -0.00012699999
-        y: 1.0967623
-        z: 0.11727774
+        y: 1.0967621
+        z: 0.11727771
       - x: -0.0004081896
-        y: 1.0183151
-        z: 0.12153816
+        y: 1.0183148
+        z: 0.12153813
       - x: -0.00040818908
-        y: 0.9414123
-        z: 0.12888074
+        y: 0.9414121
+        z: 0.12888071
       - x: -0.00012698847
-        y: 0.8660539
-        z: 0.13930565
+        y: 0.8660537
+        z: 0.13930562
       - x: -0.00012699001
-        y: 1.0910307
-        z: -0.0892545
+        y: 1.0910305
+        z: -0.089254476
       - x: -0.0001270008
-        y: 1.0203114
-        z: -0.12054777
+        y: 1.0203111
+        z: -0.12054774
       - x: -0.00012699331
-        y: 0.943377
-        z: -0.13825703
+        y: 0.9433768
+        z: -0.138257
       - x: -0.00012700472
-        y: 0.86771715
-        z: -0.15124345
+        y: 0.86771697
+        z: -0.15124342
       attributes:
       - Value: 1
       - Value: 2
@@ -5378,6 +5541,55 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.07125063, y: 0.66806775, z: -0.049357444}
     m_Extent: {x: 0.16351283, y: 0.44715995, z: 0.14234492}
   m_DirtyAABB: 0
+--- !u!1 &4787178463398319943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 722721072272636278}
+  - component: {fileID: 5324023192232961910}
+  m_Layer: 0
+  m_Name: Magica Capsule Collider (Spine) (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &722721072272636278
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4787178463398319943}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.29779145, y: 0, z: 0, w: 0.954631}
+  m_LocalPosition: {x: -0, y: -0.1946, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 379609781554243929}
+  m_LocalEulerAnglesHint: {x: -34.65, y: 0, z: 0}
+--- !u!114 &5324023192232961910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4787178463398319943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f5338a96461264fb9a1132c8509672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {x: 0, y: 0, z: 0}
+  size: {x: 0.062, y: 0.067, z: 0.317}
+  direction: 1
+  radiusSeparation: 1
+  alignedOnCenter: 0
 --- !u!1 &4850037583988121136
 GameObject:
   m_ObjectHideFlags: 0
@@ -5826,8 +6038,64 @@ Transform:
   - {fileID: 1541224458068767371}
   - {fileID: 4909542791439567234}
   - {fileID: 3483578873476448337}
+  - {fileID: 6377077910857974170}
+  - {fileID: 379609781554243929}
+  - {fileID: 5325594500975199911}
+  - {fileID: 8332155801983257756}
+  - {fileID: 6426380497476941597}
+  - {fileID: 2484750485111478267}
+  - {fileID: 8963312255241930560}
   m_Father: {fileID: 2100574491210253201}
   m_LocalEulerAnglesHint: {x: 48.837975, y: 109.63544, z: 104.4308}
+--- !u!1 &5445452134311085083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8963312255241930560}
+  - component: {fileID: 8241454584592016523}
+  m_Layer: 0
+  m_Name: Magica Capsule Collider (PPL1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8963312255241930560
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5445452134311085083}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.27690986, y: -0.4909385, z: 0.63046056, w: 0.5336851}
+  m_LocalPosition: {x: -0.00000031117457, y: 0.04470997, z: -0.010202631}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6400609667350941972}
+  m_LocalEulerAnglesHint: {x: 66.149, y: -25.621, z: 82.657}
+--- !u!114 &8241454584592016523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5445452134311085083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f5338a96461264fb9a1132c8509672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {x: 0, y: 0, z: 0}
+  size: {x: 0.041, y: 0.055, z: 0.198}
+  direction: 1
+  radiusSeparation: 1
+  alignedOnCenter: 0
 --- !u!1 &5508469903992537568
 GameObject:
   m_ObjectHideFlags: 0
@@ -5986,55 +6254,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5739125763219187171}
   m_LocalEulerAnglesHint: {x: -14.006801, y: 96.81335, z: -7.4250093}
---- !u!1 &5618927565493515086
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 353233403338192114}
-  - component: {fileID: 3901425196326493762}
-  m_Layer: 0
-  m_Name: Magica Capsule Collider (Spine) (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &353233403338192114
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5618927565493515086}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.25352016, y: -0.55617625, z: 0.5536452, w: 0.56557286}
-  m_LocalPosition: {x: -0.072134316, y: -0.11392036, z: -0.08072682}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3483578873476448337}
-  m_LocalEulerAnglesHint: {x: 17.93, y: -72.155, z: 82.166}
---- !u!114 &3901425196326493762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5618927565493515086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6f5338a96461264fb9a1132c8509672, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  center: {x: 0, y: 0, z: 0}
-  size: {x: 0.062, y: 0.038, z: 0.226}
-  direction: 1
-  radiusSeparation: 1
-  alignedOnCenter: 1
 --- !u!1 &5639992949211744044
 GameObject:
   m_ObjectHideFlags: 0
@@ -6077,7 +6296,7 @@ GameObject:
   - component: {fileID: 8332155801983257756}
   - component: {fileID: 8353561500228623616}
   m_Layer: 0
-  m_Name: Magica Capsule Collider (Spine)
+  m_Name: Magica Capsule Collider (PPL1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6091,13 +6310,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5677750391183246644}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20185067, y: 0.0010158635, z: -0.0086216405, w: 0.9793778}
-  m_LocalPosition: {x: 0.00049632497, y: 0.019386046, z: 0.014903937}
+  m_LocalRotation: {x: 0.26350474, y: 0.49159718, z: -0.6661305, w: 0.49514407}
+  m_LocalPosition: {x: 0.0000002372024, y: 0.044737626, z: -0.010208964}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3483578873476448337}
-  m_LocalEulerAnglesHint: {x: 15.616, y: 0, z: 0}
+  m_Father: {fileID: 6400609667350941972}
+  m_LocalEulerAnglesHint: {x: 66.331, y: 19.767, z: -93.76}
 --- !u!114 &8353561500228623616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6111,10 +6330,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   center: {x: 0, y: 0, z: 0}
-  size: {x: 0.066, y: 0.055, z: 0.443}
+  size: {x: 0.041, y: 0.055, z: 0.198}
   direction: 1
   radiusSeparation: 1
-  alignedOnCenter: 1
+  alignedOnCenter: 0
 --- !u!1 &5686088945869565400
 GameObject:
   m_ObjectHideFlags: 0
@@ -6911,6 +7130,55 @@ Transform:
   - {fileID: 5924805809337232000}
   m_Father: {fileID: 7729881501209888628}
   m_LocalEulerAnglesHint: {x: -12.407835, y: 178.60773, z: -179.99995}
+--- !u!1 &6621122068560024853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 90682058943458560}
+  - component: {fileID: 7702953999234530861}
+  m_Layer: 0
+  m_Name: Magica Capsule Collider (Spine) (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &90682058943458560
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6621122068560024853}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.29779145, y: 0, z: 0, w: 0.954631}
+  m_LocalPosition: {x: -0, y: -0.1946, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5325594500975199911}
+  m_LocalEulerAnglesHint: {x: -34.65, y: 0, z: 0}
+--- !u!114 &7702953999234530861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6621122068560024853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f5338a96461264fb9a1132c8509672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {x: 0, y: 0, z: 0}
+  size: {x: 0.062, y: 0.067, z: 0.317}
+  direction: 1
+  radiusSeparation: 1
+  alignedOnCenter: 0
 --- !u!1 &6641856791993779979
 GameObject:
   m_ObjectHideFlags: 0
@@ -8328,6 +8596,56 @@ Transform:
   - {fileID: 8176080226951491690}
   m_Father: {fileID: 6400609667350941972}
   m_LocalEulerAnglesHint: {x: -5.556821, y: -90.034996, z: -162.26518}
+--- !u!1 &8218338337659439563
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6377077910857974170}
+  - component: {fileID: 325139900143322190}
+  m_Layer: 0
+  m_Name: Magica Capsule Collider (Spine)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6377077910857974170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8218338337659439563}
+  serializedVersion: 2
+  m_LocalRotation: {x: -1, y: 0, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0.040477227, z: -0.000008821487}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7902922404188881089}
+  m_Father: {fileID: 6400609667350941972}
+  m_LocalEulerAnglesHint: {x: -180, y: 0, z: 0}
+--- !u!114 &325139900143322190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8218338337659439563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f5338a96461264fb9a1132c8509672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {x: 0, y: 0, z: 0}
+  size: {x: 0.062, y: 0.067, z: 0.317}
+  direction: 1
+  radiusSeparation: 1
+  alignedOnCenter: 0
 --- !u!1 &8236684048358229497
 GameObject:
   m_ObjectHideFlags: 0
@@ -9281,7 +9599,28 @@ MonoBehaviour:
     colliderCollisionConstraint:
       mode: 1
       friction: 0.05
-      colliderList: []
+      colliderList:
+      - {fileID: 8648230116793970935}
+      - {fileID: 3984254990241079848}
+      - {fileID: 4806140283162712914}
+      - {fileID: 3402791795980498034}
+      - {fileID: 1730059042263874749}
+      - {fileID: 6221895960310013052}
+      - {fileID: 9102235273293857924}
+      - {fileID: 6160514802087828883}
+      - {fileID: 1744162102191365079}
+      - {fileID: 8799386283805431226}
+      - {fileID: 5831346630337342106}
+      - {fileID: 325139900143322190}
+      - {fileID: 2977371877119952498}
+      - {fileID: 3655361182398874686}
+      - {fileID: 5324023192232961910}
+      - {fileID: 5473188171531348227}
+      - {fileID: 7702953999234530861}
+      - {fileID: 8353561500228623616}
+      - {fileID: 7980560195814113739}
+      - {fileID: 4000338673610271913}
+      - {fileID: 8241454584592016523}
     selfCollisionConstraint:
       selfMode: 0
       surfaceThickness:
@@ -9326,35 +9665,35 @@ MonoBehaviour:
     selectionData:
       positions:
       - x: 0.087978914
-        y: 1.5577617
-        z: -0.08663833
+        y: 1.5577613
+        z: -0.08663831
       - x: 0.12371487
-        y: 1.4306809
-        z: -0.106318116
+        y: 1.4306805
+        z: -0.106318094
       - x: 0.12461263
-        y: 1.3090246
-        z: -0.10769653
+        y: 1.3090242
+        z: -0.10769651
       - x: 0.109717235
-        y: 1.1933436
-        z: -0.102639556
+        y: 1.1933434
+        z: -0.10263953
       - x: 0.09865247
-        y: 1.0722789
-        z: -0.10752559
+        y: 1.0722786
+        z: -0.107525565
       - x: -0.087978974
-        y: 1.5577617
-        z: -0.08663833
+        y: 1.5577613
+        z: -0.08663831
       - x: -0.12371487
-        y: 1.4306808
-        z: -0.106318
+        y: 1.4306804
+        z: -0.106317975
       - x: -0.12461268
-        y: 1.3090246
-        z: -0.107696414
+        y: 1.3090242
+        z: -0.10769639
       - x: -0.10971745
-        y: 1.1933439
-        z: -0.10263944
+        y: 1.1933436
+        z: -0.102639414
       - x: -0.09865279
-        y: 1.0722789
-        z: -0.10752535
+        y: 1.0722786
+        z: -0.10752533
       attributes:
       - Value: 1
       - Value: 2
