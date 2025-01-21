@@ -2601,7 +2601,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3160543181444988428}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4514,7 +4514,7 @@ MonoBehaviour:
     - {fileID: 2341813108305917378}
     - {fileID: 1541224458068767371}
     - {fileID: 4909542791439567234}
-    connectionMode: 0
+    connectionMode: 1
     rotationalInterpolation: 0.5
     rootRotation: 0.5
     updateMode: 0
@@ -4524,7 +4524,11 @@ MonoBehaviour:
       shapeDistance: 0
     customSkinningSetting:
       enable: 0
-      skinningBones: []
+      skinningBones:
+      - {fileID: 8608760474200208128}
+      - {fileID: 298215351501119603}
+      - {fileID: 2671769134972979214}
+      - {fileID: 2038902467984949375}
     normalAlignmentSetting:
       alignmentMode: 0
       adjustmentTransform: {fileID: 0}
@@ -4568,14 +4572,14 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
     radius:
-      value: 0.042
+      value: 0.02
       useCurve: 1
       curve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.9166692
+          value: 0.8191884
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -4773,10 +4777,6 @@ MonoBehaviour:
       - {fileID: 3402791795980498034}
       - {fileID: 1730059042263874749}
       - {fileID: 6221895960310013052}
-      - {fileID: 9102235273293857924}
-      - {fileID: 6160514802087828883}
-      - {fileID: 1744162102191365079}
-      - {fileID: 8799386283805431226}
       - {fileID: 5831346630337342106}
       - {fileID: 325139900143322190}
       - {fileID: 2977371877119952498}
@@ -5024,7 +5024,7 @@ MonoBehaviour:
       - Value: 2
       - Value: 2
       - Value: 2
-      maxConnectionDistance: 0.08304686
+      maxConnectionDistance: 0.13190116
       userEdit: 0
   gizmoSerializeData:
     always: 0
