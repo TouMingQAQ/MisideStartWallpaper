@@ -87,6 +87,13 @@ public class AudioAnimation : MonoBehaviour
         configPath = Application.streamingAssetsPath + "/MusicHeadConfig.json";
 #endif
         LoadConfig();
+      
+    }
+
+    private void Start()
+    {
+        if (!MiSideStart.config.MusicHead)
+            return;
         capture = new WasapiLoopbackCapture();
         capture.Initialize();
         capture.Start();
@@ -94,6 +101,7 @@ public class AudioAnimation : MonoBehaviour
         soundInSource.DataAvailable += OnDataAvailable;
         _enumerator = new MMDeviceEnumerator();
     }
+
     void LoadConfig()
     {
         FileInfo fileInfo = new FileInfo(configPath);
@@ -133,9 +141,13 @@ public class AudioAnimation : MonoBehaviour
     }
     void ResetCapture()
     {
-        capture.Stop();
-        capture.Dispose();
-        soundInSource.Dispose();
+        capture?.Stop();
+        capture?.Dispose();
+        soundInSource?.Dispose();
+        capture = null;
+        soundInSource = null;
+        if (!MiSideStart.config.MusicHead)
+            return;
         capture = new WasapiLoopbackCapture();
         capture.Initialize();
         capture.Start();
@@ -149,10 +161,15 @@ public class AudioAnimation : MonoBehaviour
         soundInSource?.Dispose();
         capture?.Stop();
         capture?.Dispose();
+        _enumerator = null;
+        soundInSource = null;
+        capture = null;
     }
 
     private void Update()
     {
+        if (!MiSideStart.config.MusicHead)
+            return;
         var device = _enumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
         var deviceName = device.FriendlyName;
         if (deviceName != audioDeviceName)
@@ -162,8 +179,7 @@ public class AudioAnimation : MonoBehaviour
             audioDeviceID = device.DeviceID;
             ResetCapture();
         }
-        if (!MiSideStart.config.MusicHead)
-            return;
+        
         if (config.MusicHeadVersion == MusicHeadVersion.V1)
         {
             if (nod)

@@ -62,7 +62,7 @@ public struct MiSideConfig
             ClickCount = 2,
             LookAtOffsetMultiplier = new Vector4(3f, 3f, 3f, 3f),
             PlaySoundOnClick = true,
-            WallpaperVersion = "0.0.2_03"
+            WallpaperVersion = MiSideStart.Version
         };
     }
 }
@@ -77,6 +77,7 @@ public enum LookAtState
 public class MiSideStart : MonoBehaviour
 {
     private static readonly int Init = Animator.StringToHash("Init");
+    public static readonly string Version = "0.0.2_04";
     public static MiSideConfig config;
 
     [Tab("Components")]
@@ -214,6 +215,14 @@ public class MiSideStart : MonoBehaviour
                 File.WriteAllText(ConfigPath, json);
             }
         }
+        //版本不一致时，重写配置
+        if (config.WallpaperVersion != MiSideStart.Version)
+        {
+            config = MiSideConfig.Default();
+            var json = JsonConvert.SerializeObject(config, Formatting.Indented, new VectorConverter());
+            File.WriteAllText(ConfigPath, json);
+        }
+        
         clickCount = config.ClickCount;
         targetFrameRate = config.TargetFrameRate;
         startAnimationRange = config.StartAnimationRange;
