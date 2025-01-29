@@ -60,7 +60,7 @@ public struct MiSideConfig
             LookAtState = LookAtState.Always,
             MusicHead = true,
             ClickCount = 2,
-            LookAtOffsetMultiplier = new Vector4(3f, 3f, 3f, 3f),
+            LookAtOffsetMultiplier = new Vector4(3f, 3f, 0.5f, 3f),
             PlaySoundOnClick = true,
             WallpaperVersion = MiSideStart.Version
         };
@@ -77,7 +77,7 @@ public enum LookAtState
 public class MiSideStart : MonoBehaviour
 {
     private static readonly int Init = Animator.StringToHash("Init");
-    public static readonly string Version = "0.0.2_04";
+    public static readonly string Version = "0.0.3";
     public static MiSideConfig config;
 
     [Tab("Components")]

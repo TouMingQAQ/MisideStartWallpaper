@@ -649,7 +649,7 @@ MonoBehaviour:
   maxSpeed: 10
   limitY: {x: 0.8, y: 0}
   velocity: {x: 0, y: 0, z: 0}
-  offset: {x: 3, y: 3, z: 3, w: 3}
+  offset: {x: 3, y: 3, z: 0.5, w: 3}
 --- !u!1 &189189136
 GameObject:
   m_ObjectHideFlags: 0
