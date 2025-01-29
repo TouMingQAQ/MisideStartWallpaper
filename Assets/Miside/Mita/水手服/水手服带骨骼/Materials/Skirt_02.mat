@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shoes_0Mat
+  m_Name: Skirt_02
   m_Shader: {fileID: 4800000, guid: 6459b2db96a08ca41b0f9b39dc7ad59e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -184,7 +184,7 @@ Material:
     - _Compa: 4
     - _ComputeMeshIndex: 0
     - _Cull: 2
-    - _Culling: 2
+    - _Culling: 0
     - _CustomLightDirectionFollowObjectRotation: 0
     - _CustomLightDirectionIntensity: 0
     - _Cutoff: 0.5
@@ -372,7 +372,7 @@ Material:
     - _XYZPosition: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &5201466224738430955
+--- !u!114 &768511184198774414
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

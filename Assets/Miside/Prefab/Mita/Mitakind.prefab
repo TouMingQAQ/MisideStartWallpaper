@@ -3315,7 +3315,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
     radius:
-      value: 0.02
+      value: 0.047
       useCurve: 0
       curve:
         serializedVersion: 2
@@ -3511,7 +3511,7 @@ MonoBehaviour:
           m_RotationOrder: 4
       stiffness: 1
     colliderCollisionConstraint:
-      mode: 1
+      mode: 2
       friction: 0.05
       colliderList:
       - {fileID: 5669510722986145306}

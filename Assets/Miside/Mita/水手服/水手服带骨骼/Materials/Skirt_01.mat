@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sweater_0Mat.001
+  m_Name: Skirt_01
   m_Shader: {fileID: 4800000, guid: 6459b2db96a08ca41b0f9b39dc7ad59e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -96,7 +96,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 5a28862b96de6674abf313f05be772b1, type: 3}
+        m_Texture: {fileID: 2800000, guid: ed64488c19250754bbca6dabb8a7a306, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskGloss:
@@ -184,7 +184,7 @@ Material:
     - _Compa: 4
     - _ComputeMeshIndex: 0
     - _Cull: 2
-    - _Culling: 2
+    - _Culling: 0
     - _CustomLightDirectionFollowObjectRotation: 0
     - _CustomLightDirectionIntensity: 0
     - _Cutoff: 0.5
@@ -372,7 +372,7 @@ Material:
     - _XYZPosition: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &8663409687338766900
+--- !u!114 &768511184198774414
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
