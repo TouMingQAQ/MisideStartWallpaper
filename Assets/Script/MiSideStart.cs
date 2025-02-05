@@ -6,6 +6,8 @@ using Newtonsoft.Json;
 using RootMotion.FinalIK;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using VInspector;
 using Random = UnityEngine.Random;
 #if UNITY_EDITOR
@@ -45,7 +47,12 @@ public struct MiSideConfig
     /// 点击时是否播放音频
     /// </summary>
     public bool PlaySoundOnClick;
+    
 
+    /// <summary>
+    /// TAA抗锯齿质量
+    /// </summary>
+    public TemporalAAQuality TAAQuality;
     /// <summary>
     /// 壁纸版本
     /// </summary>
@@ -62,6 +69,7 @@ public struct MiSideConfig
             ClickCount = 2,
             LookAtOffsetMultiplier = new Vector4(3f, 3f, 0.5f, 3f),
             PlaySoundOnClick = true,
+            TAAQuality = TemporalAAQuality.VeryLow,
             WallpaperVersion = MiSideStart.Version
         };
     }
@@ -82,6 +90,8 @@ public class MiSideStart : MonoBehaviour
 
     [Tab("Components")]
     public MitaControl control;
+    public Camera mainCamera;
+    public UniversalAdditionalCameraData additionalCameraData;
     public MouseToWorldControl mouseControl;
     [Tab("Config")]
     [SerializeField] private string ConfigPath;
@@ -226,6 +236,9 @@ public class MiSideStart : MonoBehaviour
         clickCount = config.ClickCount;
         targetFrameRate = config.TargetFrameRate;
         startAnimationRange = config.StartAnimationRange;
+        mainCamera.allowHDR = true;
+        additionalCameraData.antialiasing = AntialiasingMode.TemporalAntiAliasing;
+        additionalCameraData.taaSettings.quality = config.TAAQuality;
     }
     
     [ContextMenu("NodOnShot")]

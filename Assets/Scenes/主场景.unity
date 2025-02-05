@@ -281,7 +281,7 @@ Light:
   m_InnerSpotAngle: 21.8
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 2
     m_Resolution: 2048
     m_CustomResolution: -1
     m_Strength: 0.4
@@ -520,6 +520,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
+  mainCamera: {fileID: 330585545}
+  additionalCameraData: {fileID: 330585547}
   mouseControl: {fileID: 183159174}
   ConfigPath: 
   targetFrameRate: 0
@@ -888,7 +890,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 2
+  m_Antialiasing: 3
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -902,7 +904,7 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
+    m_Quality: 4
     m_FrameInfluence: 0.1
     m_JitterScale: 1
     m_MipBias: 0
@@ -1496,7 +1498,7 @@ RectTransform:
   m_GameObject: {fileID: 1178011944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 4.0703125, y: 4.0703125, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 34858555}
@@ -1553,10 +1555,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a51f79b9b7ff3f43a0ef680ed0a75ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nowScreenSize: {x: 1563, y: 763}
+  nowScreenSize: {x: 3840, y: 2160}
   screenAnchorSize: {x: 1920, y: 1080}
   rectTransform: {fileID: 1178011945}
-  scale: 0.8140625
+  scale: 2
   scaleWight: {x: 5, y: 5}
   limitScale: {x: 0, y: 10}
   scaleMode: 1
