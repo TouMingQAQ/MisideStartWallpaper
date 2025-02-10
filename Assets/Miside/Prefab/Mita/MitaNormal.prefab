@@ -584,7 +584,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
     radius:
-      value: 0.02
+      value: 0.007
       useCurve: 0
       curve:
         serializedVersion: 2
@@ -780,7 +780,7 @@ MonoBehaviour:
           m_RotationOrder: 4
       stiffness: 1
     colliderCollisionConstraint:
-      mode: 1
+      mode: 2
       friction: 0.05
       colliderList:
       - {fileID: 9102235273293857924}
@@ -3173,9 +3173,6 @@ MonoBehaviour:
   winkClip: {fileID: 8300000, guid: 3fe99b1d09f6560478db3c91c3d3f864, type: 3}
   onClickClip: {fileID: 8300000, guid: 548abcdb3e8f1594e8494661af37d8e1, type: 3}
   headRender: {fileID: 5821098312978498612}
-  blinkTimer: 0
-  blinkShapeIndex: 1
-  blinkWeight: 0
 --- !u!95 &2669349457186144134
 Animator:
   serializedVersion: 7
