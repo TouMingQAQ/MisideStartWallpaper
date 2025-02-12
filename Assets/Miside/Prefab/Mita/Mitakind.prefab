@@ -2189,7 +2189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   center: {x: 0, y: 0, z: 0}
-  size: {x: 0.04, y: 0.05, z: 0.25}
+  size: {x: 0.04, y: 0.05, z: 0.162}
   direction: 1
   radiusSeparation: 1
   alignedOnCenter: 0
@@ -3315,7 +3315,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
     radius:
-      value: 0.047
+      value: 0.042
       useCurve: 0
       curve:
         serializedVersion: 2
@@ -3511,7 +3511,7 @@ MonoBehaviour:
           m_RotationOrder: 4
       stiffness: 1
     colliderCollisionConstraint:
-      mode: 2
+      mode: 1
       friction: 0.05
       colliderList:
       - {fileID: 5669510722986145306}
@@ -5170,7 +5170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   center: {x: 0, y: 0, z: 0}
-  size: {x: 0.041, y: 0.05, z: 0.194}
+  size: {x: 0.041, y: 0.05, z: 0.162}
   direction: 1
   radiusSeparation: 1
   alignedOnCenter: 0
@@ -7688,7 +7688,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
     radius:
-      value: 0.007
+      value: 0.011
       useCurve: 0
       curve:
         serializedVersion: 2
@@ -11778,7 +11778,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
     radius:
-      value: 0.008
+      value: 0.016
       useCurve: 0
       curve:
         serializedVersion: 2
@@ -11974,7 +11974,7 @@ MonoBehaviour:
           m_RotationOrder: 4
       stiffness: 1
     colliderCollisionConstraint:
-      mode: 2
+      mode: 1
       friction: 0.05
       colliderList:
       - {fileID: 5669510722986145306}
@@ -13513,6 +13513,7 @@ MonoBehaviour:
   audioSource: {fileID: 715759370616427430}
   winkClip: {fileID: 8300000, guid: 3fe99b1d09f6560478db3c91c3d3f864, type: 3}
   onClickClip: {fileID: 8300000, guid: 548abcdb3e8f1594e8494661af37d8e1, type: 3}
+  headRender: {fileID: 0}
 --- !u!136 &1269661951600877361
 CapsuleCollider:
   m_ObjectHideFlags: 0

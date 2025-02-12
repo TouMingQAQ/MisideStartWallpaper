@@ -595,7 +595,7 @@ MonoBehaviour:
   clickTimer: 0
   clickCountTimer: 0
   controlPrefabs:
-  - {fileID: -8230668359864887265, guid: 4c95b002fe1a37c4e8b5c8a6e9cdeea5, type: 3}
+  - {fileID: 5473387114539581262, guid: 65f8d7b5f609bfd469c47c85620b4acd, type: 3}
 --- !u!114 &183159173
 MonoBehaviour:
   m_ObjectHideFlags: 0
