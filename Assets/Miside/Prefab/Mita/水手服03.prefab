@@ -7067,6 +7067,7 @@ MonoBehaviour:
   audioSource: {fileID: 3290685210639827947}
   winkClip: {fileID: 8300000, guid: 3fe99b1d09f6560478db3c91c3d3f864, type: 3}
   onClickClip: {fileID: 8300000, guid: 548abcdb3e8f1594e8494661af37d8e1, type: 3}
+  headRender: {fileID: 0}
 --- !u!82 &3290685210639827947
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9505,7 +9506,7 @@ MonoBehaviour:
       cameraCullingMethod: 0
       cameraCullingRenderers: []
     normalAxis: 1
-    gravity: 5
+    gravity: 0
     gravityDirection:
       x: 0
       y: -1
@@ -9541,7 +9542,7 @@ MonoBehaviour:
         m_RotationOrder: 4
     radius:
       value: 0.015
-      useCurve: 0
+      useCurve: 1
       curve:
         serializedVersion: 2
         m_Curve:
@@ -9649,28 +9650,28 @@ MonoBehaviour:
     angleLimitConstraint:
       useAngleLimit: 1
       limitAngle:
-        value: 60
+        value: 7.3
         useCurve: 1
         curve:
           serializedVersion: 2
           m_Curve:
           - serializedVersion: 3
             time: 0
-            value: 0.199749
-            inSlope: 0.800251
-            outSlope: 0.800251
-            tangentMode: 34
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
             weightedMode: 0
             inWeight: 0
-            outWeight: 0.33333334
+            outWeight: 0
           - serializedVersion: 3
             time: 1
             value: 1
-            inSlope: 0.800251
-            outSlope: 0.800251
-            tangentMode: 34
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
             weightedMode: 0
-            inWeight: 0.33333334
+            inWeight: 0
             outWeight: 0
           m_PreInfinity: 2
           m_PostInfinity: 2

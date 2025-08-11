@@ -1363,7 +1363,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454219158321110037}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdbd3ce05f5b45942b56ede5c9b38364, type: 3}
   m_Name: 
@@ -7435,7 +7435,7 @@ MonoBehaviour:
       cameraCullingMethod: 0
       cameraCullingRenderers: []
     normalAxis: 1
-    gravity: 5
+    gravity: 0
     gravityDirection:
       x: 0
       y: -1
@@ -7579,28 +7579,28 @@ MonoBehaviour:
     angleLimitConstraint:
       useAngleLimit: 1
       limitAngle:
-        value: 60
+        value: 7.3
         useCurve: 1
         curve:
           serializedVersion: 2
           m_Curve:
           - serializedVersion: 3
             time: 0
-            value: 0.199749
-            inSlope: 0.800251
-            outSlope: 0.800251
-            tangentMode: 34
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
             weightedMode: 0
             inWeight: 0
-            outWeight: 0.33333334
+            outWeight: 0
           - serializedVersion: 3
             time: 1
             value: 1
-            inSlope: 0.800251
-            outSlope: 0.800251
-            tangentMode: 34
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
             weightedMode: 0
-            inWeight: 0.33333334
+            inWeight: 0
             outWeight: 0
           m_PreInfinity: 2
           m_PostInfinity: 2
@@ -7668,19 +7668,7 @@ MonoBehaviour:
     colliderCollisionConstraint:
       mode: 1
       friction: 0.05
-      colliderList:
-      - {fileID: 8648230116793970935}
-      - {fileID: 3984254990241079848}
-      - {fileID: 325139900143322190}
-      - {fileID: 2977371877119952498}
-      - {fileID: 3655361182398874686}
-      - {fileID: 5324023192232961910}
-      - {fileID: 5473188171531348227}
-      - {fileID: 7702953999234530861}
-      - {fileID: 8353561500228623616}
-      - {fileID: 7980560195814113739}
-      - {fileID: 4000338673610271913}
-      - {fileID: 8241454584592016523}
+      colliderList: []
     selfCollisionConstraint:
       selfMode: 0
       surfaceThickness:

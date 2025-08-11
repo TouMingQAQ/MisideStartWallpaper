@@ -72,6 +72,7 @@ public class AudioAnimation : MonoBehaviour
     private string audioDeviceName;
     [SerializeField,ReadOnly]
     private string audioDeviceID;
+#if !UNITY_ANDROID
 
 
 
@@ -298,4 +299,5 @@ public class AudioAnimation : MonoBehaviour
     {
         return smoothingFactor * previousEnergy + (1 - smoothingFactor) * value;
     }
+    #endif
 }

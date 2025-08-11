@@ -40,13 +40,13 @@ public class MouseToWorldControl : MonoBehaviour
         if(control == null || MiSideStart.config.LookAtState == LookAtState.None)
             return;
         var center = Screen.safeArea.center;
-#if UNITY_ANDROID
+#if UNITY_ANDROID && !UNITY_EDITOR
         var mousePos = Touchscreen.current.position.ReadValue();
 #else
         var mousePos = Mouse.current.position.ReadValue();
 #endif
 
-#if UNITY_ANDROID
+#if UNITY_ANDROID && !UNITY_EDITOR
         if (Touchscreen.current.primaryTouch.isInProgress)
         {
             targetPosition = targetPositionCache;
