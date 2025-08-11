@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.InputSystem.Android;
 using VInspector;
+using Gyroscope = UnityEngine.InputSystem.Gyroscope;
 
 public class MouseToWorldControl : MonoBehaviour
 {
@@ -18,6 +20,13 @@ public class MouseToWorldControl : MonoBehaviour
     public Vector4 offset = Vector4.one;
     private Vector3 targetPositionCache;
     private Vector3 targetPosition;
+
+    private void Awake()
+    {
+        #if UNITY_ANDROID 
+        InputSystem.EnableDevice(Gyroscope.current);//启用陀螺仪
+        #endif
+    }
 
     private void OnEnable()
     {
@@ -40,10 +49,26 @@ public class MouseToWorldControl : MonoBehaviour
         if(control == null || MiSideStart.config.LookAtState == LookAtState.None)
             return;
         var center = Screen.safeArea.center;
-#if UNITY_ANDROID && !UNITY_EDITOR
-        var mousePos = Touchscreen.current.position.ReadValue();
+        var mousePos = Vector2.zero;
+#if UNITY_ANDROID
+        if (Application.isEditor)
+        {
+            mousePos = Mouse.current.position.ReadValue();
+        }
+        else
+        {
+            if (Gyroscope.current != null && Gyroscope.current.enabled)
+            {
+                // 获取角速度 (rad/s)
+                Vector3 angularVelocity = Gyroscope.current.angularVelocity.ReadValue();
+                
+        
+                Debug.Log($"角速度: {angularVelocity}");
+            }
+        }
+ 
 #else
-        var mousePos = Mouse.current.position.ReadValue();
+        mousePos = Mouse.current.position.ReadValue();
 #endif
 
 #if UNITY_ANDROID && !UNITY_EDITOR
