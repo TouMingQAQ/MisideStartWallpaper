@@ -51,7 +51,7 @@ public class UnityWallpaperService extends WallpaperService {
             if(!isPreview)
             {
                 try {
-                    UnityPlayer.UnitySendMessage("AndroidSetting","HideSetting",null);
+                    UnityPlayer.UnitySendMessage("AndroidSetting","IsWallpaper",null);
                 }catch (Exception ignored){
                 }
             }

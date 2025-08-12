@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using DG.Tweening;
 using Newtonsoft.Json;
-using RootMotion.FinalIK;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using VInspector;
 using Random = UnityEngine.Random;
@@ -53,6 +50,17 @@ public struct MiSideConfig
     /// TAA抗锯齿质量
     /// </summary>
     public TemporalAAQuality TAAQuality;
+
+    /// <summary>
+    /// 安卓陀螺仪偏移倍率
+    /// </summary>
+    public Vector2 gyroscopeScale;
+
+    /// <summary>
+    /// 安卓陀螺仪偏移空间倍率
+    /// </summary>
+    public Vector2 gyroscopeSafeAreaScale;
+
     /// <summary>
     /// 壁纸版本
     /// </summary>
@@ -70,7 +78,9 @@ public struct MiSideConfig
             LookAtOffsetMultiplier = new Vector4(3f, 3f, 0.5f, 3f),
             PlaySoundOnClick = true,
             TAAQuality = TemporalAAQuality.VeryLow,
-            WallpaperVersion = MiSideStart.Version
+            gyroscopeScale =  new  Vector2(20, 15),
+            gyroscopeSafeAreaScale = new  Vector2(1.2f, 1.1f),
+            WallpaperVersion = MiSideStart.Version,
         };
     }
 }
@@ -85,9 +95,10 @@ public enum LookAtState
 public class MiSideStart : MonoBehaviour
 {
     private static readonly int Init = Animator.StringToHash("Init");
-    public static readonly string Version = "0.0.3";
+    private static readonly int Restart = Animator.StringToHash("Restart");
+    public static readonly string Version = "0.0.4";
     public static MiSideConfig config;
-
+    public static MiSideStart instance;
     [Tab("Components")]
     public MitaControl control;
     public Camera mainCamera;
@@ -141,6 +152,7 @@ public class MiSideStart : MonoBehaviour
     public List<MitaControl> controlPrefabs = new();
     private void Awake()
     {
+        instance = this;
         #if UNITY_ANDROID
         ConfigPath = Application.persistentDataPath + "/MiSideStartConfig.json";
         #else
@@ -194,7 +206,21 @@ public class MiSideStart : MonoBehaviour
         EditorUtility.RevealInFinder(Application.streamingAssetsPath);
     }
 #endif
-    void LoadConfig()
+    public void SaveConfig()
+    {
+        FileInfo fileInfo = new FileInfo(ConfigPath);
+        if (fileInfo.Directory == null)
+        {
+            Debug.LogError($"ConfigFileError:{ConfigPath}");
+            return;
+        }
+        if (!fileInfo.Directory.Exists)
+            Directory.CreateDirectory(fileInfo.Directory.FullName);
+        var json = JsonConvert.SerializeObject(config, Formatting.Indented, new VectorConverter());
+        File.WriteAllText(ConfigPath, json);
+        ApplyConfig();
+    }
+    public void LoadConfig()
     {
         FileInfo fileInfo = new FileInfo(ConfigPath);
         if (fileInfo.Directory == null)
@@ -233,6 +259,11 @@ public class MiSideStart : MonoBehaviour
             File.WriteAllText(ConfigPath, json);
         }
         
+        ApplyConfig();
+    }
+
+    public void ApplyConfig()
+    {
         clickCount = config.ClickCount;
         targetFrameRate = config.TargetFrameRate;
         startAnimationRange = config.StartAnimationRange;
@@ -294,12 +325,6 @@ public class MiSideStart : MonoBehaviour
         canControl = true;
         lookAtTargetIkWeight = 1;
     }
-    
-
- 
-
-   
-
 }
 /// <summary>
 /// 使Json.Net可以正确序列化或反序列化Unity中的Vector数据

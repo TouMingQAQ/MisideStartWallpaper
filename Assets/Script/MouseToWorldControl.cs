@@ -20,11 +20,15 @@ public class MouseToWorldControl : MonoBehaviour
     public Vector4 offset = Vector4.one;
     private Vector3 targetPositionCache;
     private Vector3 targetPosition;
-
+#if UNITY_ANDROID 
+    private Vector2 gyroscopePos;
+#endif
     private void Awake()
     {
         #if UNITY_ANDROID 
-        InputSystem.EnableDevice(Gyroscope.current);//启用陀螺仪
+        if(!Application.isEditor)
+            InputSystem.EnableDevice(Gyroscope.current);//启用陀螺仪
+        gyroscopePos = new Vector2(Screen.width *0.5f, Screen.height *0.5f);
         #endif
     }
 
@@ -49,7 +53,7 @@ public class MouseToWorldControl : MonoBehaviour
         if(control == null || MiSideStart.config.LookAtState == LookAtState.None)
             return;
         var center = Screen.safeArea.center;
-        var mousePos = Vector2.zero;
+        var mousePos = new Vector2(Screen.width *0.5f, Screen.height *0.5f);
 #if UNITY_ANDROID
         if (Application.isEditor)
         {
@@ -59,11 +63,22 @@ public class MouseToWorldControl : MonoBehaviour
         {
             if (Gyroscope.current != null && Gyroscope.current.enabled)
             {
+                var gyroscopeScale = MiSideStart.config.gyroscopeScale;
+                var gyroscopeSafeAreaScale = MiSideStart.config.gyroscopeSafeAreaScale;
                 // 获取角速度 (rad/s)
                 Vector3 angularVelocity = Gyroscope.current.angularVelocity.ReadValue();
+                Vector2 offset = new Vector2(-angularVelocity.y,angularVelocity.x);
+                gyroscopePos += (offset*gyroscopeScale);
+                var width = (Screen.width * 0.5f);
+                var height = (Screen.height * 0.5f);
+                var offsetWidth = width * gyroscopeSafeAreaScale.x;
+                var offsetHeight = height * gyroscopeSafeAreaScale.y;
+                var safeArea = new Vector4(-offsetWidth,offsetWidth+Screen.width,-offsetHeight, offsetHeight+Screen.height);
                 
-        
-                // Debug.Log($"角速度: {angularVelocity}");
+                
+                gyroscopePos.x = Mathf.Clamp(gyroscopePos.x,safeArea.x,safeArea.y);
+                gyroscopePos.y = Mathf.Clamp(gyroscopePos.y,safeArea.z,safeArea.w);
+                mousePos = gyroscopePos;
             }
         }
  
@@ -71,12 +86,9 @@ public class MouseToWorldControl : MonoBehaviour
         mousePos = Mouse.current.position.ReadValue();
 #endif
 
-#if UNITY_ANDROID && !UNITY_EDITOR
-        if (Touchscreen.current.primaryTouch.isInProgress)
-        {
+#if UNITY_ANDROID
+        if(!Application.isEditor)
             targetPosition = targetPositionCache;
-            return;
-        }
 #else
         if (!Mouse.current.leftButton.isPressed && MiSideStart.config.LookAtState == LookAtState.OnlyPress)
         {
