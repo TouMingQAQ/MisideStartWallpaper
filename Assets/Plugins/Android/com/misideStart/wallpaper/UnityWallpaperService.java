@@ -1,5 +1,8 @@
 package com.misideStart.wallpaper;
 
+import android.app.WallpaperManager;
+import android.content.ComponentName;
+import android.content.Intent;
 import android.service.wallpaper.WallpaperService;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -7,8 +10,24 @@ import android.view.SurfaceHolder;
 
 import com.unity3d.player.UnityPlayer;
 import com.unity3d.player.UnityPlayerForActivityOrService;
+import com.unity3d.player.UnityPlayerGameActivity;
 
 public class UnityWallpaperService extends WallpaperService {
+
+    public static void SetWallpaper()
+    {
+        Log.i(TAG,"SetWallpaper");
+        Intent intent = new Intent();
+        intent.setAction(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER);
+        intent.putExtra(WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,new ComponentName("com.misideStart.wallpaper", "com.misideStart.wallpaper.UnityWallpaperService"));
+        // 检查是否有 Activity 能处理此 Intent
+        if (intent.resolveActivity(UnityPlayerGameActivity.instance.getPackageManager()) != null) {
+            UnityPlayerGameActivity.instance.startActivity(intent);
+        } else {
+            // 备用方案：普通动态壁纸选择器
+            UnityPlayerGameActivity.instance.startActivity(new Intent(WallpaperManager.ACTION_LIVE_WALLPAPER_CHOOSER));
+        }
+    }
     private static final String TAG = "UnityWallpaperService";
     private UnityPlayerForActivityOrService service;
     private UnityWallpaperEngine engine;

@@ -63,7 +63,7 @@ public class MouseToWorldControl : MonoBehaviour
                 Vector3 angularVelocity = Gyroscope.current.angularVelocity.ReadValue();
                 
         
-                Debug.Log($"角速度: {angularVelocity}");
+                // Debug.Log($"角速度: {angularVelocity}");
             }
         }
  

@@ -30,11 +30,9 @@ public class AndroidSetting : MonoBehaviour
 
     public void SetWallpaper()
     {
-        #if UNITY_ANDROID
-        using AndroidJavaClass javaClass = new AndroidJavaClass("com.unity3d.player.UnityPlayerGameActivity");
-        AndroidJavaObject instance = javaClass.GetStatic<AndroidJavaObject>("instance");
-        // 调用 Activity 方法
-        instance.Call("SetWallpaper");
-        #endif
+#if UNITY_ANDROID
+        using AndroidJavaClass javaClass = new AndroidJavaClass("com.misideStart.wallpaper.UnityWallpaperService");
+        javaClass.CallStatic("SetWallpaper");
+#endif
     }
 }

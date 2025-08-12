@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
     <uses-feature android:name="android.software.live_wallpaper" />
     <uses-feature android:name="android.hardware.sensor.gyroscope" android:required="false"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <application>
         <!--Used when Application Entry is set to GameActivity, otherwise remove this activity block-->
         <activity android:name="com.unity3d.player.UnityPlayerGameActivity"
