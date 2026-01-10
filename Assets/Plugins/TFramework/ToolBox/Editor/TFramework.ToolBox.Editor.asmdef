@@ -1,0 +1,19 @@
+{
+    "name": "TFramework.ToolBox.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:27e0b61ebd11cf14eb121c67cf3787e2",
+        "GUID:29d1adf2af5a7724a8c9073ed3931a29"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

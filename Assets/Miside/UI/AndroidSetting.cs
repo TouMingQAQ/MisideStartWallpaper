@@ -13,6 +13,7 @@ public class AndroidSetting : MonoBehaviour
     private void Awake()
     {
         canvasGroup.alpha = 0;
+        root.gameObject.SetActive(true);
         root.anchoredPosition = new  Vector2(-1080, 0);
         sequence = DOTween.Sequence();
         sequence.Insert(0,canvasGroup.DOFade(1, 0.4f).SetEase(Ease.InOutSine));

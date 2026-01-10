@@ -1,0 +1,15 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/TFramework/ToolBox/Runtime/ConsoleBox/Resources/ConsoleUSS.uss?fileID=7433441132597879392&amp;guid=e1f39a72cbb191746a40893b6fbd6e4b&amp;type=3#ConsoleUSS" />
+    <engine:VisualElement name="Root" enabled="true" focusable="true" picking-mode="Ignore" style="flex-grow: 1; height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0.67); justify-content: flex-end; align-self: center;">
+        <engine:VisualElement name="ConsoleViewContainer" focusable="true" picking-mode="Ignore" style="flex-grow: 1; flex-direction: column; justify-content: flex-end; height: 95%;">
+            <TFramework.ToolBox.UIToolKit.LogView />
+        </engine:VisualElement>
+        <engine:VisualElement name="InputContainer" picking-mode="Ignore" style="flex-grow: 0; height: auto; justify-content: flex-end; align-self: auto; align-items: flex-start; flex-direction: row;">
+            <engine:TextField select-all-on-mouse-up="false" select-all-on-focus="false" select-word-by-double-click="false" select-line-by-triple-click="false" is-delayed="true" name="Input" placeholder-text="_" hide-placeholder-on-focus="true" auto-correction="true" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; font-size: 10px; color: rgb(0, 0, 0); flex-grow: 1; -unity-text-align: middle-left; height: 100%; flex-shrink: 1; width: 100%;" />
+            <engine:Button text="发送 " name="Submit" />
+            <engine:VisualElement name="InputTip" picking-mode="Ignore" style="flex-grow: 0; position: absolute; top: auto; bottom: 21px; height: auto; width: auto; flex-direction: column-reverse; left: 0; background-color: rgb(38, 38, 38); display: flex; visibility: hidden;">
+                <engine:ListView show-bound-collection-size="false" selection-type="None" style="background-color: rgb(30, 30, 30);" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

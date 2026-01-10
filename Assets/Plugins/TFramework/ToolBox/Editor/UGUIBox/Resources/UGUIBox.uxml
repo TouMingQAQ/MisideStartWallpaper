@@ -1,0 +1,50 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement name="Root" style="flex-grow: 1; flex-direction: column;">
+        <engine:VisualElement name="MoveModule" style="flex-grow: 0; align-items: center; height: 300px; justify-content: flex-start; flex-shrink: 0; width: 300px; max-width: 300px; max-height: 300px;">
+            <engine:VisualElement name="Top" style="flex-grow: 1; flex-direction: row; flex-shrink: 1; align-items: auto; width: 100%;">
+                <engine:VisualElement name="Left" style="flex-grow: 0; align-items: auto; flex-shrink: 1;">
+                    <engine:Button name="MoveLeftUp" icon-image="project://database/Assets/TFramework/ToolBox/Editor/UGUIBox/Resources/ICON/%E5%B7%A6%E4%B8%8A.png?fileID=2800000&amp;guid=3d72ae7bc71d2e54d8161fcf9df8f1f0&amp;type=3#左上" style="height: auto; width: auto; flex-shrink: 0; flex-grow: 1;" />
+                </engine:VisualElement>
+                <engine:VisualElement name="Center" style="flex-grow: 1; flex-shrink: 1;">
+                    <engine:Button name="MoveUp" icon-image="project://database/Assets/TFramework/ToolBox/Editor/UGUIBox/Resources/ICON/%E5%90%91%E4%B8%8A.png?fileID=2800000&amp;guid=6033278c1774fee49ac340c1c3daf796&amp;type=3#向上" style="height: auto; width: auto; flex-shrink: 0; flex-grow: 1;" />
+                </engine:VisualElement>
+                <engine:VisualElement name="Right" style="flex-grow: 0; flex-shrink: 1;">
+                    <engine:Button name="MoveRightUp" icon-image="project://database/Assets/TFramework/ToolBox/Editor/UGUIBox/Resources/ICON/%E5%8F%B3%E4%B8%8A.png?fileID=2800000&amp;guid=b16db87e458db644ba255c29455c3548&amp;type=3#右上" style="height: auto; width: auto; flex-shrink: 0; flex-grow: 1;" />
+                </engine:VisualElement>
+            </engine:VisualElement>
+            <engine:VisualElement name="Center" style="flex-grow: 1; flex-direction: row; align-items: auto; align-self: auto; flex-wrap: nowrap; width: 100%;">
+                <engine:VisualElement name="Left" style="flex-grow: 0;">
+                    <engine:Button name="MoveLeft" icon-image="project://database/Assets/TFramework/ToolBox/Editor/UGUIBox/Resources/ICON/%E5%90%91%E5%B7%A6.png?fileID=2800000&amp;guid=f3f219679cc88e545acce7bf5fa51b44&amp;type=3#向左" style="height: auto; width: auto; flex-shrink: 0; flex-grow: 0;" />
+                </engine:VisualElement>
+                <engine:VisualElement name="Center" style="flex-grow: 1; flex-shrink: 0; -unity-text-align: middle-center; max-width: 100px; max-height: 100px; min-width: 100px; min-height: 100px;">
+                    <engine:Button name="MoveState" text="Move" style="height: auto; width: auto; flex-shrink: 1; flex-grow: 1; -unity-font-style: bold; flex-direction: row; flex-wrap: nowrap;" />
+                </engine:VisualElement>
+                <engine:VisualElement name="Right" style="flex-grow: 0; flex-shrink: 1;">
+                    <engine:Button name="MoveRight" icon-image="project://database/Assets/TFramework/ToolBox/Editor/UGUIBox/Resources/ICON/%E5%90%91%E5%8F%B3.png?fileID=2800000&amp;guid=6c753a8d079dc87428742d1442917d56&amp;type=3#向右" style="height: auto; width: auto; flex-shrink: 0; flex-grow: 0;" />
+                </engine:VisualElement>
+            </engine:VisualElement>
+            <engine:VisualElement name="Bottom" style="flex-grow: 1; flex-direction: row; flex-shrink: 1; flex-wrap: nowrap; width: 100%;">
+                <engine:VisualElement name="Left" style="flex-grow: 0;">
+                    <engine:Button name="MoveLeftDown" icon-image="project://database/Assets/TFramework/ToolBox/Editor/UGUIBox/Resources/ICON/%E5%B7%A6%E4%B8%8B.png?fileID=2800000&amp;guid=ced80cb428f8f2c448a593b5d057cb94&amp;type=3#左下" style="height: auto; width: auto; flex-shrink: 0; flex-grow: 1;" />
+                </engine:VisualElement>
+                <engine:VisualElement name="Center" style="flex-grow: 1;">
+                    <engine:Button name="MoveDown" icon-image="project://database/Assets/TFramework/ToolBox/Editor/UGUIBox/Resources/ICON/%E5%90%91%E4%B8%8B.png?fileID=2800000&amp;guid=5b6f214d3c8b3f841a2d28a51e55398f&amp;type=3#向下" style="height: auto; width: auto; flex-shrink: 1; flex-grow: 0;" />
+                </engine:VisualElement>
+                <engine:VisualElement name="Right" style="flex-grow: 0;">
+                    <engine:Button name="MoveRightDown" icon-image="project://database/Assets/TFramework/ToolBox/Editor/UGUIBox/Resources/ICON/%E5%8F%B3%E4%B8%8B.png?fileID=2800000&amp;guid=644ef02e8f75d4e4f9caf4630e443270&amp;type=3#右下" style="height: auto; width: auto; flex-shrink: 1; flex-grow: 0;" />
+                </engine:VisualElement>
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:Slider label="Speed" value="0.01" high-value="1" name="Speed" style="flex-shrink: 1; flex-grow: 0;" />
+        <engine:VisualElement name="Line" style="flex-grow: 0; flex-shrink: 0; height: 2px; background-color: rgb(255, 255, 255);" />
+        <engine:VisualElement name="SelectInfo" style="flex-grow: 1; height: auto; width: auto; flex-direction: row;">
+            <engine:VisualElement name="Info" style="flex-grow: 1;">
+                <engine:Label text="Have not select" name="RectInfo" style="-unity-font-style: bold; flex-shrink: 1; flex-grow: 1;" />
+            </engine:VisualElement>
+            <engine:VisualElement name="Control" style="flex-grow: 0;">
+                <engine:Button text="Adapt" name="Adapt" style="-unity-font-style: bold;" />
+                <engine:Button text="AdaptAnchored" name="AdaptAnchored" style="-unity-font-style: bold;" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>
