@@ -23,7 +23,7 @@ public class MusicVolumeControl : MonoBehaviour,IPointerEnterHandler,IPointerExi
         volumeView.localScale = new Vector3(1, 0, 1);
         show = volumeView.DOScale(new Vector3(1,1,1), 0.2f).SetLoops(1).Pause();
         volumeSlider.maxValue = 1;
-        volumeSlider.minValue = 1;
+        volumeSlider.minValue = 0;
     }
 
     public void RefreshView()

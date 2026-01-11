@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using TFramework.Music;
 using TMPro;
 using UnityEngine;
@@ -16,7 +17,14 @@ public class MisideMusicPlay : MonoBehaviour
     private MusicControl control;
     private void Awake()
     {
-        musicGroup.LoadMusic();
+        Init();
+    }
+
+    async void Init()
+    {
+        StartWaitLoad();
+        await musicGroup.LoadMusicAsync();
+        EndWaitLoad();
         musicGroup.Play(musicGroup.CurrentIndex);
         musicInfo.RefreshView();
         control.RefreshView();
@@ -26,5 +34,15 @@ public class MisideMusicPlay : MonoBehaviour
     private void LateUpdate()
     {
         control.UpdateMusicProgress();
+    }
+
+    void StartWaitLoad()
+    {
+        
+    }
+
+    void EndWaitLoad()
+    {
+        
     }
 }

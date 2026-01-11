@@ -95,6 +95,9 @@ public class AudioAnimation : MonoBehaviour
     {
         if (!MiSideStart.config.MusicHead)
             return;
+#if MISIDE_MUSIC_ON
+        return;
+#endif
         capture = new WasapiLoopbackCapture();
         capture.Initialize();
         capture.Start();
@@ -149,6 +152,9 @@ public class AudioAnimation : MonoBehaviour
         soundInSource = null;
         if (!MiSideStart.config.MusicHead)
             return;
+#if MISIDE_MUSIC_ON
+        return;
+#endif
         capture = new WasapiLoopbackCapture();
         capture.Initialize();
         capture.Start();
@@ -171,6 +177,9 @@ public class AudioAnimation : MonoBehaviour
     {
         if (!MiSideStart.config.MusicHead)
             return;
+#if MISIDE_MUSIC_ON
+        return;
+#endif
         var device = _enumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
         var deviceName = device.FriendlyName;
         if (deviceName != audioDeviceName)

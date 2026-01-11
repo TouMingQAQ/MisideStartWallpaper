@@ -43,7 +43,7 @@ public class MusicControl : MonoBehaviour
         dropDown.onValueChanged.AddListener(OnDropDownSelect);
     
         musicProgress.maxValue = 1;
-        musicProgress.minValue = 1;
+        musicProgress.minValue = 0;
         
         lastBtn.onClick.AddListener(OnLastBtn);
         playPauseBtn.onClick.AddListener(OnPlayPauseBtn);
@@ -57,7 +57,7 @@ public class MusicControl : MonoBehaviour
         var infoGroup = musicGroup.MusicInfoList;
         var totalCount = infoGroup.Count;
         lastBtn.interactable = currentIndex > 0;
-        nextBtn.interactable = currentIndex >= totalCount;
+        nextBtn.interactable = currentIndex < totalCount;
         playPauseImg.overrideSprite = musicGroup.IsPlaying ? pauseSprite : playSprite;
         volumeImage.overrideSprite = musicGroup.IsMute ? muteVolumeSprite : null;
         volumeControl.RefreshView();
