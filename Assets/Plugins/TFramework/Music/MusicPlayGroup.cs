@@ -49,7 +49,6 @@ namespace TFramework.Music
         public void Next()
         {
             Play(currentIndex+1);
-            onMusicChange?.Invoke(infoGroup[currentIndex]);
         }
         /// <summary>
         /// 上一首
@@ -57,7 +56,6 @@ namespace TFramework.Music
         public void Last()
         {
             Play(currentIndex-1);
-            onMusicChange?.Invoke(infoGroup[currentIndex]);
         }
 
         public void LoadGroup(IEnumerable<TInfo> group, bool autoPlay = true)

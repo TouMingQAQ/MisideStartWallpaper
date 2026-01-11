@@ -14,10 +14,10 @@ public class AndroidSetting : MonoBehaviour
     {
         canvasGroup.alpha = 0;
         root.gameObject.SetActive(true);
-        root.anchoredPosition = new  Vector2(-1080, 0);
+        root.anchoredPosition = new  Vector2(0, 0);
         sequence = DOTween.Sequence();
         sequence.Insert(0,canvasGroup.DOFade(1, 0.4f).SetEase(Ease.InOutSine));
-        sequence.Insert(0.2f,root.DOAnchorPosX(0, 0.3f).SetEase(Ease.InOutSine));
+        sequence.Insert(0.2f,root.DOAnchorPosX(root.rect.width, 0.3f).SetEase(Ease.InOutSine));
         sequence.SetLoops(1).SetAutoKill(false);
 #if !UNITY_ANDROID
         DestroyImmediate(gameObject);

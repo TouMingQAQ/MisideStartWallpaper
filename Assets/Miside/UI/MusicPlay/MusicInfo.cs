@@ -1,7 +1,9 @@
 using System;
+using DG.Tweening;
 using TFramework.Music;
 using UnityEngine;
 using UnityEngine.UI;
+using VInspector;
 
 public class MusicInfo : MonoBehaviour
 {
@@ -15,16 +17,44 @@ public class MusicInfo : MonoBehaviour
     private Text musicName;
     [SerializeField]
     private Text musicWriter;
+
+    
+    private Tween musicTween;
     private void Awake()
     {
+        musicTween = musicCover.transform.DOLocalRotate(new Vector3(0, 0, -360f), 3, RotateMode.FastBeyond360)
+            .SetLoops(-1,LoopType.Restart)
+            .SetEase(Ease.Linear)
+            .SetAutoKill(false)
+            .Play();
         musicGroup.onMusicChange.AddListener(OnMusicChange);
+        // musicPlay.onPlay.AddListener(OnMusicPlay);
+        // musicPlay.onPlay.AddListener(OnMusicPause);
     }
 
+    private void LateUpdate()
+    {
+        if (musicPlay.IsPlaying)
+            musicTween.Play();
+        else
+            musicTween.Pause();
+    }
+
+    // void OnMusicPlay()
+    // {
+    //     musicTween.Play();
+    // }
+    //
+    // void OnMusicPause()
+    // {
+    //     musicTween.Pause();
+    // }
     void OnMusicChange(UnityMusicInfo musicInfo)
     {
         RefreshView();
+        musicTween.Rewind();
     }
-
+    [Button]
     public void RefreshView()
     {
         Empty();
