@@ -1,8 +1,14 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace TFramework.Music
 {
+    public interface IMusicBeat
+    {
+        public void SetSample(float[] sample);
+        public bool IsBeate();
+    }
     [RequireComponent(typeof(AudioSource))] // 强制挂载AudioSource
     public class UnityMusicVisualizer : MonoBehaviour
     {
@@ -14,27 +20,9 @@ namespace TFramework.Music
         [Tooltip("频谱平滑系数 0-1，值越大越平滑，0为无平滑")]
         [SerializeField, Range(0, 1)] private float smoothFactor = 0.85f;
 
-        [Header("===== 鼓点检测专属配置【重点】 =====")]
-        [Header("鼓点检测阈值（核心调参）")]
-        [Range(0.001f, 1.0f)] public float beatThreshold = 0.02f; // 频谱阈值，越大越严格
-        [Range(0.05f, 0.5f)] public float coolDownTime = 0.15f;   // 冷却时间，防止连触
-        private float _coolDownTimer;
-
-        [Header("频谱低频段范围（固定，无需修改）")]
-        public int lowFreqStart = 0;   // 频谱起始下标 = 最低频
-        public int lowFreqEnd = 30;    // 频谱结束下标 = 200Hz左右（完美匹配鼓点频段）
-
-        [Tooltip("鼓点衰减系数：防止一帧内重复触发鼓点，值越大触发间隔越长")]
-        [SerializeField, Range(0.05f, 0.3f)] private float drumDecay = 0.15f;
-
-        [Tooltip("低音区采样范围：鼓点都在低音区，固定0~30即可，无需修改")]
-        [SerializeField] private int drumSampleRange = 30;
-
         private AudioSource audioSource;
         private float[] sampleBuffer;      // 原始频谱数据缓存
         private float[] smoothBuffer;      // 平滑后的频谱数据
-  
-
         
         [SerializeField]
         private bool isDrumHit;            // 单次鼓点触发标记
@@ -64,7 +52,6 @@ namespace TFramework.Music
             {
                 GetSpectrumBuffer();
                 ProcessSpectrumData();
-                CalculateDrumPower(); // 每帧计算鼓点能量
             }
             else
             {
@@ -101,29 +88,7 @@ namespace TFramework.Music
                 smoothBuffer[i] = Mathf.Max(smoothBufferData, 0);
             }
         }
-
-        /// <summary>
-        /// 计算鼓点能量【核心】鼓点是低频重音，只计算低音区数据
-        /// </summary>
-        void CalculateDrumPower()
-        {
-            // 重置本次帧的鼓点标记
-            isDrumHit = false;
-            // ========== 核心：只计算低频段能量 ==========
-            float lowFreqEnergy = 0;
-            // 只遍历低频段下标，忽略中高频，彻底屏蔽旋律/人声干扰
-            for (int i = lowFreqStart; i < lowFreqEnd && i < smoothBuffer.Length; i++)
-            {
-                lowFreqEnergy += sampleBuffer[i];
-            }
-
-            // ========== 鼓点判定 ==========
-            if (lowFreqEnergy > beatThreshold)
-            {
-                isDrumHit = true;
-                _coolDownTimer = coolDownTime;
-            }
-        }
+        
 
         /// <summary>
         /// 对外提供：判断是否检测到鼓点【你要的核心方法，直接调用即可】
@@ -152,5 +117,13 @@ namespace TFramework.Music
         }
 
         public int GetDataCount() => dataCount;
+
+        public bool IsBeate(IMusicBeat beat)
+        {
+            if (beat == null)
+                return false;
+            beat.SetSample(smoothBuffer);
+            return beat.IsBeate();
+        }
     }
 }

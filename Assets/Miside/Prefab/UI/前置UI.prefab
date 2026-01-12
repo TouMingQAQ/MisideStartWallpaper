@@ -2243,12 +2243,6 @@ MonoBehaviour:
   dataCount: 128
   bufferScale: 10
   smoothFactor: 0.85
-  beatThreshold: 0.02
-  coolDownTime: 0.15
-  lowFreqStart: 0
-  lowFreqEnd: 30
-  drumDecay: 0.15
-  drumSampleRange: 30
   isDrumHit: 0
 --- !u!1 &2625058712733495004
 GameObject:
@@ -8588,7 +8582,16 @@ MonoBehaviour:
   musicInfo: {fileID: 1505770076355111973}
   control: {fileID: 6704500941196233047}
   miSideStart: {fileID: 0}
-  musicVisualizer: {fileID: 6715089908488888449}
+  visualizer: {fileID: 6715089908488888449}
+  beate:
+    nodEnergyThreshold: 0.01
+    energyDecayFactor: 0.325
+    peakDetectionThreshold: 0.975
+    smoothingFactor: 0.675
+    averageEnergy: 0
+    currentEnergy: 0
+    previousEnergy: 0
+    beate: 0
 --- !u!1 &5309112456142147793
 GameObject:
   m_ObjectHideFlags: 0

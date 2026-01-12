@@ -18,8 +18,11 @@ public class MisideMusicPlay : MonoBehaviour
 
     [SerializeField]
     private MiSideStart miSideStart;
+
     [SerializeField]
-    private UnityMusicVisualizer musicVisualizer;
+    private UnityMusicVisualizer visualizer;
+    [SerializeField]
+    private UnityAudioBeat beate;
     private void Awake()
     {
         Init();
@@ -27,7 +30,7 @@ public class MisideMusicPlay : MonoBehaviour
 
     private void Update()
     {
-        if(musicVisualizer.Drumbeat())
+        if(visualizer.IsBeate(beate))
             miSideStart.NodOnShot();
         control.UpdateMusicProgress();
     }

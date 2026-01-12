@@ -39,6 +39,8 @@ namespace TFramework.Music
         public int CurrentIndex => currentIndex;
         [SerializeField]
         protected T play;
+
+        public T MusicPlay => play;
         [SerializeField]
         protected List<TInfo> infoGroup = new();
 

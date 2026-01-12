@@ -15,6 +15,7 @@ namespace TFramework.Music
         [SerializeField]
         private AudioSource audioSource;
 
+        public AudioSource AudioSource => audioSource;
         public override bool IsPlaying => audioSource.isPlaying;
         
         public override float CurrentTime => audioSource.time;
@@ -54,7 +55,7 @@ namespace TFramework.Music
         }
 
         protected override void OnLoadMusic(UnityMusicInfo info)
-        { 
+        {
             audioSource.clip = info.clip;
         }
 
