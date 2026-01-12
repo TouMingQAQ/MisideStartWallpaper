@@ -15,9 +15,21 @@ public class MisideMusicPlay : MonoBehaviour
     private MusicInfo musicInfo;
     [SerializeField]
     private MusicControl control;
+
+    [SerializeField]
+    private MiSideStart miSideStart;
+    [SerializeField]
+    private UnityMusicVisualizer musicVisualizer;
     private void Awake()
     {
         Init();
+    }
+
+    private void Update()
+    {
+        if(musicVisualizer.Drumbeat())
+            miSideStart.NodOnShot();
+        control.UpdateMusicProgress();
     }
 
     async void Init()
@@ -30,11 +42,7 @@ public class MisideMusicPlay : MonoBehaviour
         control.RefreshView();
         control.RefreshDropDown();
     }
-
-    private void LateUpdate()
-    {
-        control.UpdateMusicProgress();
-    }
+    
 
     void StartWaitLoad()
     {
