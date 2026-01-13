@@ -35,13 +35,8 @@ public class MusicControl : MonoBehaviour
     [SerializeField]
     private Slider musicProgress;
 
-    [SerializeField]
-    private Dropdown dropDown;
-
     private void Awake()
     {
-        dropDown.onValueChanged.AddListener(OnDropDownSelect);
-    
         musicProgress.maxValue = 1;
         musicProgress.minValue = 0;
         
@@ -61,7 +56,6 @@ public class MusicControl : MonoBehaviour
         playPauseImg.overrideSprite = musicGroup.IsPlaying ? pauseSprite : playSprite;
         volumeImage.overrideSprite = musicGroup.IsMute ? muteVolumeSprite : null;
         volumeControl.RefreshView();
-        dropDown.value = currentIndex;
         UpdateMusicProgress();
     }
 
@@ -77,15 +71,15 @@ public class MusicControl : MonoBehaviour
     public void RefreshDropDown()
     {
         var infoGroup = musicGroup.MusicInfoList;
-        dropDown.options.Clear();
-        foreach (var musicInfo in infoGroup)
-        {
-            dropDown.options.Add(new Dropdown.OptionData()
-            {
-                image = musicInfo.MusicCover,
-                text = $"{musicInfo.MusicName}[{musicInfo.MusicWriter}]"
-            });
-        }
+        // dropDown.options.Clear();
+        // foreach (var musicInfo in infoGroup)
+        // {
+        //     dropDown.options.Add(new Dropdown.OptionData()
+        //     {
+        //         image = musicInfo.MusicCover,
+        //         text = $"{musicInfo.MusicName}[{musicInfo.MusicWriter}]"
+        //     });
+        // }
     }
 
     void OnDropDownSelect(int index)

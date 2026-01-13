@@ -17,7 +17,8 @@ namespace TFramework.Music
 
         public AudioSource AudioSource => audioSource;
         public override bool IsPlaying => audioSource.isPlaying;
-        
+        public override bool IsEnd => TotalTime > 0 && (PlayProgress >= 0.99f);
+
         public override float CurrentTime => audioSource.time;
         public override float TotalTime
         {

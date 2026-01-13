@@ -33,7 +33,7 @@ namespace TFramework.Music
 
 
         public abstract bool IsPlaying { get; }
-        public bool IsEnd => TotalTime > 0 && PlayProgress >= 1;
+        public abstract bool IsEnd { get; }
 
         /// <summary>
         /// 当前播放时间
@@ -132,8 +132,7 @@ namespace TFramework.Music
         }
 
         private bool isPlaying = false;
-        private bool isEnd = false;
-        protected virtual void LateUpdate()
+        protected virtual void Update()
         {
             if (isPlaying != IsPlaying)
             {
@@ -141,22 +140,15 @@ namespace TFramework.Music
                 if(IsPlaying)
                     onPlay?.Invoke();
                 else
-                    onPause?.Invoke();
-            }
-
-            if (isPlaying)
-            {
-                if (isEnd != IsEnd)
                 {
-                    isEnd = IsEnd;
-                    if(isEnd)
+                    if (IsEnd)
                         onEnd?.Invoke();
+                    else
+                        onPause?.Invoke();
                 }
             }
-            else
-            {
-                isEnd = false;
-            }
+
+           
         }
     }
 }

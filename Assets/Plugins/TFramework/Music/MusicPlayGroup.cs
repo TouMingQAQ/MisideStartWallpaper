@@ -78,10 +78,12 @@ namespace TFramework.Music
 
         public void Play(int index)
         {
-            if(index < 0 || index >= infoGroup.Count)
-                return;
             if(infoGroup.Count <= 0)
                 return;
+            if (index < 0)
+                index = infoGroup.Count - 1;
+            if (index >= infoGroup.Count)
+                index = 0;
             var info = infoGroup[index];
             if (info == null)
             {

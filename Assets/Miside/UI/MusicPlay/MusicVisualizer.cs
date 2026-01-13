@@ -37,10 +37,20 @@ public class MusicVisualizer : MonoBehaviour
         {
             var image = visualizerImages[i];
             var data = visualizer.GetSpectrumValue(i);
-            data = Mathf.Clamp01(data);
+            if (data > 1)
+            {
+                data = 1 + Mathf.Atan(data);
+            }
+            else
+            {
+                data = Mathf.Clamp01(data);
+            }
+            
+            
+            
             var color = Color.Lerp(fromColor, toColor, data);
             var scale =  image.transform.localScale;
-            scale.y = data;
+            scale.x = data;
             image.transform.localScale = scale;
             image.color = color;
         }
