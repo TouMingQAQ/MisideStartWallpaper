@@ -1,10 +1,12 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Android;
 using VInspector;
-using Gyroscope = UnityEngine.InputSystem.Gyroscope;
 
+#if UNITY_ANDROID
+using UnityEngine.InputSystem.Android;
+using Gyroscope = UnityEngine.InputSystem.Gyroscope;
+#endif
 public class MouseToWorldControl : MonoBehaviour
 {
     public Transform control;
