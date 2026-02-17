@@ -79,7 +79,7 @@ public class MitaControl : MonoBehaviour,IPointerClickHandler
             start.clickTimer = 0;
         }
         start.clickParticle.OnClick();
-        if(MiSideStart.config.PlaySoundOnClick)
+        if(MiSideStart.instance.config.value.PlaySoundOnClick)
             audioSource.PlayOneShot(onClickClip);
         void SetAnimation()
         {

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ecd6365e5bca104181f144ce05be64a, type: 3}
+  m_Name: MisideConfig
+  m_EditorClassIdentifier: 
+  value:
+    StartAnimationRange: {x: 0, y: 5}
+    LookAtOffsetMultiplier: {x: 3, y: 3, z: 0.5, w: 3}
+    TargetFrameRate: 60
+    LookAtState: 1
+    MusicHead: 1
+    ClickCount: 2
+    PlaySoundOnClick: 1
+    TAAQuality: 0
+    gyroscopeScale: {x: 20, y: 15}
+    gyroscopeSafeAreaScale: {x: 1.2, y: 1.1}
+    WallpaperVersion: 0.0.4

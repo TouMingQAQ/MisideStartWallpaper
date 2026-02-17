@@ -10,80 +10,7 @@ using Random = UnityEngine.Random;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-public struct MiSideConfig
-{
-    /// <summary>
-    /// 开场动画范围
-    /// </summary>
-    public Vector2Int StartAnimationRange;
-    /// <summary>
-    /// 视野跟踪幅度
-    /// </summary>
-    public Vector4 LookAtOffsetMultiplier;
-    /// <summary>
-    /// 限制帧率
-    /// </summary>
-    public int TargetFrameRate;
-    
-    /// <summary>
-    /// 跟随鼠标
-    /// </summary>
-    public LookAtState LookAtState;
-    /// <summary>
-    /// 跟随音乐点头
-    /// </summary>
-    public bool MusicHead;
-    
 
-    /// <summary>
-    /// 触发点击动画的连续点击次数
-    /// </summary>
-    public int ClickCount;
-
-    /// <summary>
-    /// 点击时是否播放音频
-    /// </summary>
-    public bool PlaySoundOnClick;
-    
-
-    /// <summary>
-    /// TAA抗锯齿质量
-    /// </summary>
-    public TemporalAAQuality TAAQuality;
-
-    /// <summary>
-    /// 安卓陀螺仪偏移倍率
-    /// </summary>
-    public Vector2 gyroscopeScale;
-
-    /// <summary>
-    /// 安卓陀螺仪偏移空间倍率
-    /// </summary>
-    public Vector2 gyroscopeSafeAreaScale;
-
-    /// <summary>
-    /// 壁纸版本
-    /// </summary>
-    public string WallpaperVersion;
-    
-    public static MiSideConfig Default()
-    {
-        return new MiSideConfig()
-        {
-            StartAnimationRange = new Vector2Int(0, 5),
-            TargetFrameRate = 60,
-            LookAtState = LookAtState.Always,
-            MusicHead = true,
-            ClickCount = 2,
-            LookAtOffsetMultiplier = new Vector4(3f, 3f, 0.5f, 3f),
-            PlaySoundOnClick = true,
-            TAAQuality = TemporalAAQuality.VeryLow,
-            gyroscopeScale =  new  Vector2(20, 15),
-            gyroscopeSafeAreaScale = new  Vector2(1.2f, 1.1f),
-            WallpaperVersion = MiSideStart.Version,
-        };
-    }
-}
 public enum LookAtState
 {
     None,
@@ -96,16 +23,16 @@ public class MiSideStart : MonoBehaviour
 {
     private static readonly int Init = Animator.StringToHash("Init");
     private static readonly int Restart = Animator.StringToHash("Restart");
-    public static readonly string Version = "0.0.4";
-    public static MiSideConfig config;
+    public static readonly string Version = "0.0.5";
     public static MiSideStart instance;
+    [Tab("Config")]
+    public MisideConfig config;
     [Tab("Components")]
     public MitaControl control;
     public Camera mainCamera;
     public UniversalAdditionalCameraData additionalCameraData;
     public MouseToWorldControl mouseControl;
-    [Tab("Config")]
-    [SerializeField] private string ConfigPath;
+
     [Tab("Normal")] 
     [InspectorName("帧率限制")]
     public int targetFrameRate = 60;
@@ -153,14 +80,10 @@ public class MiSideStart : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        #if UNITY_ANDROID
-        ConfigPath = Application.persistentDataPath + "/MiSideStartConfig.json";
-        #else
-        ConfigPath = Application.streamingAssetsPath + "/MiSideStartConfig.json";
-        #endif
-        LoadConfig();
+        config.Init();
         LoadControl();
-        mouseControl.offset = config.LookAtOffsetMultiplier;
+        mouseControl.offsetX = config.value.LookAtOffsetMultiplierX;
+        mouseControl.offsetY = config.value.LookAtOffsetMultiplierY;
         Application.targetFrameRate = targetFrameRate;
         HideControl();
         control.animator.SetInteger(Init,GetStartAnimationIndex());
@@ -206,71 +129,16 @@ public class MiSideStart : MonoBehaviour
         EditorUtility.RevealInFinder(Application.streamingAssetsPath);
     }
 #endif
-    public void SaveConfig()
-    {
-        FileInfo fileInfo = new FileInfo(ConfigPath);
-        if (fileInfo.Directory == null)
-        {
-            Debug.LogError($"ConfigFileError:{ConfigPath}");
-            return;
-        }
-        if (!fileInfo.Directory.Exists)
-            Directory.CreateDirectory(fileInfo.Directory.FullName);
-        var json = JsonConvert.SerializeObject(config, Formatting.Indented, new VectorConverter());
-        File.WriteAllText(ConfigPath, json);
-        ApplyConfig();
-    }
-    public void LoadConfig()
-    {
-        FileInfo fileInfo = new FileInfo(ConfigPath);
-        if (fileInfo.Directory == null)
-        {
-            Debug.LogError($"ConfigFileError:{ConfigPath}");
-            return;
-        }
-        if (!fileInfo.Directory.Exists)
-            Directory.CreateDirectory(fileInfo.Directory.FullName);
-        if (!fileInfo.Exists)
-        {
-            config = MiSideConfig.Default();
-            var json = JsonConvert.SerializeObject(config, Formatting.Indented, new VectorConverter());
-            File.WriteAllText(ConfigPath, json);
-        }
-        else
-        {
-            var json = File.ReadAllText(ConfigPath);
-            try
-            {
-                config = JsonConvert.DeserializeObject<MiSideConfig>(json, new VectorConverter());
-            }
-            catch (Exception e) // 使用异常对象来记录错误信息（解决捕捉异常而忽略了异常对象本身）
-            {
-                Debug.LogError($"Failed to deserialize config file: {e.Message}"); // 记录错误信息（此处为记录异常信息以便于调试和维护没有省略变量名）
-                config = MiSideConfig.Default();
-                json = JsonConvert.SerializeObject(config, Formatting.Indented, new VectorConverter());
-                File.WriteAllText(ConfigPath, json);
-            }
-        }
-        //版本不一致时，重写配置
-        if (config.WallpaperVersion != MiSideStart.Version)
-        {
-            config = MiSideConfig.Default();
-            var json = JsonConvert.SerializeObject(config, Formatting.Indented, new VectorConverter());
-            File.WriteAllText(ConfigPath, json);
-        }
-        
-        ApplyConfig();
-    }
 
     public void ApplyConfig()
     {
-        clickCount = config.ClickCount;
-        targetFrameRate = config.TargetFrameRate;
-        startAnimationRange = config.StartAnimationRange;
+        clickCount = config.value.ClickCount;
+        targetFrameRate = config.value.TargetFrameRate;
+        startAnimationRange =  config.value.StartAnimationRange;
         mainCamera.allowHDR = true;
         additionalCameraData.antialiasing = AntialiasingMode.TemporalAntiAliasing;
-        additionalCameraData.taaSettings.quality = config.TAAQuality;
-    }
+        additionalCameraData.taaSettings.quality =  config.value.TAAQuality;
+    } 
     
     [ContextMenu("NodOnShot")]
     public void NodOnShot()
@@ -324,6 +192,12 @@ public class MiSideStart : MonoBehaviour
         mouseControl.enabled = true;
         canControl = true;
         lookAtTargetIkWeight = 1;
+    }
+
+    public void SaveConfig()
+    {
+        config.SaveConfig();
+        ApplyConfig();
     }
 }
 /// <summary>

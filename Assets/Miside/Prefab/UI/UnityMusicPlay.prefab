@@ -2062,18 +2062,18 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4274372268755519072}
   - {fileID: 8058631785777402253}
   - {fileID: 5266041534337694567}
   m_Father: {fileID: 7083737840927691009}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 332.71436, y: 415.8929}
-  m_Pivot: {x: 0, y: 0}
+  m_SizeDelta: {x: 332.71436, y: 415.89294}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &3788139674558117296
 MonoBehaviour:
   m_ObjectHideFlags: 0

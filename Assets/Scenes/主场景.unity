@@ -538,11 +538,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b6cbc7b33a64f4c93e33efb0ce2d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  config: {fileID: 11400000, guid: 8411f17e954fe364c8bc6a3795863021, type: 2}
   control: {fileID: 0}
   mainCamera: {fileID: 330585545}
   additionalCameraData: {fileID: 330585547}
   mouseControl: {fileID: 183159174}
-  ConfigPath: 
   targetFrameRate: 0
   weightList:
   - 0.5
@@ -637,16 +637,7 @@ MonoBehaviour:
   peakDetectionThreshold: 1.5
   smoothingFactor: 0.7
   averageEnergy: 0
-  config:
-    MusicHeadVersion: 1
-    v1Info:
-      NodMinEnergy: 0.0125
-    v2Info:
-      NodEnergyThreshold: 0.01
-      EnergyDecayFactor: 0.95
-      PeakDetectionThreshold: 1.5
-      SmoothingFactor: 0.7
-  configPath: 
+  config: {fileID: 11400000, guid: 9fd396e7e2a74444395f45086f365d81, type: 2}
   currentEnergy: 0
   previousEnergy: 0
   nod: 0

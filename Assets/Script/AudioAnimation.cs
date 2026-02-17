@@ -6,31 +6,9 @@ using CSCore.Streams;
 using Newtonsoft.Json;
 using UnityEngine;
 using VInspector;
-public enum MusicHeadVersion
-{
-    V1 = 1,
-    V2 = 2
-}
+
 [Serializable]
-public class MusicHeadConfig
-{
-    public MusicHeadVersion MusicHeadVersion = MusicHeadVersion.V1;
-    public V1Info v1Info = new();
-    public V2Info v2Info = new();
-    [Serializable]
-    public class V1Info
-    {
-        public float NodMinEnergy =  0.0125f;//触发阈值
-    }
-    [Serializable]
-    public class V2Info
-    {
-        public float NodEnergyThreshold = 0.01f; // 初始阈值
-        public float EnergyDecayFactor = 0.95f; // 衰减因子
-        public float PeakDetectionThreshold = 1.5f; // 峰值检测阈值
-        public float SmoothingFactor = 0.7f; // 平滑滤波因子
-    }
-}
+
 public class AudioAnimation : MonoBehaviour
 {
     private const int BufferSize = 2048;   // 缓冲区大小
@@ -60,7 +38,6 @@ public class AudioAnimation : MonoBehaviour
     private const float shortTimeEnergyThreshold = 0.01f;
     [Tab("Config")]
     public MusicHeadConfig config;
-    public string configPath;
     [Tab("Info")]
     [ReadOnly]
     public float currentEnergy;
@@ -82,18 +59,12 @@ public class AudioAnimation : MonoBehaviour
 
     private void Awake()
     {
-#if UNITY_ANDROID
-        configPath = Application.persistentDataPath + "/MusicHeadConfig.json";
-#else
-        configPath = Application.streamingAssetsPath + "/MusicHeadConfig.json";
-#endif
         LoadConfig();
-      
     }
 
     private void Start()
     {
-        if (!MiSideStart.config.MusicHead)
+        if (!MiSideStart.instance.config.value.MusicHead)
             return;
 #if MISIDE_MUSIC_ON
         return;
@@ -106,42 +77,14 @@ public class AudioAnimation : MonoBehaviour
         _enumerator = new MMDeviceEnumerator();
     }
 
-    void LoadConfig()
+    public void LoadConfig()
     {
-        FileInfo fileInfo = new FileInfo(configPath);
-        if (fileInfo.Directory == null)
-        {
-            Debug.LogError($"ConfigFileError:{configPath}");
-            return;
-        }
-        if (!fileInfo.Directory.Exists)
-            Directory.CreateDirectory(fileInfo.Directory.FullName);
-        if (!fileInfo.Exists)
-        {
-            config = new();
-            var json = JsonConvert.SerializeObject(config, Formatting.Indented, new VectorConverter());
-            File.WriteAllText(configPath, json);
-        }
-        else
-        {
-            var json = File.ReadAllText(configPath);
-            try
-            {
-                config = JsonConvert.DeserializeObject<MusicHeadConfig>(json, new VectorConverter());
-            }
-            catch (Exception e) // 使用异常对象来记录错误信息（解决捕捉异常而忽略了异常对象本身）
-            {
-                Debug.LogError($"Failed to deserialize config file: {e.Message}"); // 记录错误信息（此处为记录异常信息以便于调试和维护没有省略变量名）
-                config = new();
-                json = JsonConvert.SerializeObject(config, Formatting.Indented, new VectorConverter());
-                File.WriteAllText(configPath, json);
-            }
-        }
-        nodMinEnergy = config.v1Info.NodMinEnergy;
-        nodEnergyThreshold = config.v2Info.NodEnergyThreshold;
-        energyDecayFactor = config.v2Info.EnergyDecayFactor;
-        peakDetectionThreshold = config.v2Info.PeakDetectionThreshold;
-        smoothingFactor = config.v2Info.SmoothingFactor;
+        config.LoadConfig();
+        nodMinEnergy = config.value.v1Info.NodMinEnergy;
+        nodEnergyThreshold = config.value.v2Info.NodEnergyThreshold;
+        energyDecayFactor = config.value.v2Info.EnergyDecayFactor;
+        peakDetectionThreshold = config.value.v2Info.PeakDetectionThreshold;
+        smoothingFactor = config.value.v2Info.SmoothingFactor;
     }
     void ResetCapture()
     {
@@ -150,7 +93,7 @@ public class AudioAnimation : MonoBehaviour
         soundInSource?.Dispose();
         capture = null;
         soundInSource = null;
-        if (!MiSideStart.config.MusicHead)
+        if (!MiSideStart.instance.config.value.MusicHead)
             return;
 #if MISIDE_MUSIC_ON
         return;
@@ -175,7 +118,7 @@ public class AudioAnimation : MonoBehaviour
 
     private void Update()
     {
-        if (!MiSideStart.config.MusicHead)
+        if (!MiSideStart.instance.config.value.MusicHead)
             return;
 #if MISIDE_MUSIC_ON
         return;
@@ -190,7 +133,7 @@ public class AudioAnimation : MonoBehaviour
             ResetCapture();
         }
         
-        if (config.MusicHeadVersion == MusicHeadVersion.V1)
+        if (config.value.MusicHeadVersion == MusicHeadVersion.V1)
         {
             if (nod)
             {
@@ -238,7 +181,7 @@ public class AudioAnimation : MonoBehaviour
         // 更新 nodEnergy
         nodEnergy = energy;
 
-        if (config.MusicHeadVersion == MusicHeadVersion.V2)
+        if (config.value.MusicHeadVersion == MusicHeadVersion.V2)
         {
             // 平滑滤波
             energy = SmoothingFilter(energy);

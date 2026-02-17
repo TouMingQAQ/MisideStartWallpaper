@@ -15,11 +15,12 @@ public class MouseToWorldControl : MonoBehaviour
     public Camera worldCamera; // 更改：重命名以避免与基类成员冲突
     public float smoothTime = 0.3f;
     public float maxSpeed = 10;
-    [InspectorName("Y轴跟随限制")]
-    public Vector2 limitY = new Vector2(0.8f,0.6f);
     [ReadOnly]
     public Vector3 velocity;
-    public Vector4 offset = Vector4.one;
+    public Vector2 offsetX = Vector2.one;
+    public Vector2 offsetY = Vector2.one;
+    [SerializeField,ReadOnly]
+    private Vector2 distance;
     private Vector3 targetPositionCache;
     private Vector3 targetPosition;
 #if UNITY_ANDROID 
@@ -52,7 +53,7 @@ public class MouseToWorldControl : MonoBehaviour
 
     void UpdateTargetPosition()
     {
-        if(control == null || MiSideStart.config.LookAtState == LookAtState.None)
+        if(control == null || MiSideStart.instance.config.value.LookAtState == LookAtState.None)
             return;
         var center = Screen.safeArea.center;
         var mousePos = new Vector2(Screen.width *0.5f, Screen.height *0.5f);
@@ -92,26 +93,22 @@ public class MouseToWorldControl : MonoBehaviour
         if(!Application.isEditor)
             targetPosition = targetPositionCache;
 #else
-        if (!Mouse.current.leftButton.isPressed && MiSideStart.config.LookAtState == LookAtState.OnlyPress)
+        if (!Mouse.current.leftButton.isPressed && MiSideStart.instance.config.value.LookAtState == LookAtState.OnlyPress)
         {
             targetPosition = targetPositionCache;
             return;
         }
 #endif
-        var distance = mousePos - center;
-
-        var mulX = distance.x < 0 ? offset.x : offset.z;
-        var mulY = distance.y < 0 ? offset.y : offset.w;
+        distance = mousePos - center;
+        //限制跟随距离为屏幕大小，超出屏幕大小的无效
+        var limitX = Screen.width * 0.5f;
+        var limitY = Screen.height * 0.5f;
+        distance.x = Mathf.Clamp(distance.x, -limitX, limitX);
+        distance.y = Mathf.Clamp(distance.y, -limitY, limitY);
+        var mulX = distance.x < 0 ? offsetX.x : offsetX.y;
+        var mulY = distance.y < 0 ? offsetY.x : offsetY.y;
         var screenHeight = Screen.safeArea.height / 2;
-
-        if(distance.y > screenHeight * limitY.x)
-        {
-            distance.y = screenHeight * limitY.x;
-        }
-        else if(distance.y < -screenHeight * limitY.y)
-        {
-            distance.y = -screenHeight * limitY.y;
-        }
+        
         mousePos = new Vector2(mulX, mulY) * distance;
         targetPosition = worldCamera.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, depth)); // 更改：使用新的变量名
     }

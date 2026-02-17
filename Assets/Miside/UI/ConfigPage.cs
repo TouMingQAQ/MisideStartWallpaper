@@ -20,10 +20,10 @@ public class ConfigPage : MonoBehaviour
 
     void LoadConfig()
     {
-        var config = MiSideStart.config;
+        var config = MiSideStart.instance.config.value;
         animationRange.Value = config.StartAnimationRange;
-        lookAtOffsetX.Value = new  Vector2(config.LookAtOffsetMultiplier.x,config.LookAtOffsetMultiplier.z);
-        lookAtOffsetY.Value = new  Vector2(config.LookAtOffsetMultiplier.y,config.LookAtOffsetMultiplier.w);
+        lookAtOffsetX.Value = new  Vector2(config.LookAtOffsetMultiplierX.x,config.LookAtOffsetMultiplierX.y);
+        lookAtOffsetY.Value = new  Vector2(config.LookAtOffsetMultiplierY.y,config.LookAtOffsetMultiplierY.y);
         gyroscopeScale.Value = config.gyroscopeScale;
         gyroscopeAreaScale.Value = config.gyroscopeSafeAreaScale;
         playSoundOnClick.isOn = config.PlaySoundOnClick;
@@ -32,21 +32,21 @@ public class ConfigPage : MonoBehaviour
 
     public void SaveConfig()
     {
-        var config = MiSideStart.config;
+        var config = MiSideStart.instance.config.value;
         config.StartAnimationRange = animationRange.Value;
         var lookAtOffsetXValue = lookAtOffsetX.Value;
         var lookAtOffsetYValue = lookAtOffsetY.Value;
-        config.LookAtOffsetMultiplier = new Vector4(lookAtOffsetXValue.x,lookAtOffsetYValue.x,lookAtOffsetXValue.y,lookAtOffsetYValue.y);
+        config.LookAtOffsetMultiplierX = new Vector2(lookAtOffsetXValue.x,lookAtOffsetXValue.y);
+        config.LookAtOffsetMultiplierY = new Vector2(lookAtOffsetYValue.x,lookAtOffsetYValue.y);
         config.gyroscopeSafeAreaScale = gyroscopeAreaScale.Value;
         config.gyroscopeScale = gyroscopeScale.Value;
         config.PlaySoundOnClick = playSoundOnClick.isOn;
-        MiSideStart.config = config;
         MiSideStart.instance.SaveConfig();
     }
 
     public void ResetConfig()
     {
-        MiSideStart.config = MiSideConfig.Default();
+        MiSideStart.instance.config.value.Default();
         LoadConfig();
         MiSideStart.instance.SaveConfig();
     }
